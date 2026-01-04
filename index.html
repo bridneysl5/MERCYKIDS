@@ -57,24 +57,34 @@
         .details-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.5s ease-out;
+            border-top: 0 solid transparent;
+            transition: max-height 0.5s ease-out, border-top 0s 0.5s;
         }
+        
         .details-open {
-            max-height: 3000px;
-            border-top: 3px solid #2D3436;
-            transition: max-height 0.8s ease-in;
+            max-height: 4000px;
+            border-top: 4px solid #2D3436;
+            transition: max-height 0.8s ease-in, border-top 0s;
         }
 
         .sticker-card {
             background: white;
-            border: 3px solid #2D3436;
-            box-shadow: 6px 6px 0px 0px #2D3436;
+            border: 4px solid #2D3436;
+            box-shadow: 8px 8px 0px 0px #2D3436;
             transition: all 0.2s ease;
-            border-radius: 16px;
+            border-radius: 24px;
+            /* Quitamos overflow:hidden global para permitir etiquetas flotantes en los precios */
         }
+        
+        /* Clase específica para recortar imágenes en tarjetas de talleres */
+        .card-image-container {
+            overflow: hidden;
+            border-radius: 20px 20px 0 0; /* Ajuste interno para respetar bordes */
+        }
+
         .sticker-card:hover {
             transform: translate(-2px, -2px);
-            box-shadow: 8px 8px 0px 0px #2D3436;
+            box-shadow: 10px 10px 0px 0px #2D3436;
         }
         
         .btn-pop {
@@ -97,11 +107,12 @@
             background-color: white;
             color: #A4B0BE;
         }
-
-        .photo-sticker {
-            border: 3px solid #2D3436;
-            box-shadow: 3px 3px 0px 0px #2D3436;
-            object-fit: cover;
+        
+        .info-box {
+            border: 2px solid #2D3436;
+            border-radius: 12px;
+            padding: 10px;
+            text-align: center;
         }
     </style>
 </head>
@@ -117,7 +128,7 @@
                 </div>
                 <span class="font-display font-bold text-3xl ml-2 hidden sm:block tracking-wide text-brand-dark">Marcy Kids</span>
             </div>
-            <a href="https://wa.me/51925982984" target="_blank" class="btn-pop bg-brand-secondary text-white px-6 py-2 rounded-full font-bold text-lg flex items-center gap-2 hover:bg-green-600">
+            <a href="https://wa.me/51925982984?text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20talleres%20de%20verano" target="_blank" class="btn-pop bg-brand-green text-white px-6 py-2 rounded-full font-bold text-lg flex items-center gap-2 hover:bg-green-600">
                 <i data-lucide="message-circle" class="w-5 h-5"></i> Inscribirse
             </a>
         </div>
@@ -131,50 +142,42 @@
             </span>
             
             <h1 class="font-display text-5xl md:text-7xl font-bold mb-4 leading-tight mt-4">
-                Verano <br class="md:hidden">
-                <span class="inline-block transform -rotate-2">
-                    <span class="text-brand-purple">M</span><span class="text-brand-red">a</span><span class="text-brand-red">r</span><span class="text-brand-yellow">c</span><span class="text-brand-green">y</span>
-                </span> 
-                <span class="inline-block transform rotate-2 ml-2">
-                    <span class="text-brand-sky">K</span><span class="text-brand-green">i</span><span class="text-brand-purple">d</span><span class="text-brand-blue">s</span>
-                </span>
+                Verano <span class="text-brand-purple">Marcy</span> <span class="text-brand-sky">Kids</span>
             </h1>
             <p class="font-sans text-xl md:text-2xl font-bold text-gray-600 max-w-2xl mx-auto mb-8">
                 Talleres creativos donde aprender es una gran aventura.
             </p>
             
             <div class="inline-flex flex-col md:flex-row items-center gap-4 bg-brand-light border-2 border-brand-dark px-6 py-3 rounded-xl font-bold text-brand-dark">
-                <div class="flex items-center gap-2">
-                    <i data-lucide="calendar" class="w-6 h-6 text-brand-red"></i> 
-                    <span>12 Ene - 21 Feb</span>
-                </div>
+                <div class="flex items-center gap-2"><i data-lucide="calendar" class="w-6 h-6 text-brand-red"></i> <span>12 Ene - 21 Feb</span></div>
                 <div class="hidden md:block w-2 h-2 bg-brand-dark rounded-full"></div>
-                <div class="flex items-center gap-2">
-                    <i data-lucide="clock" class="w-6 h-6 text-brand-purple"></i> 
-                    <span>6 Semanas de Diversión</span>
-                </div>
+                <div class="flex items-center gap-2"><i data-lucide="clock" class="w-6 h-6 text-brand-purple"></i> <span>6 Semanas de Diversión</span></div>
             </div>
         </div>
     </header>
 
-    <!-- Selector de Edad (TABS) -->
-    <div class="container mx-auto px-4 relative z-10 mb-12 max-w-5xl">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 justify-center">
-            <button onclick="switchTab('toddlers')" id="tab-toddlers" class="btn-pop active-tab py-4 px-2 md:px-6 rounded-2xl font-display font-bold text-lg md:text-xl text-center transition-all">
-                2-3 Años 👶
-                <span class="block text-xs md:text-sm font-sans font-normal mt-1 opacity-90">3:00 - 4:00 PM</span>
+    <!-- Tabs -->
+    <div class="container mx-auto px-4 relative z-10 mb-12 max-w-6xl">
+        <div class="flex flex-wrap gap-4 justify-center">
+            <button onclick="switchTab('toddlers')" id="tab-toddlers" class="btn-pop active-tab py-4 px-6 rounded-2xl font-display font-bold text-lg md:text-xl text-center flex-1 min-w-[140px] flex flex-col items-center gap-1">
+                <span class="flex items-center gap-2">2-3 Años <i data-lucide="baby" class="w-5 h-5"></i></span>
+                <span class="block text-xs font-sans font-normal opacity-90">3:00 - 4:00 PM</span>
             </button>
-            <button onclick="switchTab('kids')" id="tab-kids" class="btn-pop inactive-tab py-4 px-2 md:px-6 rounded-2xl font-display font-bold text-lg md:text-xl text-center transition-all border-4 border-brand-dark">
-                4-5 Años 🧒
-                <span class="block text-xs md:text-sm font-sans font-normal mt-1 opacity-90">4:00 - 5:00 PM</span>
+            <button onclick="switchTab('kids')" id="tab-kids" class="btn-pop inactive-tab py-4 px-6 rounded-2xl font-display font-bold text-lg md:text-xl text-center border-4 border-brand-dark flex-1 min-w-[140px] flex flex-col items-center gap-1">
+                <span class="flex items-center gap-2">4-5 Años <i data-lucide="smile" class="w-5 h-5"></i></span>
+                <span class="block text-xs font-sans font-normal opacity-90">4:00 - 5:00 PM</span>
             </button>
-            <button onclick="switchTab('juniors')" id="tab-juniors" class="btn-pop inactive-tab py-4 px-2 md:px-6 rounded-2xl font-display font-bold text-lg md:text-xl text-center transition-all border-4 border-brand-dark">
-                6-10 Años 🧑
-                <span class="block text-xs md:text-sm font-sans font-normal mt-1 opacity-90">5:00 - 6:00 PM</span>
+            <button onclick="switchTab('juniors')" id="tab-juniors" class="btn-pop inactive-tab py-4 px-6 rounded-2xl font-display font-bold text-lg md:text-xl text-center border-4 border-brand-dark flex-1 min-w-[140px] flex flex-col items-center gap-1">
+                <span class="flex items-center gap-2">6-10 Años <i data-lucide="user" class="w-5 h-5"></i></span>
+                <span class="block text-xs font-sans font-normal opacity-90">5:00 - 6:00 PM</span>
             </button>
-            <button onclick="switchTab('tech')" id="tab-tech" class="btn-pop inactive-tab py-4 px-2 md:px-6 rounded-2xl font-display font-bold text-lg md:text-xl text-center transition-all border-4 border-brand-dark bg-brand-sky text-white">
-                Niñ@s Tech 🤖
-                <span class="block text-xs md:text-sm font-sans font-normal mt-1 opacity-90">Sábados</span>
+            <button onclick="switchTab('tech')" id="tab-tech" class="btn-pop inactive-tab py-4 px-6 rounded-2xl font-display font-bold text-lg md:text-xl text-center border-4 border-brand-dark bg-brand-purple text-white flex-1 min-w-[140px] flex flex-col items-center gap-1">
+                <span class="flex items-center gap-2">Niñ@s Tech <i data-lucide="bot" class="w-5 h-5"></i></span>
+                <span class="block text-xs font-sans font-normal opacity-90">Sábados</span>
+            </button>
+            <button onclick="switchTab('ballet')" id="tab-ballet" class="btn-pop inactive-tab py-4 px-6 rounded-2xl font-display font-bold text-lg md:text-xl text-center border-4 border-brand-dark bg-brand-hotpink text-white flex-1 min-w-[140px] flex flex-col items-center gap-1">
+                <span class="flex items-center gap-2">Ballet Kids <i data-lucide="star" class="w-5 h-5"></i></span>
+                <span class="block text-xs font-sans font-normal opacity-90">Sábados</span>
             </button>
         </div>
     </div>
@@ -870,87 +873,55 @@
             </div>
         </div>
 
-    </main>
-
-    <!-- SECCIÓN ESPECIAL BALLET (AHORA CON SÍLABUS INTERACTIVO) -->
-    <section class="py-16 px-4 bg-brand-ballet/30 border-t-4 border-brand-dark relative overflow-hidden">
-        <div class="container mx-auto max-w-4xl relative z-10">
-            <!-- TARJETA PRINCIPAL BALLET -->
+        <!-- ================= BALLET ================= -->
+        <div id="content-ballet" class="space-y-8 animate-fade-in hidden">
             <div class="sticker-card overflow-hidden">
                 <div class="flex flex-col md:flex-row">
-                    <!-- COLUMNA IZQUIERDA: FOTO PRINCIPAL -->
-                    <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[300px]">
-                         <!-- FOTO CORREGIDA: Niñas pequeñas reales en clase de ballet -->
-                         <img src="https://images.unsplash.com/photo-1520609090647-19458df24107?q=80&w=800&auto=format&fit=crop" alt="Grupo de niñas pequeñas en clase de ballet con tutú" class="absolute inset-0 w-full h-full object-cover">
-                         <div class="absolute inset-0 bg-brand-hotpink/20 mix-blend-multiply"></div>
-                         <span class="absolute top-4 left-4 bg-brand-hotpink text-white border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase mb-4 animate-bounce shadow-pop">¡Sábados!</span>
+                    <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
+                        <img src="https://images.unsplash.com/photo-1520609090647-19458df24107?q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-brand-hotpink/20 mix-blend-multiply"></div>
+                        <span class="absolute top-4 left-4 bg-brand-hotpink text-white border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Sábados</span>
                     </div>
-                    
-                    <!-- COLUMNA DERECHA: INFO -->
-                    <div class="p-8 md:w-7/12 flex flex-col justify-center">
-                        <h2 class="font-display text-4xl font-bold mb-2 text-brand-hotpink">Ballet Kids</h2>
-                        <h3 class="font-display text-xl font-bold text-gray-700 mb-6 italic">"Donde los Sueños Danzan"</h3>
-                        
-                        <div class="grid grid-cols-2 gap-4 mb-6">
-                            <div class="bg-pink-50 p-3 rounded-lg border-2 border-brand-dark">
-                                <p class="text-xs text-brand-hotpink uppercase font-bold">Inicio</p>
-                                <p class="font-bold text-brand-dark">17 Enero</p>
-                            </div>
-                            <div class="bg-pink-50 p-3 rounded-lg border-2 border-brand-dark">
-                                <p class="text-xs text-brand-hotpink uppercase font-bold">Horario</p>
-                                <p class="font-bold text-brand-dark">3:00 - 4:00 PM</p>
-                            </div>
-                            <div class="bg-pink-50 p-3 rounded-lg border-2 border-brand-dark col-span-2 flex justify-between items-center px-6">
-                                <p class="text-xs text-brand-hotpink uppercase font-bold">Inversión Total</p>
-                                <p class="font-bold text-brand-dark text-2xl">S/ 150.00</p>
-                            </div>
+                    <div class="p-6 md:w-7/12 flex flex-col justify-center bg-white">
+                        <h2 class="font-display text-3xl font-bold text-brand-hotpink mb-1">Ballet Kids</h2>
+                        <p class="font-bold text-gray-600 mb-6 italic">"Donde los Sueños Danzan"</p>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="info-box bg-pink-50"><p class="text-xs text-brand-hotpink font-bold uppercase">Inicio</p><p class="font-bold">17 Enero</p></div>
+                            <div class="info-box bg-pink-50"><p class="text-xs text-brand-hotpink font-bold uppercase">Horario</p><p class="font-bold">3:00 PM</p></div>
+                            <div class="info-box bg-pink-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-hotpink font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
                         </div>
-                        
-                        <div class="text-center">
-                            <p class="text-sm font-bold text-brand-hotpink mb-4">Para niñas de 2 y 3 Añitos</p>
-                            <!-- BOTÓN VER SÍLABUS PARA BALLET -->
-                            <button onclick="toggleDetails('details-ballet')" class="w-full bg-white border-2 border-brand-dark text-brand-dark font-bold py-2 px-6 rounded-lg flex items-center justify-center gap-2 transition-all hover:shadow-[3px_3px_0px_0px_#2D3436] mb-4">
-                                Ver Sílabus Completo <i data-lucide="chevron-down" class="w-5 h-5"></i>
-                            </button>
-                            
-                            <a href="https://wa.me/51925982984?text=Hola,%20quiero%20inscribir%20a%20mi%20peque%20en%20Ballet%20Kids" target="_blank" class="w-full btn-pop bg-brand-hotpink text-white py-3 rounded-xl font-bold text-center block hover:bg-pink-600 transition-colors">
-                                ¡Inscribir Ahora!
-                            </a>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <button onclick="toggleDetails('details-ballet')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
+                            <a href="https://wa.me/51925982984?text=Hola,%20quiero%20inscribir%20a%20mi%20peque%20en%20Ballet%20Kids" target="_blank" class="flex-1 btn-pop bg-brand-hotpink text-white font-bold py-3 rounded-xl text-center hover:bg-pink-600">Inscribir Ahora <i data-lucide="message-circle" class="inline w-4 h-4 ml-1"></i></a>
                         </div>
                     </div>
                 </div>
-
-                <!-- CONTENIDO DESPLEGABLE DEL SÍLABUS DE BALLET -->
-                <div id="details-ballet" class="details-content bg-pink-50 border-t-4 border-brand-dark">
-                    <div class="p-8">
-                        <div class="grid md:grid-cols-2 gap-8">
+                <div id="details-ballet" class="details-content bg-pink-50">
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
                             <div>
-                                <h4 class="font-black text-brand-hotpink mb-4 uppercase text-lg border-b-2 border-brand-hotpink/20 pb-2">El Viaje de la Bailarina</h4>
-                                <ul class="space-y-3 text-gray-700 font-medium">
-                                    <li class="flex gap-3 items-start"><span class="bg-brand-hotpink text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mt-0.5 shrink-0">1</span> <div><strong class="block text-brand-dark">El Secreto de las Estrellas</strong> Postura y crecimiento hacia el cielo.</div></li>
-                                    <li class="flex gap-3 items-start"><span class="bg-brand-hotpink text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mt-0.5 shrink-0">2</span> <div><strong class="block text-brand-dark">El Camino del Bosque</strong> Equilibrio y serenidad (flamenco).</div></li>
-                                    <li class="flex gap-3 items-start"><span class="bg-brand-hotpink text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mt-0.5 shrink-0">3</span> <div><strong class="block text-brand-dark">Corazones al Ritmo</strong> Pulso musical y pasitos mágicos.</div></li>
-                                    <li class="flex gap-3 items-start"><span class="bg-brand-hotpink text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mt-0.5 shrink-0">4</span> <div><strong class="block text-brand-dark">Mis Primeras Alas</strong> Posición en "V" y abrazo de oso.</div></li>
-                                    <li class="flex gap-3 items-start"><span class="bg-brand-hotpink text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mt-0.5 shrink-0">5</span> <div><strong class="block text-brand-dark">Saltos de Algodón</strong> Saltitos suaves de conejo.</div></li>
-                                    <li class="flex gap-3 items-start"><span class="bg-brand-hotpink text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mt-0.5 shrink-0">6</span> <div><strong class="block text-brand-dark">El Gran Baile de Colores</strong> Coreografía final inolvidable.</div></li>
+                                <h4 class="font-black text-brand-hotpink mb-3 uppercase border-b-2 border-brand-hotpink/20 pb-1">El Viaje de la Bailarina</h4>
+                                <ul class="text-sm space-y-2 text-gray-700 font-medium list-disc pl-4">
+                                    <li><strong>Clase 1:</strong> El Secreto de las Estrellas. Postura y crecimiento hacia el cielo.</li>
+                                    <li><strong>Clase 2:</strong> El Camino del Bosque Encantado. Equilibrio y serenidad (flamenco).</li>
+                                    <li><strong>Clase 3:</strong> Corazones al Ritmo del Arte. Pulso musical y pasitos mágicos.</li>
+                                    <li><strong>Clase 4:</strong> Mis Primeras Alas. Posición en "V" y abrazo de oso.</li>
+                                    <li><strong>Clase 5:</strong> Saltos de Algodón y Nubes. Saltitos suaves de conejo.</li>
+                                    <li><strong>Clase 6:</strong> El Gran Baile de Colores. Coreografía final inolvidable.</li>
                                 </ul>
                             </div>
                             <div class="flex flex-col justify-between">
                                 <div>
-                                    <h4 class="font-black text-brand-hotpink mb-4 uppercase text-lg border-b-2 border-brand-hotpink/20 pb-2">Uniforme de Hada</h4>
-                                    <ul class="text-sm space-y-2 text-gray-700 mb-6">
-                                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-hotpink"></i> Leotardo (malla) o polo cómodo.</li>
-                                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-hotpink"></i> Tutú favorito (¡Opcional pero recomendado!).</li>
-                                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-hotpink"></i> Zapatillas de ballet o medias antideslizantes.</li>
-                                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-hotpink"></i> Cabello recogido (moñito).</li>
+                                    <h4 class="font-black text-brand-hotpink mb-3 uppercase border-b-2 border-brand-hotpink/20 pb-1">Uniforme de Hada</h4>
+                                    <ul class="text-sm space-y-2 text-gray-700 list-disc pl-4 mb-4">
+                                        <li>Leotardo (malla) o polo cómodo.</li>
+                                        <li>Tutú favorito (¡Opcional pero recomendado!).</li>
+                                        <li>Zapatillas de ballet o medias antideslizantes.</li>
+                                        <li>Cabello recogido (moñito).</li>
                                     </ul>
                                 </div>
-                                
-                                <!-- LOGRO DE BALLET -->
                                 <div class="bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#FF9FF3]">
-                                    <div class="bg-brand-ballet p-3 rounded-full border-2 border-brand-dark shrink-0">
-                                        <i data-lucide="star" class="w-8 h-8 text-brand-dark"></i>
-                                    </div>
+                                    <div class="bg-brand-ballet p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="star" class="w-8 h-8 text-brand-dark"></i></div>
                                     <div>
                                         <h5 class="font-black text-brand-hotpink text-sm uppercase mb-1">¡Estrella del Ballet!</h5>
                                         <p class="text-sm font-bold text-gray-700 leading-tight">Al finalizar recibirás tu <span class="text-brand-dark underline">Diploma de Bailarina</span> y la <span class="text-brand-dark underline">Insignia de Cisne</span> 🦢</p>
@@ -962,9 +933,89 @@
                 </div>
             </div>
         </div>
-        <!-- Decoración extra -->
-        <div class="absolute top-10 right-10 text-6xl opacity-20 rotate-12 text-brand-hotpink">🌸</div>
-        <div class="absolute bottom-10 left-10 text-6xl opacity-20 -rotate-12 text-brand-hotpink">🩰</div>
+
+    </main>
+
+    <!-- Section Packs -->
+    <section class="py-16 px-4 bg-brand-yellow/20 border-t-4 border-brand-dark relative">
+        <div class="container mx-auto max-w-7xl">
+            <div class="text-center mb-12">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-brand-dark mb-4">¡Packs de Verano! ☀️</h2>
+                <p class="text-xl text-gray-700 font-bold">Elige la mejor opción para tu peque</p>
+            </div>
+
+            <!-- GRID CAMBIADO A 4 COLUMNAS PARA INCLUIR EL FULL PASS -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Pack 1 -->
+                <div class="sticker-card bg-white p-6 relative transform hover:-translate-y-2 transition-transform border-brand-sky overflow-visible">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-brand-sky text-white border-2 border-brand-dark px-3 py-1 rounded-full text-sm font-bold shadow-pop">Básico</div>
+                    <h3 class="font-display text-2xl font-bold text-center mt-4 mb-2 text-brand-sky">1 Taller</h3>
+                    <p class="text-center text-xs text-gray-500 mb-4">Para probar la experiencia</p>
+                    <div class="text-center mb-4">
+                        <span class="text-3xl font-bold text-brand-dark">S/ 150</span>
+                        <span class="text-xs text-gray-500 block">/ único pago</span>
+                    </div>
+                    <ul class="space-y-2 mb-6 text-sm">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-4 h-4"></i> Acceso a 1 taller</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-4 h-4"></i> 6 Semanas</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-4 h-4"></i> Materiales incluidos*</li>
+                    </ul>
+                    <a href="https://wa.me/51925982984?text=Hola,%20me%20interesa%20inscribirme%20en%201%20Taller" target="_blank" class="w-full btn-pop bg-brand-sky text-white font-bold py-2 rounded-xl text-center block text-sm">Elegir 1 Taller</a>
+                </div>
+
+                <!-- Pack 2 -->
+                 <div class="sticker-card bg-white p-6 relative transform hover:-translate-y-2 transition-transform border-brand-purple overflow-visible">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-brand-purple text-white border-2 border-brand-dark px-3 py-1 rounded-full text-sm font-bold shadow-pop">Duo</div>
+                    <h3 class="font-display text-2xl font-bold text-center mt-4 mb-2 text-brand-purple">Pack 2</h3>
+                    <p class="text-center text-xs text-gray-500 mb-4">Dos talleres a elección</p>
+                    <div class="text-center mb-4">
+                        <span class="text-3xl font-bold text-brand-purple">S/ 280</span>
+                        <span class="text-xs text-gray-500 block line-through">Antes S/ 300</span>
+                    </div>
+                    <ul class="space-y-2 mb-6 text-sm">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-brand-purple w-4 h-4"></i> <strong>Ahorras S/ 20</strong></li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-4 h-4"></i> Acceso a 2 talleres</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-4 h-4"></i> Diploma Físico</li>
+                    </ul>
+                    <a href="https://wa.me/51925982984?text=Hola,%20me%20interesa%20el%20Pack%20Duo" target="_blank" class="w-full btn-pop bg-brand-purple text-white font-bold py-2 rounded-xl text-center block text-sm">Quiero el Duo</a>
+                </div>
+
+                <!-- Pack 3 -->
+                 <div class="sticker-card bg-white p-6 relative transform hover:-translate-y-2 transition-transform border-brand-red overflow-visible">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-brand-red text-white border-2 border-brand-dark px-3 py-1 rounded-full text-sm font-bold shadow-pop">Trio</div>
+                    <h3 class="font-display text-2xl font-bold text-center mt-4 mb-2 text-brand-red">Pack 3</h3>
+                    <p class="text-center text-xs text-gray-500 mb-4">Experiencia variada</p>
+                    <div class="text-center mb-4">
+                        <span class="text-3xl font-bold text-brand-dark">S/ 400</span>
+                        <span class="text-xs text-gray-500 block line-through">Antes S/ 450</span>
+                    </div>
+                    <ul class="space-y-2 mb-6 text-sm">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-brand-red w-4 h-4"></i> <strong>Ahorras S/ 50</strong></li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-4 h-4"></i> Acceso a 3 talleres</li>
+                        <li class="flex items-center gap-2"><i data-lucide="gift" class="text-brand-red w-4 h-4"></i> Polo Marcy Kids</li>
+                    </ul>
+                    <a href="https://wa.me/51925982984?text=Hola,%20me%20interesa%20el%20Pack%20Trio" target="_blank" class="w-full btn-pop bg-brand-red text-white font-bold py-2 rounded-xl text-center block text-sm">Quiero el Trio</a>
+                </div>
+
+                <!-- Pack 4 (FULL WEEK) -->
+                <div class="sticker-card bg-green-50 p-6 relative transform hover:-translate-y-2 transition-transform scale-105 z-10 border-brand-green shadow-xl overflow-visible">
+                    <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-brand-green text-white border-2 border-brand-dark px-4 py-2 rounded-full font-bold shadow-pop text-sm w-max">★ FULL WEEK ★</div>
+                    <h3 class="font-display text-2xl font-bold text-center mt-6 mb-2 text-brand-green">Lunes a Viernes</h3>
+                    <p class="text-center text-xs text-gray-600 mb-4 font-bold">¡Diversión todos los días!</p>
+                    <div class="text-center mb-4">
+                        <span class="text-4xl font-bold text-brand-green">S/ 600</span>
+                        <span class="text-xs text-gray-500 block line-through">Antes S/ 750</span>
+                    </div>
+                    <ul class="space-y-2 mb-6 text-sm">
+                        <li class="flex items-center gap-2"><i data-lucide="sparkles" class="text-brand-yellow w-4 h-4"></i> <strong>¡Ahorras S/ 150!</strong></li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-600 w-4 h-4"></i> 5 Talleres (Lun-Vie)</li>
+                        <li class="flex items-center gap-2"><i data-lucide="gift" class="text-brand-red w-4 h-4"></i> Polo + Merch Oficial</li>
+                        <li class="flex items-center gap-2"><i data-lucide="star" class="text-brand-yellow w-4 h-4"></i> Diploma de Honor</li>
+                    </ul>
+                    <a href="https://wa.me/51925982984?text=Hola,%20me%20interesa%20el%20Pack%20FULL%20WEEK%20(Lunes%20a%20Viernes)" target="_blank" class="w-full btn-pop bg-brand-green text-white font-bold py-3 rounded-xl text-center block text-lg hover:bg-green-600">¡Lo Quiero Todo!</a>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -983,43 +1034,22 @@
         lucide.createIcons();
 
         function switchTab(group) {
-            const btnToddlers = document.getElementById('tab-toddlers');
-            const btnKids = document.getElementById('tab-kids');
-            const btnJuniors = document.getElementById('tab-juniors');
-            const btnTech = document.getElementById('tab-tech');
+            const tabs = ['toddlers', 'kids', 'juniors', 'tech', 'ballet'];
             
-            const contentToddlers = document.getElementById('content-toddlers');
-            const contentKids = document.getElementById('content-kids');
-            const contentJuniors = document.getElementById('content-juniors');
-            const contentTech = document.getElementById('content-tech');
-
-            // Resetear todos
-            [btnToddlers, btnKids, btnJuniors, btnTech].forEach(btn => {
-                btn.classList.remove('active-tab');
-                btn.classList.add('inactive-tab', 'border-4', 'border-brand-dark');
+            tabs.forEach(tab => {
+                const btn = document.getElementById('tab-' + tab);
+                const content = document.getElementById('content-' + tab);
+                
+                if (tab === group) {
+                    btn.classList.add('active-tab');
+                    btn.classList.remove('inactive-tab', 'border-4', 'border-brand-dark');
+                    content.classList.remove('hidden');
+                } else {
+                    btn.classList.remove('active-tab');
+                    btn.classList.add('inactive-tab', 'border-4', 'border-brand-dark');
+                    content.classList.add('hidden');
+                }
             });
-            [contentToddlers, contentKids, contentJuniors, contentTech].forEach(content => {
-                content.classList.add('hidden');
-            });
-
-            // Activar seleccionado
-            if (group === 'toddlers') {
-                btnToddlers.classList.add('active-tab');
-                btnToddlers.classList.remove('inactive-tab', 'border-4', 'border-brand-dark');
-                contentToddlers.classList.remove('hidden');
-            } else if (group === 'kids') {
-                btnKids.classList.add('active-tab');
-                btnKids.classList.remove('inactive-tab', 'border-4', 'border-brand-dark');
-                contentKids.classList.remove('hidden');
-            } else if (group === 'juniors') {
-                btnJuniors.classList.add('active-tab');
-                btnJuniors.classList.remove('inactive-tab', 'border-4', 'border-brand-dark');
-                contentJuniors.classList.remove('hidden');
-            } else if (group === 'tech') {
-                btnTech.classList.add('active-tab');
-                btnTech.classList.remove('inactive-tab', 'border-4', 'border-brand-dark');
-                contentTech.classList.remove('hidden');
-            }
         }
 
         function toggleDetails(id) {
