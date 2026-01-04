@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marcy Kids | Verano 2026</title>
-    <!-- Fuentes Google -->
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Iconos Lucide -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <script>
@@ -27,10 +24,6 @@
                             green: '#8CC63F',      
                             sky: '#0095DA',        
                             blue: '#0072BC',       
-                            
-                            primary: '#EF4136',
-                            secondary: '#8CC63F',
-                            accent: '#FDB913',
                             dark: '#2D3436',
                             light: '#F1F2F6',
                             ballet: '#FF9FF3',     
@@ -75,7 +68,6 @@
             border-radius: 24px;
             overflow: hidden;
         }
-
         .sticker-card:hover {
             transform: translate(-2px, -2px);
             box-shadow: 10px 10px 0px 0px #2D3436;
@@ -134,7 +126,6 @@
             <span class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-brand-red text-white border-4 border-brand-dark px-6 py-2 rounded-full font-bold font-display text-lg shadow-pop rotate-2">
                 ¡Temporada 2026!
             </span>
-            
             <h1 class="font-display text-5xl md:text-7xl font-bold mb-4 leading-tight mt-4">
                 Verano <br class="md:hidden">
                 <span class="inline-block transform -rotate-2">
@@ -147,7 +138,6 @@
             <p class="font-sans text-xl md:text-2xl font-bold text-gray-600 max-w-2xl mx-auto mb-8">
                 Talleres creativos donde aprender es una gran aventura.
             </p>
-            
             <div class="inline-flex flex-col md:flex-row items-center gap-4 bg-brand-light border-2 border-brand-dark px-6 py-3 rounded-xl font-bold text-brand-dark">
                 <div class="flex items-center gap-2"><i data-lucide="calendar" class="w-6 h-6 text-brand-red"></i> <span>12 Ene - 21 Feb</span></div>
                 <div class="hidden md:block w-2 h-2 bg-brand-dark rounded-full"></div>
@@ -183,151 +173,294 @@
         </div>
     </div>
 
-    <!-- Contenido de Talleres -->
-    <main class="container mx-auto px-4 pb-20 max-w-4xl">
+    <main class="container mx-auto px-4 pb-20 max-w-5xl">
         
-        <!-- ================= GRUPO 2-3 AÑOS ================= -->
-        <div id="content-toddlers" class="space-y-6 block animate-fade-in">
+        <!-- ================= 2-3 AÑOS ================= -->
+        <div id="content-toddlers" class="space-y-8 animate-fade-in block">
             <!-- Lunes -->
             <div class="sticker-card">
-                <div class="p-6 md:p-8 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-red opacity-10 rounded-bl-full -mr-10 -mt-10"></div>
-                    <div class="flex flex-col md:flex-row justify-between items-start gap-4 relative z-10">
-                        <div class="flex-1">
-                            <span class="inline-block bg-brand-red text-white border-2 border-brand-dark px-3 py-1 rounded-md text-sm font-bold uppercase tracking-wide mb-2 shadow-[2px_2px_0px_0px_#2D3436]">Lunes</span>
-                            <h2 class="font-display text-3xl font-bold text-brand-dark">Baile Moderno</h2>
-                            <p class="text-gray-600 font-bold mt-1">"Ritmo, Juego y Movimiento"</p>
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
+                        <img src="https://images.unsplash.com/photo-1545389336-cf090694435e?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-brand-red/20 mix-blend-multiply"></div>
+                        <span class="absolute top-4 left-4 bg-brand-red text-white border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Lunes</span>
+                    </div>
+                    <div class="p-6 md:w-7/12 flex flex-col justify-center bg-white">
+                        <h2 class="font-display text-3xl font-bold text-brand-red mb-1">Baile Moderno</h2>
+                        <p class="font-bold text-gray-600 mb-6 italic">"Ritmo, Juego y Movimiento"</p>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="info-box bg-red-50"><p class="text-xs text-brand-red font-bold uppercase">Inicio</p><p class="font-bold">12 Enero</p></div>
+                            <div class="info-box bg-red-50"><p class="text-xs text-brand-red font-bold uppercase">Horario</p><p class="font-bold">3:00 PM</p></div>
+                            <div class="info-box bg-red-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-red font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
                         </div>
-                        <div class="w-24 h-24 shrink-0 rotate-3 transition-transform hover:rotate-6">
-                            <img src="https://images.unsplash.com/photo-1545389336-cf090694435e?auto=format&fit=crop&q=80&w=200" alt="Niños bailando" class="w-full h-full rounded-xl photo-sticker">
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <button onclick="toggleDetails('details-23-mon')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
+                            <a href="https://wa.me/51925982984?text=Hola,%20quiero%20inscribir%20a%20mi%20peque%20en%20Baile%20Moderno%20(2-3%20a%C3%B1os)" target="_blank" class="flex-1 btn-pop bg-brand-red text-white font-bold py-3 rounded-xl text-center hover:bg-red-600">Inscribir Ahora <i data-lucide="message-circle" class="inline w-4 h-4 ml-1"></i></a>
                         </div>
                     </div>
-                    <button onclick="toggleDetails('details-23-mon')" class="mt-6 w-full md:w-auto bg-brand-light hover:bg-white border-2 border-brand-dark text-brand-dark font-bold py-2 px-6 rounded-lg flex items-center justify-center gap-2 transition-all hover:shadow-[3px_3px_0px_0px_#2D3436]">Ver Sílabus (6 Semanas) <i data-lucide="chevron-down" class="w-5 h-5"></i></button>
-                    <div id="details-23-mon" class="details-content mt-6 bg-brand-light rounded-xl">
-                        <div class="p-6">
-                            <div class="grid md:grid-cols-2 gap-6 mb-4">
-                                <div><h4 class="font-black text-brand-red mb-2 uppercase text-sm border-b-2 border-brand-red/20 pb-1">Cronograma</h4><ul class="text-sm space-y-2 text-gray-700 font-medium"><li>Sem 1: El ritmo de mi cuerpo.</li><li>Sem 2: Bailando con pañuelos.</li><li>Sem 3: El baile del zoo.</li><li>Sem 4: Estatua musical.</li><li>Sem 5: Preparación.</li><li>Sem 6: 🎉 Gran Clausura.</li></ul></div>
-                                <div><h4 class="font-black text-brand-red mb-2 uppercase text-sm border-b-2 border-brand-red/20 pb-1">Requisitos</h4><ul class="text-sm space-y-2 text-gray-700"><li>Ropa cómoda</li><li>Zapatillas ligeras</li><li>Botella de agua</li></ul></div>
+                </div>
+                <div id="details-23-mon" class="details-content bg-red-50">
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-black text-brand-red mb-3 uppercase border-b-2 border-brand-red/20 pb-1">Cronograma Semanal</h4>
+                                <ul class="text-sm space-y-2 text-gray-700 list-disc pl-4">
+                                    <li><strong>Sem 1:</strong> El ritmo de mi cuerpo. Juegos de palmas y zapateo musical.</li>
+                                    <li><strong>Sem 2:</strong> Bailando con pañuelos. Movimientos fluidos y telas de colores.</li>
+                                    <li><strong>Sem 3:</strong> El baile del zoo. Imitación de animales (saltos de conejo, elefante).</li>
+                                    <li><strong>Sem 4:</strong> Estatua musical. Control del movimiento y atención auditiva.</li>
+                                    <li><strong>Sem 5:</strong> Gran Ensayo de Clausura. Preparación de la dinámica final.</li>
+                                    <li><strong>Sem 6:</strong> <i data-lucide="party-popper" class="inline w-4 h-4 text-brand-red"></i> Gran Clausura de Verano. ¡Show para papás!</li>
+                                </ul>
                             </div>
-                            <div class="mt-4 bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#EF4136]">
-                                <div class="bg-brand-red p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="award" class="w-8 h-8 text-white"></i></div>
-                                <div><h5 class="font-black text-brand-red text-sm uppercase mb-1">¡Logro!</h5><p class="text-sm font-bold text-gray-700">Diploma + <span class="text-brand-dark underline">Medalla de Ritmo</span> 🏅</p></div>
+                            <div class="flex flex-col justify-between">
+                                <div>
+                                    <h4 class="font-black text-brand-red mb-3 uppercase border-b-2 border-brand-red/20 pb-1">Requisitos</h4>
+                                    <ul class="text-sm space-y-2 text-gray-700 list-disc pl-4 mb-4">
+                                        <li>Ropa cómoda (buzo o leggings).</li>
+                                        <li>Zapatillas ligeras o calcetines antideslizantes.</li>
+                                        <li>Botella de agua para hidratarse.</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#EF4136]">
+                                    <div class="bg-brand-red p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="award" class="w-8 h-8 text-white"></i></div>
+                                    <div>
+                                        <h5 class="font-black text-brand-red text-sm uppercase mb-1">¡Logro Desbloqueable!</h5>
+                                        <p class="text-sm font-bold text-gray-700 leading-tight">Al completar el taller recibirás tu <span class="text-brand-dark underline">Diploma de Honor</span> y la <span class="text-brand-dark underline">Medalla de Ritmo</span> 🏅</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <!-- Martes -->
             <div class="sticker-card">
-                <div class="p-6 md:p-8 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-green opacity-10 rounded-bl-full -mr-10 -mt-10"></div>
-                    <div class="flex flex-col md:flex-row justify-between items-start gap-4 relative z-10">
-                        <div class="flex-1">
-                            <span class="inline-block bg-brand-green text-white border-2 border-brand-dark px-3 py-1 rounded-md text-sm font-bold uppercase tracking-wide mb-2 shadow-[2px_2px_0px_0px_#2D3436]">Martes</span>
-                            <h2 class="font-display text-3xl font-bold text-brand-dark">Arte y Creatividad</h2>
-                            <p class="text-gray-600 font-bold mt-1">"Pequeños Grandes Artistas"</p>
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
+                        <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-brand-green/20 mix-blend-multiply"></div>
+                        <span class="absolute top-4 left-4 bg-brand-green text-white border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Martes</span>
+                    </div>
+                    <div class="p-6 md:w-7/12 flex flex-col justify-center bg-white">
+                        <h2 class="font-display text-3xl font-bold text-brand-green mb-1">Arte y Creatividad</h2>
+                        <p class="font-bold text-gray-600 mb-6 italic">"Pequeños Grandes Artistas"</p>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="info-box bg-green-50"><p class="text-xs text-brand-green font-bold uppercase">Inicio</p><p class="font-bold">13 Enero</p></div>
+                            <div class="info-box bg-green-50"><p class="text-xs text-brand-green font-bold uppercase">Horario</p><p class="font-bold">3:00 PM</p></div>
+                            <div class="info-box bg-green-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-green font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
                         </div>
-                        <div class="w-24 h-24 shrink-0 -rotate-2 transition-transform hover:-rotate-6">
-                             <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&q=80&w=200" alt="Arte niños" class="w-full h-full rounded-xl photo-sticker">
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <button onclick="toggleDetails('details-23-tue')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
+                            <a href="https://wa.me/51925982984?text=Hola,%20quiero%20inscribir%20a%20mi%20peque%20en%20Arte%20y%20Creatividad%20(2-3%20a%C3%B1os)" target="_blank" class="flex-1 btn-pop bg-brand-green text-white font-bold py-3 rounded-xl text-center hover:bg-green-600">Inscribir Ahora <i data-lucide="message-circle" class="inline w-4 h-4 ml-1"></i></a>
                         </div>
                     </div>
-                    <button onclick="toggleDetails('details-23-tue')" class="mt-6 w-full md:w-auto bg-brand-light hover:bg-white border-2 border-brand-dark text-brand-dark font-bold py-2 px-6 rounded-lg flex items-center justify-center gap-2 transition-all hover:shadow-[3px_3px_0px_0px_#2D3436]">Ver Sílabus (6 Semanas) <i data-lucide="chevron-down" class="w-5 h-5"></i></button>
-                    <div id="details-23-tue" class="details-content mt-6 bg-brand-light rounded-xl">
-                        <div class="p-6">
-                            <div class="grid md:grid-cols-2 gap-6 mb-4">
-                                <div><h4 class="font-black text-brand-green mb-2 uppercase text-sm border-b-2 border-brand-green/20 pb-1">Cronograma</h4><ul class="text-sm space-y-2 text-gray-700 font-medium"><li>Sem 1: Dactilopintura.</li><li>Sem 2: Collage.</li><li>Sem 3: Sellos Naturales.</li><li>Sem 4: Modelado.</li><li>Sem 5: Mural.</li><li>Sem 6: 🖼️ Exposición.</li></ul></div>
-                                <div><h4 class="font-black text-brand-green mb-2 uppercase text-sm border-b-2 border-brand-green/20 pb-1">Requisitos</h4><ul class="text-sm space-y-2 text-gray-700"><li>Polo viejo</li><li>Toallita</li></ul></div>
+                </div>
+                <div id="details-23-tue" class="details-content bg-green-50">
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-black text-brand-green mb-3 uppercase border-b-2 border-brand-green/20 pb-1">Cronograma Semanal</h4>
+                                <ul class="text-sm space-y-2 text-gray-700 list-disc pl-4">
+                                    <li><strong>Sem 1:</strong> Dactilopintura. Pintamos con los dedos y manos usando pinturas no tóxicas.</li>
+                                    <li><strong>Sem 2:</strong> Collage de Texturas. Exploración de materiales suaves, rugosos y lisos.</li>
+                                    <li><strong>Sem 3:</strong> Sellos Naturales. Estampados usando hojas, esponjas y vegetales.</li>
+                                    <li><strong>Sem 4:</strong> Modelado Creativo. Jugamos con masa de sal casera para fortalecer manos.</li>
+                                    <li><strong>Sem 5:</strong> El Gran Mural. Pintura grupal en un lienzo gigante para decorar.</li>
+                                    <li><strong>Sem 6:</strong> <i data-lucide="image" class="inline w-4 h-4 text-brand-green"></i> Exposición de Arte Final.</li>
+                                </ul>
                             </div>
-                             <div class="mt-4 bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#8CC63F]">
-                                <div class="bg-brand-green p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="palette" class="w-8 h-8 text-white"></i></div>
-                                <div><h5 class="font-black text-brand-green text-sm uppercase mb-1">¡Logro!</h5><p class="text-sm font-bold text-gray-700">Diploma + <span class="text-brand-dark underline">Insignia Creativa</span> 🎨</p></div>
+                            <div class="flex flex-col justify-between">
+                                <div>
+                                    <h4 class="font-black text-brand-green mb-3 uppercase border-b-2 border-brand-green/20 pb-1">Requisitos</h4>
+                                    <ul class="text-sm space-y-2 text-gray-700 list-disc pl-4 mb-4">
+                                        <li>Un polo viejo o mandil plástico (¡vamos a ensuciarnos!).</li>
+                                        <li>Toallita de mano personal.</li>
+                                        <li>Un paquete de pañitos húmedos.</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#8CC63F]">
+                                    <div class="bg-brand-green p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="palette" class="w-8 h-8 text-white"></i></div>
+                                    <div>
+                                        <h5 class="font-black text-brand-green text-sm uppercase mb-1">¡Recompensa Creativa!</h5>
+                                        <p class="text-sm font-bold text-gray-700 leading-tight">Obtén tu <span class="text-brand-dark underline">Diploma de Artista</span> y la exclusiva <span class="text-brand-dark underline">Insignia de Creatividad</span> 🎨</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <!-- Miércoles -->
             <div class="sticker-card">
-                <div class="p-6 md:p-8 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-purple opacity-20 rounded-bl-full -mr-10 -mt-10"></div>
-                    <div class="flex flex-col md:flex-row justify-between items-start gap-4 relative z-10">
-                        <div class="flex-1">
-                            <span class="inline-block bg-brand-purple text-white border-2 border-brand-dark px-3 py-1 rounded-md text-sm font-bold uppercase tracking-wide mb-2 shadow-[2px_2px_0px_0px_#2D3436]">Miércoles</span>
-                            <h2 class="font-display text-3xl font-bold text-brand-dark">Ajedrez Educativo</h2>
-                            <p class="text-gray-600 font-bold mt-1">"Lógica y Aventura"</p>
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
+                        <img src="https://images.unsplash.com/photo-1580541832626-2a7131ee809f?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-brand-purple/20 mix-blend-multiply"></div>
+                        <span class="absolute top-4 left-4 bg-brand-purple text-white border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Miércoles</span>
+                    </div>
+                    <div class="p-6 md:w-7/12 flex flex-col justify-center bg-white">
+                        <h2 class="font-display text-3xl font-bold text-brand-purple mb-1">Ajedrez Educativo</h2>
+                        <p class="font-bold text-gray-600 mb-6 italic">"Lógica y Aventura"</p>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="info-box bg-purple-50"><p class="text-xs text-brand-purple font-bold uppercase">Inicio</p><p class="font-bold">14 Enero</p></div>
+                            <div class="info-box bg-purple-50"><p class="text-xs text-brand-purple font-bold uppercase">Horario</p><p class="font-bold">3:00 PM</p></div>
+                            <div class="info-box bg-purple-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-purple font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
                         </div>
-                        <div class="w-24 h-24 shrink-0 rotate-1 transition-transform hover:rotate-3">
-                             <img src="https://images.unsplash.com/photo-1580541832626-2a7131ee809f?auto=format&fit=crop&q=80&w=200" alt="Ajedrez niños" class="w-full h-full rounded-xl photo-sticker">
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <button onclick="toggleDetails('details-23-wed')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
+                            <a href="https://wa.me/51925982984?text=Hola,%20quiero%20inscribir%20a%20mi%20peque%20en%20Ajedrez%20Educativo%20(2-3%20a%C3%B1os)" target="_blank" class="flex-1 btn-pop bg-brand-purple text-white font-bold py-3 rounded-xl text-center hover:bg-purple-600">Inscribir Ahora <i data-lucide="message-circle" class="inline w-4 h-4 ml-1"></i></a>
                         </div>
                     </div>
-                    <button onclick="toggleDetails('details-23-wed')" class="mt-6 w-full md:w-auto bg-brand-light hover:bg-white border-2 border-brand-dark text-brand-dark font-bold py-2 px-6 rounded-lg flex items-center justify-center gap-2 transition-all hover:shadow-[3px_3px_0px_0px_#2D3436]">Ver Sílabus (6 Semanas) <i data-lucide="chevron-down" class="w-5 h-5"></i></button>
-                    <div id="details-23-wed" class="details-content mt-6 bg-brand-light rounded-xl">
-                        <div class="p-6">
-                            <div class="grid md:grid-cols-2 gap-6 mb-4">
-                                <div><h4 class="font-black text-brand-purple mb-2 uppercase text-sm border-b-2 border-brand-purple/30 pb-1">Cronograma</h4><ul class="text-sm space-y-2 text-gray-700 font-medium"><li>Sem 1: Tablero Gigante.</li><li>Sem 2: Rey y Reina.</li><li>Sem 3: Salto del Caballito.</li><li>Sem 4: Torres Fuertes.</li><li>Sem 5: Desfile Real.</li><li>Sem 6: 👑 Fiesta del Reino.</li></ul></div>
-                                <div><h4 class="font-black text-brand-purple mb-2 uppercase text-sm border-b-2 border-brand-purple/30 pb-1">Requisitos</h4><ul class="text-sm space-y-2 text-gray-700"><li>Ropa cómoda</li><li>Corona (Opcional)</li></ul></div>
+                </div>
+                <div id="details-23-wed" class="details-content bg-purple-50">
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-black text-brand-purple mb-3 uppercase border-b-2 border-brand-purple/20 pb-1">Cronograma Semanal</h4>
+                                <ul class="text-sm space-y-2 text-gray-700 list-disc pl-4">
+                                    <li><strong>Sem 1:</strong> El Tablero Gigante. Caminamos y saltamos sobre los "caminos" de colores.</li>
+                                    <li><strong>Sem 2:</strong> El Rey y la Reina. Cuento interactivo sobre los jefes del reino.</li>
+                                    <li><strong>Sem 3:</strong> El Salto del Caballito. Circuito de motricidad imitando el salto en "L".</li>
+                                    <li><strong>Sem 4:</strong> Las Torres Fuertes. Construcción de torres y juegos de protección.</li>
+                                    <li><strong>Sem 5:</strong> El Desfile Real. Fiesta de disfraces sencillos (coronas y capas).</li>
+                                    <li><strong>Sem 6:</strong> <i data-lucide="crown" class="inline w-4 h-4 text-brand-purple"></i> Fiesta del Reino (Clausura).</li>
+                                </ul>
                             </div>
-                            <div class="mt-4 bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#7D3F98]">
-                                <div class="bg-brand-purple p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="crown" class="w-8 h-8 text-white"></i></div>
-                                <div><h5 class="font-black text-brand-purple text-sm uppercase mb-1">¡Premio Real!</h5><p class="text-sm font-bold text-gray-700">Título Estratega + <span class="text-brand-dark underline">Medalla del Reino</span> 🏰</p></div>
+                            <div class="flex flex-col justify-between">
+                                <div>
+                                    <h4 class="font-black text-brand-purple mb-3 uppercase border-b-2 border-brand-purple/20 pb-1">Requisitos</h4>
+                                    <ul class="text-sm space-y-2 text-gray-700 list-disc pl-4 mb-4">
+                                        <li>Ropa cómoda para moverse en el tablero gigante.</li>
+                                        <li>Muchas ganas de escuchar cuentos y jugar.</li>
+                                        <li>(Opcional) Una corona de cartulina hecha en casa.</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#7D3F98]">
+                                    <div class="bg-brand-purple p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="crown" class="w-8 h-8 text-white"></i></div>
+                                    <div>
+                                        <h5 class="font-black text-brand-purple text-sm uppercase mb-1">¡Premio Real!</h5>
+                                        <p class="text-sm font-bold text-gray-700 leading-tight">Recibe tu <span class="text-brand-dark underline">Título de Estratega</span> y una brillante <span class="text-brand-dark underline">Medalla del Reino</span> 🏰</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <!-- Jueves -->
             <div class="sticker-card">
-                <div class="p-6 md:p-8 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-sky opacity-20 rounded-bl-full -mr-10 -mt-10"></div>
-                    <div class="flex flex-col md:flex-row justify-between items-start gap-4 relative z-10">
-                        <div class="flex-1">
-                            <span class="inline-block bg-brand-sky text-white border-2 border-brand-dark px-3 py-1 rounded-md text-sm font-bold uppercase tracking-wide mb-2 shadow-[2px_2px_0px_0px_#2D3436]">Jueves</span>
-                            <h2 class="font-display text-3xl font-bold text-brand-dark">Jugando con Ciencia</h2>
-                            <p class="text-gray-600 font-bold mt-1">"Mi Primer Laboratorio"</p>
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
+                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-brand-sky/20 mix-blend-multiply"></div>
+                        <span class="absolute top-4 left-4 bg-brand-sky text-white border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Jueves</span>
+                    </div>
+                    <div class="p-6 md:w-7/12 flex flex-col justify-center bg-white">
+                        <h2 class="font-display text-3xl font-bold text-brand-sky mb-1">Jugando con Ciencia</h2>
+                        <p class="font-bold text-gray-600 mb-6 italic">"Mi Primer Laboratorio"</p>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="info-box bg-sky-50"><p class="text-xs text-brand-sky font-bold uppercase">Inicio</p><p class="font-bold">15 Enero</p></div>
+                            <div class="info-box bg-sky-50"><p class="text-xs text-brand-sky font-bold uppercase">Horario</p><p class="font-bold">3:00 PM</p></div>
+                            <div class="info-box bg-sky-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-sky font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
                         </div>
-                        <div class="w-24 h-24 shrink-0 rotate-2 transition-transform hover:rotate-6">
-                             <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=200" alt="Ciencia niños" class="w-full h-full rounded-xl photo-sticker">
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <button onclick="toggleDetails('details-23-thu')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
+                            <a href="https://wa.me/51925982984?text=Hola,%20quiero%20inscribir%20a%20mi%20peque%20en%20Jugando%20con%20Ciencia%20(2-3%20a%C3%B1os)" target="_blank" class="flex-1 btn-pop bg-brand-sky text-white font-bold py-3 rounded-xl text-center hover:bg-sky-600">Inscribir Ahora <i data-lucide="message-circle" class="inline w-4 h-4 ml-1"></i></a>
                         </div>
                     </div>
-                    <button onclick="toggleDetails('details-23-thu')" class="mt-6 w-full md:w-auto bg-brand-light hover:bg-white border-2 border-brand-dark text-brand-dark font-bold py-2 px-6 rounded-lg flex items-center justify-center gap-2 transition-all hover:shadow-[3px_3px_0px_0px_#2D3436]">Ver Sílabus (6 Semanas) <i data-lucide="chevron-down" class="w-5 h-5"></i></button>
-                    <div id="details-23-thu" class="details-content mt-6 bg-brand-light rounded-xl">
-                        <div class="p-6">
-                            <div class="grid md:grid-cols-2 gap-6 mb-4">
-                                <div><h4 class="font-black text-brand-sky mb-2 uppercase text-sm border-b-2 border-brand-sky/30 pb-1">Cronograma</h4><ul class="text-sm space-y-2 text-gray-700 font-medium"><li>Sem 1: Magia de Colores.</li><li>Sem 2: Fábrica Burbujas.</li><li>Sem 3: Pesca Milagrosa.</li><li>Sem 4: ¿Flota o se hunde?</li><li>Sem 5: Volcán.</li><li>Sem 6: 🚀 Feria Ciencias.</li></ul></div>
-                                <div><h4 class="font-black text-brand-sky mb-2 uppercase text-sm border-b-2 border-brand-sky/30 pb-1">Requisitos</h4><ul class="text-sm space-y-2 text-gray-700"><li>Mandil plástico</li><li>Material NO tóxico</li></ul></div>
+                </div>
+                <div id="details-23-thu" class="details-content bg-sky-50">
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-black text-brand-sky mb-3 uppercase border-b-2 border-brand-sky/20 pb-1">Cronograma Semanal</h4>
+                                <ul class="text-sm space-y-2 text-gray-700 list-disc pl-4">
+                                    <li><strong>Sem 1:</strong> Magia de Colores. Mezclamos agua, tintes y leche para ver cómo bailan.</li>
+                                    <li><strong>Sem 2:</strong> Fábrica de Burbujas. Tensión del agua y burbujas gigantes.</li>
+                                    <li><strong>Sem 3:</strong> Pesca Milagrosa. Usamos imanes para rescatar objetos metálicos.</li>
+                                    <li><strong>Sem 4:</strong> ¿Flota o se hunde? Experimentamos en un mini acuario.</li>
+                                    <li><strong>Sem 5:</strong> El Volcán de Espuma. Bicarbonato y vinagre para una erupción segura.</li>
+                                    <li><strong>Sem 6:</strong> 🚀 Feria de Ciencias Final.</li>
+                                </ul>
                             </div>
-                            <div class="mt-4 bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#0095DA]">
-                                <div class="bg-brand-sky p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="flask-conical" class="w-8 h-8 text-white"></i></div>
-                                <div><h5 class="font-black text-brand-sky text-sm uppercase mb-1">¡Oficial!</h5><p class="text-sm font-bold text-gray-700">Carnet Científico + <span class="text-brand-dark underline">Insignia Curiosidad</span> 🧪</p></div>
+                            <div class="flex flex-col justify-between">
+                                <div>
+                                    <h4 class="font-black text-brand-sky mb-3 uppercase border-b-2 border-brand-sky/20 pb-1">Requisitos</h4>
+                                    <ul class="text-sm space-y-2 text-gray-700 list-disc pl-4 mb-4">
+                                        <li>Un mandil plástico o polo que se pueda manchar.</li>
+                                        <li>Muchas ganas de preguntar "¿Por qué?".</li>
+                                        <li>Todo el material utilizado es 100% no tóxico.</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#0095DA]">
+                                    <div class="bg-brand-sky p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="flask-conical" class="w-8 h-8 text-white"></i></div>
+                                    <div>
+                                        <h5 class="font-black text-brand-sky text-sm uppercase mb-1">¡Certificación Oficial!</h5>
+                                        <p class="text-sm font-bold text-gray-700 leading-tight">Te graduarás con tu <span class="text-brand-dark underline">Carnet de Científico</span> y la <span class="text-brand-dark underline">Insignia de Curiosidad</span> 🧪</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <!-- Viernes -->
             <div class="sticker-card">
-                <div class="p-6 md:p-8 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-yellow opacity-20 rounded-bl-full -mr-10 -mt-10"></div>
-                    <div class="flex flex-col md:flex-row justify-between items-start gap-4 relative z-10">
-                        <div class="flex-1">
-                            <span class="inline-block bg-brand-yellow text-brand-dark border-2 border-brand-dark px-3 py-1 rounded-md text-sm font-bold uppercase tracking-wide mb-2 shadow-[2px_2px_0px_0px_#2D3436]">Viernes</span>
-                            <h2 class="font-display text-3xl font-bold text-brand-dark">Mini Chefs</h2>
-                            <p class="text-gray-600 font-bold mt-1">"Sabores y Texturas"</p>
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
+                        <img src="https://images.unsplash.com/photo-1606822365365-17937397b275?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-brand-yellow/20 mix-blend-multiply"></div>
+                        <span class="absolute top-4 left-4 bg-brand-yellow text-brand-dark border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Viernes</span>
+                    </div>
+                    <div class="p-6 md:w-7/12 flex flex-col justify-center bg-white">
+                        <h2 class="font-display text-3xl font-bold text-brand-dark mb-1">Mini Chefs</h2>
+                        <p class="font-bold text-gray-600 mb-6 italic">"Sabores y Texturas"</p>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="info-box bg-yellow-50"><p class="text-xs text-brand-yellow font-bold uppercase">Inicio</p><p class="font-bold">16 Enero</p></div>
+                            <div class="info-box bg-yellow-50"><p class="text-xs text-brand-yellow font-bold uppercase">Horario</p><p class="font-bold">3:00 PM</p></div>
+                            <div class="info-box bg-yellow-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-yellow font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
                         </div>
-                        <div class="w-24 h-24 shrink-0 -rotate-3 transition-transform hover:-rotate-6">
-                             <img src="https://images.unsplash.com/photo-1606822365365-17937397b275?auto=format&fit=crop&q=80&w=200" alt="Mini chef" class="w-full h-full rounded-xl photo-sticker">
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <button onclick="toggleDetails('details-23-fri')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
+                            <a href="https://wa.me/51925982984?text=Hola,%20quiero%20inscribir%20a%20mi%20peque%20en%20Mini%20Chefs%20(2-3%20a%C3%B1os)" target="_blank" class="flex-1 btn-pop bg-brand-yellow text-brand-dark font-bold py-3 rounded-xl text-center hover:bg-yellow-400">Inscribir Ahora <i data-lucide="message-circle" class="inline w-4 h-4 ml-1"></i></a>
                         </div>
                     </div>
-                    <button onclick="toggleDetails('details-23-fri')" class="mt-6 w-full md:w-auto bg-brand-light hover:bg-white border-2 border-brand-dark text-brand-dark font-bold py-2 px-6 rounded-lg flex items-center justify-center gap-2 transition-all hover:shadow-[3px_3px_0px_0px_#2D3436]">Ver Sílabus (6 Semanas) <i data-lucide="chevron-down" class="w-5 h-5"></i></button>
-                    <div id="details-23-fri" class="details-content mt-6 bg-brand-light rounded-xl">
-                        <div class="p-6">
-                            <div class="grid md:grid-cols-2 gap-6 mb-4">
-                                <div><h4 class="font-black text-brand-yellow mb-2 uppercase text-sm border-b-2 border-brand-yellow/30 pb-1">Cronograma</h4><ul class="text-sm space-y-2 text-gray-700 font-medium"><li>Sem 1: Brochetas.</li><li>Sem 2: Sándwiches.</li><li>Sem 3: Yogur.</li><li>Sem 4: Galletas.</li><li>Sem 5: Mini Pizzas.</li><li>Sem 6: 🎂 Buffet.</li></ul></div>
-                                <div><h4 class="font-black text-brand-yellow mb-2 uppercase text-sm border-b-2 border-brand-yellow/30 pb-1">Requisitos</h4><ul class="text-sm space-y-2 text-gray-700"><li>Mandil y gorrito</li><li>Tupper</li></ul></div>
+                </div>
+                <div id="details-23-fri" class="details-content bg-yellow-50">
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-black text-brand-yellow mb-3 uppercase border-b-2 border-brand-yellow/20 pb-1">Cronograma Semanal</h4>
+                                <ul class="text-sm space-y-2 text-gray-700 list-disc pl-4">
+                                    <li><strong>Sem 1:</strong> Brochetas de Alegría. Trozos de frutas suaves en palitos seguros.</li>
+                                    <li><strong>Sem 2:</strong> Sándwiches con Forma. Usamos moldes de galletas para cortar pan.</li>
+                                    <li><strong>Sem 3:</strong> Caritas de Yogur. Decoramos bowls con cereales.</li>
+                                    <li><strong>Sem 4:</strong> Galletas de Verano. Decoración con chispas de colores.</li>
+                                    <li><strong>Sem 5:</strong> Fiesta de Mini Pizzas. Armamos pizzas en pan pita.</li>
+                                    <li><strong>Sem 6:</strong> <i data-lucide="cake" class="inline w-4 h-4 text-brand-yellow"></i> Gran Buffet de Clausura.</li>
+                                </ul>
                             </div>
-                            <div class="mt-4 bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#FDB913]">
-                                <div class="bg-brand-yellow p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="chef-hat" class="w-8 h-8 text-brand-dark"></i></div>
-                                <div><h5 class="font-black text-brand-yellow text-sm uppercase mb-1">¡Graduación!</h5><p class="text-sm font-bold text-gray-700">Gorro Chef + <span class="text-brand-dark underline">Diploma Master Chef</span> 👨‍🍳</p></div>
+                            <div class="flex flex-col justify-between">
+                                <div>
+                                    <h4 class="font-black text-brand-yellow mb-3 uppercase border-b-2 border-brand-yellow/20 pb-1">Requisitos</h4>
+                                    <ul class="text-sm space-y-2 text-gray-700 list-disc pl-4 mb-4">
+                                        <li>Un mandil de cocina o polo protector.</li>
+                                        <li>Un gorrito de chef (opcional, ¡pero muy tierno!).</li>
+                                        <li>Un recipiente (tupper) pequeño para llevar a casa.</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#FDB913]">
+                                    <div class="bg-brand-yellow p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="chef-hat" class="w-8 h-8 text-brand-dark"></i></div>
+                                    <div>
+                                        <h5 class="font-black text-brand-yellow text-sm uppercase mb-1">¡Graduación Culinaria!</h5>
+                                        <p class="text-sm font-bold text-gray-700 leading-tight">Gana tu <span class="text-brand-dark underline">Gorro de Chef</span> y el <span class="text-brand-dark underline">Diploma de Master Chef Junior</span> 👨‍🍳</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -335,149 +468,189 @@
             </div>
         </div>
 
-        <!-- ================= GRUPO 4-5 AÑOS ================= -->
-        <div id="content-kids" class="space-y-6 hidden animate-fade-in">
-             <!-- (Se mantienen los talleres 4-5 años...) -->
-             <!-- Lunes (4-5) -->
-             <div class="sticker-card">
-                <div class="p-6 md:p-8 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-red opacity-10 rounded-bl-full -mr-10 -mt-10"></div>
-                    <div class="flex flex-col md:flex-row justify-between items-start gap-4 relative z-10">
-                        <div class="flex-1">
-                            <span class="inline-block bg-brand-red text-white border-2 border-brand-dark px-3 py-1 rounded-md text-sm font-bold uppercase tracking-wide mb-2 shadow-[2px_2px_0px_0px_#2D3436]">Lunes</span>
-                            <h2 class="font-display text-3xl font-bold text-brand-dark">Baile Moderno (Nivel 2)</h2>
-                            <p class="text-gray-600 font-bold mt-1">"Ritmo, Coreografía y Expresión"</p>
+        <!-- ================= 4-5 AÑOS ================= -->
+        <div id="content-kids" class="space-y-8 animate-fade-in hidden">
+            <!-- (Repetimos estructura para 4-5 años con textos completos) -->
+            <!-- Lunes -->
+            <div class="sticker-card">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
+                        <img src="https://images.unsplash.com/photo-1545389336-cf090694435e?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-brand-red/20 mix-blend-multiply"></div>
+                        <span class="absolute top-4 left-4 bg-brand-red text-white border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Lunes</span>
+                    </div>
+                    <div class="p-6 md:w-7/12 flex flex-col justify-center bg-white">
+                        <h2 class="font-display text-3xl font-bold text-brand-red mb-1">Baile Moderno (Nivel 2)</h2>
+                        <p class="font-bold text-gray-600 mb-6 italic">"Ritmo, Coreografía y Expresión"</p>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="info-box bg-red-50"><p class="text-xs text-brand-red font-bold uppercase">Inicio</p><p class="font-bold">12 Enero</p></div>
+                            <div class="info-box bg-red-50"><p class="text-xs text-brand-red font-bold uppercase">Horario</p><p class="font-bold">4:00 PM</p></div>
+                            <div class="info-box bg-red-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-red font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
                         </div>
-                        <div class="w-24 h-24 shrink-0 rotate-3 transition-transform hover:rotate-6">
-                            <img src="https://images.unsplash.com/photo-1545389336-cf090694435e?auto=format&fit=crop&q=80&w=200" alt="Niños bailando" class="w-full h-full rounded-xl photo-sticker">
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <button onclick="toggleDetails('details-45-mon')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
+                            <a href="https://wa.me/51925982984?text=Hola,%20quiero%20inscribir%20a%20mi%20peque%20en%20Baile%20Moderno%20(4-5%20a%C3%B1os)" target="_blank" class="flex-1 btn-pop bg-brand-red text-white font-bold py-3 rounded-xl text-center hover:bg-red-600">Inscribir Ahora <i data-lucide="message-circle" class="inline w-4 h-4 ml-1"></i></a>
                         </div>
                     </div>
-                    <button onclick="toggleDetails('details-45-mon')" class="mt-6 w-full md:w-auto bg-brand-light hover:bg-white border-2 border-brand-dark text-brand-dark font-bold py-2 px-6 rounded-lg flex items-center justify-center gap-2 transition-all hover:shadow-[3px_3px_0px_0px_#2D3436]">Ver Sílabus (6 Semanas) <i data-lucide="chevron-down" class="w-5 h-5"></i></button>
-                    <div id="details-45-mon" class="details-content mt-6 bg-brand-light rounded-xl">
-                        <div class="p-6">
-                            <div class="grid md:grid-cols-2 gap-6 mb-4">
-                                <div><h4 class="font-black text-brand-red mb-2 uppercase text-sm border-b-2 border-brand-red/20 pb-1">Cronograma</h4><ul class="text-sm space-y-2 text-gray-700 font-medium"><li>Sem 1: Pasos Básicos.</li><li>Sem 2: Circuitos.</li><li>Sem 3: Espejo de Baile.</li><li>Sem 4: Baile con Elementos.</li><li>Sem 5: Ensayo.</li><li>Sem 6: 🎉 Presentación.</li></ul></div>
-                                <div><h4 class="font-black text-brand-red mb-2 uppercase text-sm border-b-2 border-brand-red/20 pb-1">Requisitos</h4><ul class="text-sm space-y-2 text-gray-700"><li>Ropa deportiva</li><li>Zapatillas</li><li>Agua</li></ul></div>
-                            </div>
-                            <div class="mt-4 bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#EF4136]">
-                                <div class="bg-brand-red p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="award" class="w-8 h-8 text-white"></i></div>
-                                <div><h5 class="font-black text-brand-red text-sm uppercase mb-1">¡Logro!</h5><p class="text-sm font-bold text-gray-700">Diploma + <span class="text-brand-dark underline">Medalla Avanzada</span> 🏅</p></div>
-                            </div>
+                </div>
+                <div id="details-45-mon" class="details-content bg-red-50">
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div><h4 class="font-black text-brand-red mb-3 uppercase border-b-2 border-brand-red/20 pb-1">Cronograma Semanal</h4><ul class="text-sm space-y-2 text-gray-700 list-disc pl-4"><li><strong>Sem 1:</strong> Pasos Básicos (Ritmo y lateralidad).</li><li><strong>Sem 2:</strong> Circuitos de Movimiento (Saltos, giros).</li><li><strong>Sem 3:</strong> Espejo de Baile (Creación propia).</li><li><strong>Sem 4:</strong> Baile con Elementos (Pompones).</li><li><strong>Sem 5:</strong> Gran Ensayo General.</li><li><strong>Sem 6:</strong> 🎉 Gran Presentación Final.</li></ul></div>
+                            <div class="flex flex-col justify-between"><div><h4 class="font-black text-brand-red mb-3 uppercase border-b-2 border-brand-red/20 pb-1">Requisitos</h4><ul class="text-sm space-y-2 text-gray-700 list-disc pl-4 mb-4"><li>Ropa deportiva cómoda.</li><li>Zapatillas con suela limpia.</li><li>Botella de agua personal.</li></ul></div><div class="bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#EF4136]"><div class="bg-brand-red p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="award" class="w-8 h-8 text-white"></i></div><div><h5 class="font-black text-brand-red text-sm uppercase mb-1">¡Reconocimiento!</h5><p class="text-sm font-bold text-gray-700 leading-tight">Diploma de Honor + <span class="text-brand-dark underline">Medalla de Bailarín Avanzado</span> 🏅</p></div></div></div>
                         </div>
                     </div>
                 </div>
             </div>
+            
             <!-- Martes -->
             <div class="sticker-card">
-                <div class="p-6 md:p-8 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-green opacity-10 rounded-bl-full -mr-10 -mt-10"></div>
-                    <div class="flex flex-col md:flex-row justify-between items-start gap-4 relative z-10">
-                        <div class="flex-1">
-                            <span class="inline-block bg-brand-green text-white border-2 border-brand-dark px-3 py-1 rounded-md text-sm font-bold uppercase tracking-wide mb-2 shadow-[2px_2px_0px_0px_#2D3436]">Martes</span>
-                            <h2 class="font-display text-3xl font-bold text-brand-dark">Arte y Creatividad (Nivel 2)</h2>
-                            <p class="text-gray-600 font-bold mt-1">"De la Imaginación al Lienzo"</p>
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
+                        <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-brand-green/20 mix-blend-multiply"></div>
+                        <span class="absolute top-4 left-4 bg-brand-green text-white border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Martes</span>
+                    </div>
+                    <div class="p-6 md:w-7/12 flex flex-col justify-center bg-white">
+                        <h2 class="font-display text-3xl font-bold text-brand-green mb-1">Arte (Nivel 2)</h2>
+                        <p class="font-bold text-gray-600 mb-6 italic">"De la Imaginación al Lienzo"</p>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="info-box bg-green-50"><p class="text-xs text-brand-green font-bold uppercase">Inicio</p><p class="font-bold">13 Enero</p></div>
+                            <div class="info-box bg-green-50"><p class="text-xs text-brand-green font-bold uppercase">Horario</p><p class="font-bold">4:00 PM</p></div>
+                            <div class="info-box bg-green-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-green font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
                         </div>
-                        <div class="w-24 h-24 shrink-0 -rotate-2 transition-transform hover:-rotate-6">
-                             <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&q=80&w=200" alt="Arte niños" class="w-full h-full rounded-xl photo-sticker">
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <button onclick="toggleDetails('details-45-tue')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
+                            <a href="https://wa.me/51925982984?text=Hola,%20quiero%20inscribir%20a%20mi%20peque%20en%20Arte%20y%20Creatividad%20(4-5%20a%C3%B1os)" target="_blank" class="flex-1 btn-pop bg-brand-green text-white font-bold py-3 rounded-xl text-center hover:bg-green-600">Inscribir Ahora <i data-lucide="message-circle" class="inline w-4 h-4 ml-1"></i></a>
                         </div>
                     </div>
-                    <button onclick="toggleDetails('details-45-tue')" class="mt-6 w-full md:w-auto bg-brand-light hover:bg-white border-2 border-brand-dark text-brand-dark font-bold py-2 px-6 rounded-lg flex items-center justify-center gap-2 transition-all hover:shadow-[3px_3px_0px_0px_#2D3436]">Ver Sílabus (6 Semanas) <i data-lucide="chevron-down" class="w-5 h-5"></i></button>
-                    <div id="details-45-tue" class="details-content mt-6 bg-brand-light rounded-xl">
-                        <div class="p-6">
-                            <div class="grid md:grid-cols-2 gap-6 mb-4">
-                                <div><h4 class="font-black text-brand-green mb-2 uppercase text-sm border-b-2 border-brand-green/20 pb-1">Cronograma</h4><ul class="text-sm space-y-2 text-gray-700 font-medium"><li>Sem 1: Pintura con Música.</li><li>Sem 2: Arte con Naturaleza.</li><li>Sem 3: Títeres.</li><li>Sem 4: Esculturas 3D.</li><li>Sem 5: Mural.</li><li>Sem 6: 🖼️ Galería.</li></ul></div>
-                                <div><h4 class="font-black text-brand-green mb-2 uppercase text-sm border-b-2 border-brand-green/20 pb-1">Requisitos</h4><ul class="text-sm space-y-2 text-gray-700"><li>Mandil</li><li>Toallita</li></ul></div>
-                            </div>
-                            <div class="mt-4 bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#8CC63F]">
-                                <div class="bg-brand-green p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="palette" class="w-8 h-8 text-white"></i></div>
-                                <div><h5 class="font-black text-brand-green text-sm uppercase mb-1">¡Logro!</h5><p class="text-sm font-bold text-gray-700">Diploma Pro + <span class="text-brand-dark underline">Insignia Color</span> 🎨</p></div>
-                            </div>
+                </div>
+                <div id="details-45-tue" class="details-content bg-green-50">
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div><h4 class="font-black text-brand-green mb-3 uppercase border-b-2 border-brand-green/20 pb-1">Cronograma Semanal</h4><ul class="text-sm space-y-2 text-gray-700 list-disc pl-4"><li><strong>Sem 1:</strong> Pintura con Música (Caballete).</li><li><strong>Sem 2:</strong> Arte con Naturaleza (Collage).</li><li><strong>Sem 3:</strong> Fábrica de Títeres.</li><li><strong>Sem 4:</strong> Esculturas de Sal (3D).</li><li><strong>Sem 5:</strong> Gran Mural Colaborativo.</li><li><strong>Sem 6:</strong> 🖼️ Galería de Arte Final.</li></ul></div>
+                            <div class="flex flex-col justify-between"><div><h4 class="font-black text-brand-green mb-3 uppercase border-b-2 border-brand-green/20 pb-1">Requisitos</h4><ul class="text-sm space-y-2 text-gray-700 list-disc pl-4 mb-4"><li>Un mandil plástico.</li><li>Una toallita de mano.</li><li>Pañitos húmedos.</li></ul></div><div class="bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#8CC63F]"><div class="bg-brand-green p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="palette" class="w-8 h-8 text-white"></i></div><div><h5 class="font-black text-brand-green text-sm uppercase mb-1">¡Recompensa!</h5><p class="text-sm font-bold text-gray-700 leading-tight">Diploma de Artista Pro + <span class="text-brand-dark underline">Insignia de Maestría en Color</span> 🖌️</p></div></div></div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <!-- Miércoles -->
             <div class="sticker-card">
-                <div class="p-6 md:p-8 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-purple opacity-20 rounded-bl-full -mr-10 -mt-10"></div>
-                    <div class="flex flex-col md:flex-row justify-between items-start gap-4 relative z-10">
-                        <div class="flex-1">
-                            <span class="inline-block bg-brand-purple text-white border-2 border-brand-dark px-3 py-1 rounded-md text-sm font-bold uppercase tracking-wide mb-2 shadow-[2px_2px_0px_0px_#2D3436]">Miércoles</span>
-                            <h2 class="font-display text-3xl font-bold text-brand-dark">Ajedrez (Nivel 2)</h2>
-                            <p class="text-gray-600 font-bold mt-1">"Estrategia en el Reino de las Ideas"</p>
-                        </div>
-                         <div class="w-24 h-24 shrink-0 rotate-1 transition-transform hover:rotate-3">
-                            <img src="https://images.unsplash.com/photo-1580541832626-2a7131ee809f?auto=format&fit=crop&q=80&w=200" alt="Ajedrez niños" class="w-full h-full rounded-xl photo-sticker">
-                       </div>
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
+                        <img src="https://images.unsplash.com/photo-1580541832626-2a7131ee809f?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-brand-purple/20 mix-blend-multiply"></div>
+                        <span class="absolute top-4 left-4 bg-brand-purple text-white border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Miércoles</span>
                     </div>
-                    <button onclick="toggleDetails('details-45-wed')" class="mt-6 w-full md:w-auto bg-brand-light hover:bg-white border-2 border-brand-dark text-brand-dark font-bold py-2 px-6 rounded-lg flex items-center justify-center gap-2 transition-all hover:shadow-[3px_3px_0px_0px_#2D3436]">Ver Sílabus (6 Semanas) <i data-lucide="chevron-down" class="w-5 h-5"></i></button>
-                    <div id="details-45-wed" class="details-content mt-6 bg-brand-light rounded-xl">
-                        <div class="p-6">
-                            <div class="grid md:grid-cols-2 gap-6 mb-4">
-                                <div><h4 class="font-black text-brand-purple mb-2 uppercase text-sm border-b-2 border-brand-purple/30 pb-1">Cronograma</h4><ul class="text-sm space-y-2 text-gray-700 font-medium"><li>Sem 1: Tablero Vivo.</li><li>Sem 2: Peón y Torre.</li><li>Sem 3: Caballo y Alfil.</li><li>Sem 4: Rey y Dama.</li><li>Sem 5: Mini-Torneo.</li><li>Sem 6: 🏆 Torneo Final.</li></ul></div>
-                                <div><h4 class="font-black text-brand-purple mb-2 uppercase text-sm border-b-2 border-brand-purple/30 pb-1">Requisitos</h4><ul class="text-sm space-y-2 text-gray-700"><li>Folder</li><li>Curiosidad</li></ul></div>
-                            </div>
-                            <div class="mt-4 bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#7D3F98]">
-                                <div class="bg-brand-purple p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="crown" class="w-8 h-8 text-white"></i></div>
-                                <div><h5 class="font-black text-brand-purple text-sm uppercase mb-1">¡Premio Real!</h5><p class="text-sm font-bold text-gray-700">Título Estratega + <span class="text-brand-dark underline">Medalla de Oro</span> 🏰</p></div>
-                            </div>
+                    <div class="p-6 md:w-7/12 flex flex-col justify-center bg-white">
+                        <h2 class="font-display text-3xl font-bold text-brand-purple mb-1">Ajedrez (Nivel 2)</h2>
+                        <p class="font-bold text-gray-600 mb-6 italic">"Estrategia en el Reino"</p>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="info-box bg-purple-50"><p class="text-xs text-brand-purple font-bold uppercase">Inicio</p><p class="font-bold">14 Enero</p></div>
+                            <div class="info-box bg-purple-50"><p class="text-xs text-brand-purple font-bold uppercase">Horario</p><p class="font-bold">4:00 PM</p></div>
+                            <div class="info-box bg-purple-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-purple font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
+                        </div>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <button onclick="toggleDetails('details-45-wed')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
+                            <a href="https://wa.me/51925982984?text=Hola,%20quiero%20inscribir%20a%20mi%20peque%20en%20Ajedrez%20(4-5%20a%C3%B1os)" target="_blank" class="flex-1 btn-pop bg-brand-purple text-white font-bold py-3 rounded-xl text-center hover:bg-purple-600">Inscribir Ahora <i data-lucide="message-circle" class="inline w-4 h-4 ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div id="details-45-wed" class="details-content bg-purple-50">
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div><h4 class="font-black text-brand-purple mb-3 uppercase border-b-2 border-brand-purple/20 pb-1">Cronograma Semanal</h4><ul class="text-sm space-y-2 text-gray-700 list-disc pl-4"><li><strong>Sem 1:</strong> El Tablero Vivo (Filas y columnas).</li><li><strong>Sem 2:</strong> El Peón y la Torre (Captura).</li><li><strong>Sem 3:</strong> El Caballo y el Alfil (Saltos).</li><li><strong>Sem 4:</strong> El Rey y la Dama (Protección).</li><li><strong>Sem 5:</strong> Mini-Torneo de Verano.</li><li><strong>Sem 6:</strong> 🏆 Gran Torneo de Clausura.</li></ul></div>
+                            <div class="flex flex-col justify-between"><div><h4 class="font-black text-brand-purple mb-3 uppercase border-b-2 border-brand-purple/20 pb-1">Requisitos</h4><ul class="text-sm space-y-2 text-gray-700 list-disc pl-4 mb-4"><li>Folder para guardar fichas.</li><li>Mucha curiosidad y atención.</li></ul></div><div class="bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#7D3F98]"><div class="bg-brand-purple p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="crown" class="w-8 h-8 text-white"></i></div><div><h5 class="font-black text-brand-purple text-sm uppercase mb-1">¡Premio Real!</h5><p class="text-sm font-bold text-gray-700 leading-tight">Título de <span class="text-brand-dark underline">Gran Estratega</span> + Medalla de Oro del Reino 🏰</p></div></div></div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <!-- Jueves -->
             <div class="sticker-card">
-                <div class="p-6 md:p-8 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-sky opacity-20 rounded-bl-full -mr-10 -mt-10"></div>
-                    <div class="flex flex-col md:flex-row justify-between items-start gap-4 relative z-10">
-                        <div class="flex-1">
-                            <span class="inline-block bg-brand-sky text-white border-2 border-brand-dark px-3 py-1 rounded-md text-sm font-bold uppercase tracking-wide mb-2 shadow-[2px_2px_0px_0px_#2D3436]">Jueves</span>
-                            <h2 class="font-display text-3xl font-bold text-brand-dark">Ciencia (Nivel 2)</h2>
-                            <p class="text-gray-600 font-bold mt-1">"Pequeños Científicos: Investigadores"</p>
-                        </div>
-                        <div class="w-24 h-24 shrink-0 rotate-2 transition-transform hover:rotate-6">
-                            <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=200" alt="Ciencia niños" class="w-full h-full rounded-xl photo-sticker">
-                       </div>
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
+                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-brand-sky/20 mix-blend-multiply"></div>
+                        <span class="absolute top-4 left-4 bg-brand-sky text-white border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Jueves</span>
                     </div>
-                    <button onclick="toggleDetails('details-45-thu')" class="mt-6 w-full md:w-auto bg-brand-light hover:bg-white border-2 border-brand-dark text-brand-dark font-bold py-2 px-6 rounded-lg flex items-center justify-center gap-2 transition-all hover:shadow-[3px_3px_0px_0px_#2D3436]">Ver Sílabus (6 Semanas) <i data-lucide="chevron-down" class="w-5 h-5"></i></button>
-                    <div id="details-45-thu" class="details-content mt-6 bg-brand-light rounded-xl">
-                        <div class="p-6">
-                            <div class="grid md:grid-cols-2 gap-6 mb-4">
-                                <div><h4 class="font-black text-brand-sky mb-2 uppercase text-sm border-b-2 border-brand-sky/30 pb-1">Cronograma</h4><ul class="text-sm space-y-2 text-gray-700 font-medium"><li>Sem 1: Agua Viajera.</li><li>Sem 2: Huevo Mágico.</li><li>Sem 3: Tinta Invisible.</li><li>Sem 4: Magia Estática.</li><li>Sem 5: Volcán.</li><li>Sem 6: 🚀 Exposición.</li></ul></div>
-                                <div><h4 class="font-black text-brand-sky mb-2 uppercase text-sm border-b-2 border-brand-sky/30 pb-1">Requisitos</h4><ul class="text-sm space-y-2 text-gray-700"><li>Bata blanca</li><li>Lentes juguete</li></ul></div>
-                            </div>
-                            <div class="mt-4 bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#0095DA]">
-                                <div class="bg-brand-sky p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="microscope" class="w-8 h-8 text-white"></i></div>
-                                <div><h5 class="font-black text-brand-sky text-sm uppercase mb-1">¡Certificado!</h5><p class="text-sm font-bold text-gray-700">Carnet Senior + <span class="text-brand-dark underline">Medalla Innovación</span> 🧬</p></div>
-                            </div>
+                    <div class="p-6 md:w-7/12 flex flex-col justify-center bg-white">
+                        <h2 class="font-display text-3xl font-bold text-brand-dark mb-1">Ciencia (Nivel 2)</h2>
+                        <p class="font-bold text-gray-600 mb-6 italic">"Pequeños Investigadores"</p>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="info-box bg-sky-50"><p class="text-xs text-brand-sky font-bold uppercase">Inicio</p><p class="font-bold">15 Enero</p></div>
+                            <div class="info-box bg-sky-50"><p class="text-xs text-brand-sky font-bold uppercase">Horario</p><p class="font-bold">4:00 PM</p></div>
+                            <div class="info-box bg-sky-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-sky font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
+                        </div>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <button onclick="toggleDetails('details-45-thu')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
+                            <a href="https://wa.me/51925982984?text=Hola,%20quiero%20inscribir%20a%20mi%20peque%20en%20Ciencia%20(4-5%20a%C3%B1os)" target="_blank" class="flex-1 btn-pop bg-brand-sky text-white font-bold py-3 rounded-xl text-center hover:bg-sky-600">Inscribir Ahora <i data-lucide="message-circle" class="inline w-4 h-4 ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div id="details-45-thu" class="details-content bg-sky-50">
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div><h4 class="font-black text-brand-sky mb-3 uppercase border-b-2 border-brand-sky/20 pb-1">Cronograma Semanal</h4><ul class="text-sm space-y-2 text-gray-700 list-disc pl-4"><li><strong>Sem 1:</strong> Agua Viajera (Capilaridad).</li><li><strong>Sem 2:</strong> El Huevo Mágico (Densidad).</li><li><strong>Sem 3:</strong> Tinta Invisible (Reacciones).</li><li><strong>Sem 4:</strong> Magia Estática (Electricidad).</li><li><strong>Sem 5:</strong> El Gran Volcán.</li><li><strong>Sem 6:</strong> 🚀 Exposición de Inventos.</li></ul></div>
+                            <div class="flex flex-col justify-between"><div><h4 class="font-black text-brand-sky mb-3 uppercase border-b-2 border-brand-sky/20 pb-1">Requisitos</h4><ul class="text-sm space-y-2 text-gray-700 list-disc pl-4 mb-4"><li>Bata blanca o camisa vieja.</li><li>Lentes de juguete (opcional).</li><li>Cuaderno de notas.</li></ul></div><div class="bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#0095DA]"><div class="bg-brand-sky p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="microscope" class="w-8 h-8 text-white"></i></div><div><h5 class="font-black text-brand-sky text-sm uppercase mb-1">¡Certificación!</h5><p class="text-sm font-bold text-gray-700 leading-tight">Carnet de Científico Senior + <span class="text-brand-dark underline">Medalla de la Innovación</span> 🧬</p></div></div></div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <!-- Viernes -->
             <div class="sticker-card">
-                <div class="p-6 md:p-8 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-yellow opacity-20 rounded-bl-full -mr-10 -mt-10"></div>
-                    <div class="flex flex-col md:flex-row justify-between items-start gap-4 relative z-10">
-                        <div class="flex-1">
-                            <span class="inline-block bg-brand-yellow text-brand-dark border-2 border-brand-dark px-3 py-1 rounded-md text-sm font-bold uppercase tracking-wide mb-2 shadow-[2px_2px_0px_0px_#2D3436]">Viernes</span>
-                            <h2 class="font-display text-3xl font-bold text-brand-dark">Mini Chefs (Nivel 2)</h2>
-                            <p class="text-gray-600 font-bold mt-1">"Cocina Creativa y Saludable"</p>
-                        </div>
-                        <div class="w-24 h-24 shrink-0 -rotate-3 transition-transform hover:-rotate-6">
-                            <img src="https://images.unsplash.com/photo-1606822365365-17937397b275?auto=format&fit=crop&q=80&w=200" alt="Mini chef" class="w-full h-full rounded-xl photo-sticker">
-                       </div>
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
+                        <img src="https://images.unsplash.com/photo-1606822365365-17937397b275?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-brand-yellow/20 mix-blend-multiply"></div>
+                        <span class="absolute top-4 left-4 bg-brand-yellow text-brand-dark border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Viernes</span>
                     </div>
-                    <button onclick="toggleDetails('details-45-fri')" class="mt-6 w-full md:w-auto bg-brand-light hover:bg-white border-2 border-brand-dark text-brand-dark font-bold py-2 px-6 rounded-lg flex items-center justify-center gap-2 transition-all hover:shadow-[3px_3px_0px_0px_#2D3436]">Ver Sílabus (6 Semanas) <i data-lucide="chevron-down" class="w-5 h-5"></i></button>
-                    <div id="details-45-fri" class="details-content mt-6 bg-brand-light rounded-xl">
-                        <div class="p-6">
-                            <div class="grid md:grid-cols-2 gap-6 mb-4">
-                                <div><h4 class="font-black text-brand-yellow mb-2 uppercase text-sm border-b-2 border-brand-yellow/30 pb-1">Cronograma</h4><ul class="text-sm space-y-2 text-gray-700 font-medium"><li>Sem 1: Smoothie.</li><li>Sem 2: Pizza Sandía.</li><li>Sem 3: Búhos.</li><li>Sem 4: Galletas.</li><li>Sem 5: Brochetas.</li><li>Sem 6: 🎂 Banquete.</li></ul></div>
-                                <div><h4 class="font-black text-brand-yellow mb-2 uppercase text-sm border-b-2 border-brand-yellow/30 pb-1">Requisitos</h4><ul class="text-sm space-y-2 text-gray-700"><li>Mandil y gorro</li><li>Tupper</li></ul></div>
+                    <div class="p-6 md:w-7/12 flex flex-col justify-center bg-white">
+                        <h2 class="font-display text-3xl font-bold text-brand-dark mb-1">Mini Chefs (Nivel 2)</h2>
+                        <p class="font-bold text-gray-600 mb-6 italic">"Cocina Creativa"</p>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="info-box bg-yellow-50"><p class="text-xs text-brand-yellow font-bold uppercase">Inicio</p><p class="font-bold">16 Enero</p></div>
+                            <div class="info-box bg-yellow-50"><p class="text-xs text-brand-yellow font-bold uppercase">Horario</p><p class="font-bold">4:00 PM</p></div>
+                            <div class="info-box bg-yellow-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-yellow font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
+                        </div>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <button onclick="toggleDetails('details-45-fri')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
+                            <a href="https://wa.me/51925982984?text=Hola,%20quiero%20inscribir%20a%20mi%20hijo/a%20en%20Mini%20Chefs%20(4-5%20a%C3%B1os)" target="_blank" class="flex-1 btn-pop bg-brand-yellow text-brand-dark font-bold py-3 rounded-xl text-center hover:bg-yellow-400">Inscribir Ahora <i data-lucide="message-circle" class="inline w-4 h-4 ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div id="details-45-fri" class="details-content bg-yellow-50">
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-black text-brand-yellow mb-3 uppercase border-b-2 border-brand-yellow/20 pb-1">Cronograma Semanal</h4>
+                                <ul class="text-sm space-y-2 text-gray-700 list-disc pl-4">
+                                    <li><strong>Sem 1:</strong> Smoothie de Frutas Tropicales.</li>
+                                    <li><strong>Sem 2:</strong> Pizza de Sandía.</li>
+                                    <li><strong>Sem 3:</strong> Búhos de Oreo y Avena.</li>
+                                    <li><strong>Sem 4:</strong> Galletas de Plátano y Cacao.</li>
+                                    <li><strong>Sem 5:</strong> Brochetas de Verduras y Sándwiches.</li>
+                                    <li><strong>Sem 6:</strong> 🎂 Gran Banquete Final.</li>
+                                </ul>
                             </div>
-                            <div class="mt-4 bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#FDB913]">
-                                <div class="bg-brand-yellow p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="utensils" class="w-8 h-8 text-brand-dark"></i></div>
-                                <div><h5 class="font-black text-brand-yellow text-sm uppercase mb-1">¡Graduación!</h5><p class="text-sm font-bold text-gray-700">Gorro Pro + <span class="text-brand-dark underline">Medalla Cuchara Oro</span> 👨‍🍳</p></div>
+                            <div class="flex flex-col justify-between">
+                                <div>
+                                    <h4 class="font-black text-brand-yellow mb-3 uppercase border-b-2 border-brand-yellow/20 pb-1">Requisitos</h4>
+                                    <ul class="text-sm space-y-2 text-gray-700 list-disc pl-4 mb-4">
+                                        <li>Mandil y gorro de chef.</li>
+                                        <li>Tupper grande.</li>
+                                        <li>Kit de aseo personal.</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#FDB913]">
+                                    <div class="bg-brand-yellow p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="utensils" class="w-8 h-8 text-brand-dark"></i></div>
+                                    <div>
+                                        <h5 class="font-black text-brand-yellow text-sm uppercase mb-1">¡Graduación!</h5>
+                                        <p class="text-sm font-bold text-gray-700 leading-tight">Gorro de Chef Pro + <span class="text-brand-dark underline">Medalla de la Cuchara de Oro</span> 👨‍🍳</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -485,51 +658,35 @@
             </div>
         </div>
 
-        <!-- ================= GRUPO 6-10 AÑOS ================= -->
-        <div id="content-juniors" class="space-y-6 hidden animate-fade-in">
-            <!-- (Se mantienen los talleres 6-10 años...) -->
-             <!-- Lunes: Ajedrez -->
+        <!-- ================= 6-10 AÑOS ================= -->
+        <div id="content-juniors" class="space-y-8 animate-fade-in hidden">
+            <!-- Lunes: Ajedrez -->
             <div class="sticker-card">
-                <div class="p-6 md:p-8 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-purple opacity-20 rounded-bl-full -mr-10 -mt-10"></div>
-                    <div class="flex flex-col md:flex-row justify-between items-start gap-4 relative z-10">
-                        <div class="flex-1">
-                            <span class="inline-block bg-brand-purple text-white border-2 border-brand-dark px-3 py-1 rounded-md text-sm font-bold uppercase tracking-wide mb-2 shadow-[2px_2px_0px_0px_#2D3436]">Lunes • 5:00 - 6:00 PM</span>
-                            <h2 class="font-display text-3xl font-bold text-brand-dark">Ajedrez: "Mentes Maestras"</h2>
-                            <p class="text-gray-600 font-bold mt-1">Estrategia Avanzada y Resiliencia</p>
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
+                        <img src="https://images.unsplash.com/photo-1529699211952-734e80c4d42b?q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-brand-purple/20 mix-blend-multiply"></div>
+                        <span class="absolute top-4 left-4 bg-brand-purple text-white border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Lunes</span>
+                    </div>
+                    <div class="p-6 md:w-7/12 flex flex-col justify-center bg-white">
+                        <h2 class="font-display text-3xl font-bold text-brand-purple mb-1">Ajedrez: Mentes Maestras</h2>
+                        <p class="font-bold text-gray-600 mb-6 italic">"Estrategia Avanzada"</p>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="info-box bg-purple-50"><p class="text-xs text-brand-purple font-bold uppercase">Inicio</p><p class="font-bold">12 Enero</p></div>
+                            <div class="info-box bg-purple-50"><p class="text-xs text-brand-purple font-bold uppercase">Horario</p><p class="font-bold">5:00 PM</p></div>
+                            <div class="info-box bg-purple-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-purple font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
                         </div>
-                        <div class="w-24 h-24 shrink-0 rotate-2 transition-transform hover:rotate-6">
-                            <img src="https://images.unsplash.com/photo-1529699211952-734e80c4d42b?q=80&w=200&auto=format&fit=crop" alt="Ajedrez niños grandes" class="w-full h-full rounded-xl photo-sticker">
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <button onclick="toggleDetails('details-610-mon')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
+                            <a href="https://wa.me/51925982984?text=Hola,%20quiero%20inscribir%20a%20mi%20peque%20en%20Ajedrez%20(6-10%20a%C3%B1os)" target="_blank" class="flex-1 btn-pop bg-brand-purple text-white font-bold py-3 rounded-xl text-center hover:bg-purple-600">Inscribir Ahora <i data-lucide="message-circle" class="inline w-4 h-4 ml-1"></i></a>
                         </div>
                     </div>
-                    <button onclick="toggleDetails('details-610-mon')" class="mt-6 w-full md:w-auto bg-brand-light hover:bg-white border-2 border-brand-dark text-brand-dark font-bold py-2 px-6 rounded-lg flex items-center justify-center gap-2 transition-all hover:shadow-[3px_3px_0px_0px_#2D3436]">Ver Sílabus (6 Semanas) <i data-lucide="chevron-down" class="w-5 h-5"></i></button>
-                    <div id="details-610-mon" class="details-content mt-6 bg-brand-light rounded-xl">
-                        <div class="p-6">
-                            <div class="grid md:grid-cols-2 gap-6 mb-4">
-                                <div>
-                                    <h4 class="font-black text-brand-purple mb-2 uppercase text-sm border-b-2 border-brand-purple/30 pb-1">Programa Académico</h4>
-                                    <ul class="text-sm space-y-2 text-gray-700 font-medium">
-                                        <li><strong>Sem 1:</strong> Fundamentos y Notación.</li>
-                                        <li><strong>Sem 2:</strong> Aperturas (Italiana/Siciliana).</li>
-                                        <li><strong>Sem 3:</strong> Táctica (Dobles, Clavadas).</li>
-                                        <li><strong>Sem 4:</strong> Estrategia y Enroques.</li>
-                                        <li><strong>Sem 5:</strong> Finales de Infarto.</li>
-                                        <li><strong>Sem 6:</strong> 🏆 Torneo "Gambito de Oro".</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h4 class="font-black text-brand-purple mb-2 uppercase text-sm border-b-2 border-brand-purple/30 pb-1">Actividades Pro</h4>
-                                    <ul class="text-sm space-y-2 text-gray-700">
-                                        <li><i data-lucide="eye" class="w-4 h-4 inline mr-1"></i> Ajedrez a Ciegas</li>
-                                        <li><i data-lucide="book-open" class="w-4 h-4 inline mr-1"></i> Análisis de Partidas</li>
-                                        <li><i data-lucide="timer" class="w-4 h-4 inline mr-1"></i> Duelo con Relojes</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mt-4 bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#7D3F98]">
-                                <div class="bg-brand-purple p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="crown" class="w-8 h-8 text-white"></i></div>
-                                <div><h5 class="font-black text-brand-purple text-sm uppercase mb-1">¡Gran Maestro Junior!</h5><p class="text-sm font-bold text-gray-700">Gana tu <span class="text-brand-dark underline">Medalla de Estrategia</span> y Trofeo del Torneo 🏆</p></div>
-                            </div>
+                </div>
+                <div id="details-610-mon" class="details-content bg-purple-50">
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div><h4 class="font-black text-brand-purple mb-3 uppercase border-b-2 border-brand-purple/20 pb-1">Programa Académico</h4><ul class="text-sm space-y-2 text-gray-700 list-disc pl-4"><li><strong>Sem 1:</strong> Fundamentos Logísticos: Valor relativo de piezas.</li><li><strong>Sem 2:</strong> El Arte de la Apertura: Italiana y Siciliana.</li><li><strong>Sem 3:</strong> Táctica y Munición: Dobles y Clavadas.</li><li><strong>Sem 4:</strong> Estrategia Medio Juego: Planificación de ataque.</li><li><strong>Sem 5:</strong> Finales de Infarto: Mate con Torre y Rey.</li><li><strong>Sem 6:</strong> 🏆 Torneo "Gambito de Oro".</li></ul></div>
+                            <div class="flex flex-col justify-between"><div><h4 class="font-black text-brand-purple mb-3 uppercase border-b-2 border-brand-purple/20 pb-1">Actividades Pro</h4><ul class="text-sm space-y-2 text-gray-700 list-disc pl-4 mb-4"><li>Ajedrez a Ciegas (Visualización).</li><li>Análisis de Partidas Históricas (Fischer/Carlsen).</li><li>Duelo con Relojes (Manejo de tiempo).</li></ul></div><div class="bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#7D3F98]"><div class="bg-brand-purple p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="crown" class="w-8 h-8 text-white"></i></div><div><h5 class="font-black text-brand-purple text-sm uppercase mb-1">¡Gran Maestro Junior!</h5><p class="text-sm font-bold text-gray-700 leading-tight">Gana tu <span class="text-brand-dark underline">Medalla de Estrategia</span> y Trofeo del Torneo 🏆</p></div></div></div>
                         </div>
                     </div>
                 </div>
@@ -537,45 +694,31 @@
 
             <!-- Martes: Arte -->
             <div class="sticker-card">
-                <div class="p-6 md:p-8 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-green opacity-20 rounded-bl-full -mr-10 -mt-10"></div>
-                    <div class="flex flex-col md:flex-row justify-between items-start gap-4 relative z-10">
-                        <div class="flex-1">
-                            <span class="inline-block bg-brand-green text-white border-2 border-brand-dark px-3 py-1 rounded-md text-sm font-bold uppercase tracking-wide mb-2 shadow-[2px_2px_0px_0px_#2D3436]">Martes • 5:00 - 6:00 PM</span>
-                            <h2 class="font-display text-3xl font-bold text-brand-dark">Arte: "Explora y Crea"</h2>
-                            <p class="text-gray-600 font-bold mt-1">Técnicas Reales: Volumen, Color y Composición</p>
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
+                        <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-brand-green/20 mix-blend-multiply"></div>
+                        <span class="absolute top-4 left-4 bg-brand-green text-white border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Martes</span>
+                    </div>
+                    <div class="p-6 md:w-7/12 flex flex-col justify-center bg-white">
+                        <h2 class="font-display text-3xl font-bold text-brand-green mb-1">Arte: Explora y Crea</h2>
+                        <p class="font-bold text-gray-600 mb-6 italic">"Técnicas Reales"</p>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="info-box bg-green-50"><p class="text-xs text-brand-green font-bold uppercase">Inicio</p><p class="font-bold">13 Enero</p></div>
+                            <div class="info-box bg-green-50"><p class="text-xs text-brand-green font-bold uppercase">Horario</p><p class="font-bold">5:00 PM</p></div>
+                            <div class="info-box bg-green-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-green font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
                         </div>
-                        <div class="w-24 h-24 shrink-0 -rotate-2 transition-transform hover:-rotate-6">
-                            <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=200&auto=format&fit=crop" alt="Niños pintando cuadro" class="w-full h-full rounded-xl photo-sticker">
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <button onclick="toggleDetails('details-610-tue')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
+                            <a href="https://wa.me/51925982984?text=Hola,%20quiero%20inscribir%20a%20mi%20peque%20en%20Arte%20(6-10%20a%C3%B1os)" target="_blank" class="flex-1 btn-pop bg-brand-green text-white font-bold py-3 rounded-xl text-center hover:bg-green-600">Inscribir Ahora <i data-lucide="message-circle" class="inline w-4 h-4 ml-1"></i></a>
                         </div>
                     </div>
-                    <button onclick="toggleDetails('details-610-tue')" class="mt-6 w-full md:w-auto bg-brand-light hover:bg-white border-2 border-brand-dark text-brand-dark font-bold py-2 px-6 rounded-lg flex items-center justify-center gap-2 transition-all hover:shadow-[3px_3px_0px_0px_#2D3436]">Ver Sílabus (6 Semanas) <i data-lucide="chevron-down" class="w-5 h-5"></i></button>
-                    <div id="details-610-tue" class="details-content mt-6 bg-brand-light rounded-xl">
-                        <div class="p-6">
-                            <div class="grid md:grid-cols-2 gap-6 mb-4">
-                                <div>
-                                    <h4 class="font-black text-brand-green mb-2 uppercase text-sm border-b-2 border-brand-green/20 pb-1">Proyectos</h4>
-                                    <ul class="text-sm space-y-2 text-gray-700 font-medium">
-                                        <li><strong>Sem 1:</strong> Crea tu Avatar (Geometría).</li>
-                                        <li><strong>Sem 2:</strong> Paisajes Fantásticos.</li>
-                                        <li><strong>Sem 3:</strong> Esculturas Robots 3D.</li>
-                                        <li><strong>Sem 4:</strong> Arte con Relieve.</li>
-                                        <li><strong>Sem 5:</strong> Mi Primera Historieta.</li>
-                                        <li><strong>Sem 6:</strong> 🎨 Obra Maestra en Galería.</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h4 class="font-black text-brand-green mb-2 uppercase text-sm border-b-2 border-brand-green/20 pb-1">Materiales</h4>
-                                    <ul class="text-sm space-y-2 text-gray-700">
-                                        <li>Camiseta vieja para manchar.</li>
-                                        <li>Usaremos lápices, témperas, cartón y telas.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mt-4 bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#8CC63F]">
-                                <div class="bg-brand-green p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="palette" class="w-8 h-8 text-white"></i></div>
-                                <div><h5 class="font-black text-brand-green text-sm uppercase mb-1">¡Artista Pro!</h5><p class="text-sm font-bold text-gray-700">Exhibe tu obra y gana la <span class="text-brand-dark underline">Insignia de Maestro del Color</span> 🖌️</p></div>
-                            </div>
+                </div>
+                <div id="details-610-tue" class="details-content bg-green-50">
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div><h4 class="font-black text-brand-green mb-3 uppercase border-b-2 border-brand-green/20 pb-1">Proyectos</h4><ul class="text-sm space-y-2 text-gray-700 list-disc pl-4"><li><strong>Sem 1:</strong> Crea tu Avatar. Geometría y expresiones.</li><li><strong>Sem 2:</strong> Pintura y Explosión de Color. Témperas y luz.</li><li><strong>Sem 3:</strong> Escultura con Reciclaje. Robots en 3D.</li><li><strong>Sem 4:</strong> Arte con Relieve. Collage y texturas táctiles.</li><li><strong>Sem 5:</strong> Mi Primera Historieta. Cómics y narrativa visual.</li><li><strong>Sem 6:</strong> 🎨 Obra Maestra Libre en Galería.</li></ul></div>
+                            <div class="flex flex-col justify-between"><div><h4 class="font-black text-brand-green mb-3 uppercase border-b-2 border-brand-green/20 pb-1">Materiales</h4><ul class="text-sm space-y-2 text-gray-700 list-disc pl-4 mb-4"><li>Camiseta vieja para manchar.</li><li>Usaremos lápices, témperas, cartón y telas.</li></ul></div><div class="bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#8CC63F]"><div class="bg-brand-green p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="palette" class="w-8 h-8 text-white"></i></div><div><h5 class="font-black text-brand-green text-sm uppercase mb-1">¡Artista Pro!</h5><p class="text-sm font-bold text-gray-700 leading-tight">Exhibe tu obra y gana la <span class="text-brand-dark underline">Insignia de Maestro del Color</span> 🖌️</p></div></div></div>
                         </div>
                     </div>
                 </div>
@@ -583,46 +726,31 @@
 
             <!-- Miércoles: Caporal -->
             <div class="sticker-card">
-                <div class="p-6 md:p-8 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-red opacity-20 rounded-bl-full -mr-10 -mt-10"></div>
-                    <div class="flex flex-col md:flex-row justify-between items-start gap-4 relative z-10">
-                        <div class="flex-1">
-                            <span class="inline-block bg-brand-red text-white border-2 border-brand-dark px-3 py-1 rounded-md text-sm font-bold uppercase tracking-wide mb-2 shadow-[2px_2px_0px_0px_#2D3436]">Miércoles • 5:00 - 6:00 PM</span>
-                            <h2 class="font-display text-3xl font-bold text-brand-dark">Caporal: "Fuerza Sambos"</h2>
-                            <p class="text-gray-600 font-bold mt-1">¡Elegancia, Fuerza y Empoderamiento!</p>
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
+                        <img src="https://images.unsplash.com/photo-1516475429286-465d815a0df7?q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-brand-red/20 mix-blend-multiply"></div>
+                        <span class="absolute top-4 left-4 bg-brand-red text-white border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Miércoles</span>
+                    </div>
+                    <div class="p-6 md:w-7/12 flex flex-col justify-center bg-white">
+                        <h2 class="font-display text-3xl font-bold text-brand-dark mb-1">Caporal: Fuerza Sambos</h2>
+                        <p class="font-bold text-gray-600 mb-6 italic">"Elegancia y Fuerza"</p>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="info-box bg-red-50"><p class="text-xs text-brand-red font-bold uppercase">Inicio</p><p class="font-bold">14 Enero</p></div>
+                            <div class="info-box bg-red-50"><p class="text-xs text-brand-red font-bold uppercase">Horario</p><p class="font-bold">5:00 PM</p></div>
+                            <div class="info-box bg-red-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-red font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
                         </div>
-                        <div class="w-24 h-24 shrink-0 rotate-3 transition-transform hover:rotate-6">
-                            <img src="https://images.unsplash.com/photo-1516475429286-465d815a0df7?q=80&w=200&auto=format&fit=crop" alt="Niñas bailando con fuerza" class="w-full h-full rounded-xl photo-sticker">
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <button onclick="toggleDetails('details-610-wed')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
+                            <a href="https://wa.me/51925982984?text=Info%20Caporal%20Juniors" target="_blank" class="flex-1 btn-pop bg-brand-red text-white font-bold py-3 rounded-xl text-center hover:bg-red-600">Inscribir Ahora <i data-lucide="message-circle" class="inline w-4 h-4 ml-1"></i></a>
                         </div>
                     </div>
-                    <button onclick="toggleDetails('details-610-wed')" class="mt-6 w-full md:w-auto bg-brand-light hover:bg-white border-2 border-brand-dark text-brand-dark font-bold py-2 px-6 rounded-lg flex items-center justify-center gap-2 transition-all hover:shadow-[3px_3px_0px_0px_#2D3436]">Ver Sílabus (6 Semanas) <i data-lucide="chevron-down" class="w-5 h-5"></i></button>
-                    <div id="details-610-wed" class="details-content mt-6 bg-brand-light rounded-xl">
-                        <div class="p-6">
-                            <div class="grid md:grid-cols-2 gap-6 mb-4">
-                                <div>
-                                    <h4 class="font-black text-brand-red mb-2 uppercase text-sm border-b-2 border-brand-red/20 pb-1">Entrenamiento</h4>
-                                    <ul class="text-sm space-y-2 text-gray-700 font-medium">
-                                        <li><strong>Sem 1:</strong> Ritmo y Postura Real.</li>
-                                        <li><strong>Sem 2:</strong> Coordinación y Mirada.</li>
-                                        <li><strong>Sem 3:</strong> Giros y Saltos Sambos.</li>
-                                        <li><strong>Sem 4:</strong> Coreografía en Bloque.</li>
-                                        <li><strong>Sem 5:</strong> Fuerza y Expresión.</li>
-                                        <li><strong>Sem 6:</strong> 💃 Gran Gala de Caporalitas.</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h4 class="font-black text-brand-red mb-2 uppercase text-sm border-b-2 border-brand-red/20 pb-1">Requisitos</h4>
-                                    <ul class="text-sm space-y-2 text-gray-700">
-                                        <li>Ropa deportiva (leggings/licras).</li>
-                                        <li>Zapatillas deportivas cómodas.</li>
-                                        <li>Hidratación (es de alta intensidad).</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mt-4 bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#EF4136]">
-                                <div class="bg-brand-red p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="music" class="w-8 h-8 text-white"></i></div>
-                                <div><h5 class="font-black text-brand-red text-sm uppercase mb-1">¡Reina del Caporal!</h5><p class="text-sm font-bold text-gray-700">Demuestra tu fuerza y recibe la <span class="text-brand-dark underline">Medalla de Elegancia</span> ✨</p></div>
-                            </div>
+                </div>
+                <div id="details-610-wed" class="details-content bg-red-50">
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div><h4 class="font-black text-brand-red mb-3 uppercase border-b-2 border-brand-red/20 pb-1">Entrenamiento</h4><ul class="text-sm space-y-2 text-gray-700 list-disc pl-4"><li><strong>Sem 1:</strong> Pasos de Fuego. Ritmo y Postura Real.</li><li><strong>Sem 2:</strong> El Arte del Movimiento. Coordinación y Mirada.</li><li><strong>Sem 3:</strong> Agilidad y Giros. Desplazamientos rápidos.</li><li><strong>Sem 4:</strong> Coreografía en Bloque. Trabajo en equipo.</li><li><strong>Sem 5:</strong> Energía y Expresión. Fuerza escénica.</li><li><strong>Sem 6:</strong> 💃 Gran Gala de Caporalitas.</li></ul></div>
+                            <div class="flex flex-col justify-between"><div><h4 class="font-black text-brand-red mb-3 uppercase border-b-2 border-brand-red/20 pb-1">Requisitos</h4><ul class="text-sm space-y-2 text-gray-700 list-disc pl-4 mb-4"><li>Ropa deportiva (leggings/licras).</li><li>Zapatillas deportivas cómodas.</li><li>Hidratación (es de alta intensidad).</li></ul></div><div class="bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#EF4136]"><div class="bg-brand-red p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="music" class="w-8 h-8 text-white"></i></div><div><h5 class="font-black text-brand-red text-sm uppercase mb-1">¡Reina del Caporal!</h5><p class="text-sm font-bold text-gray-700 leading-tight">Demuestra tu fuerza y recibe la <span class="text-brand-dark underline">Medalla de Elegancia</span> ✨</p></div></div></div>
                         </div>
                     </div>
                 </div>
@@ -630,47 +758,31 @@
 
             <!-- Jueves: Ciencia -->
             <div class="sticker-card">
-                <div class="p-6 md:p-8 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-sky opacity-20 rounded-bl-full -mr-10 -mt-10"></div>
-                    <div class="flex flex-col md:flex-row justify-between items-start gap-4 relative z-10">
-                        <div class="flex-1">
-                            <span class="inline-block bg-brand-sky text-white border-2 border-brand-dark px-3 py-1 rounded-md text-sm font-bold uppercase tracking-wide mb-2 shadow-[2px_2px_0px_0px_#2D3436]">Jueves • 5:00 - 6:30 PM (1.5h)</span>
-                            <h2 class="font-display text-3xl font-bold text-brand-dark">Ciencia: "Explora y Descubre"</h2>
-                            <p class="text-gray-600 font-bold mt-1">Leyes del mundo: Densidad, Química y Física</p>
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
+                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-brand-sky/20 mix-blend-multiply"></div>
+                        <span class="absolute top-4 left-4 bg-brand-sky text-white border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Jueves</span>
+                    </div>
+                    <div class="p-6 md:w-7/12 flex flex-col justify-center bg-white">
+                        <h2 class="font-display text-3xl font-bold text-brand-dark mb-1">Ciencia: "Explora y Descubre"</h2>
+                        <p class="font-bold text-gray-600 mb-6 italic">"Leyes del Mundo"</p>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="info-box bg-sky-50"><p class="text-xs text-brand-sky font-bold uppercase">Inicio</p><p class="font-bold">15 Enero</p></div>
+                            <div class="info-box bg-sky-50"><p class="text-xs text-brand-sky font-bold uppercase">Horario</p><p class="font-bold">5:00 PM</p></div>
+                            <div class="info-box bg-sky-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-sky font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
                         </div>
-                        <div class="w-24 h-24 shrink-0 -rotate-2 transition-transform hover:-rotate-6">
-                            <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=200&auto=format&fit=crop" alt="Experimento escolar" class="w-full h-full rounded-xl photo-sticker">
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <button onclick="toggleDetails('details-610-thu')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
+                            <a href="https://wa.me/51925982984?text=Info%20Ciencia%20Juniors" target="_blank" class="flex-1 btn-pop bg-brand-sky text-white font-bold py-3 rounded-xl text-center hover:bg-sky-600">Inscribir Ahora <i data-lucide="message-circle" class="inline w-4 h-4 ml-1"></i></a>
                         </div>
                     </div>
-                    <button onclick="toggleDetails('details-610-thu')" class="mt-6 w-full md:w-auto bg-brand-light hover:bg-white border-2 border-brand-dark text-brand-dark font-bold py-2 px-6 rounded-lg flex items-center justify-center gap-2 transition-all hover:shadow-[3px_3px_0px_0px_#2D3436]">Ver Sílabus (6 Semanas) <i data-lucide="chevron-down" class="w-5 h-5"></i></button>
-                    <div id="details-610-thu" class="details-content mt-6 bg-brand-light rounded-xl">
-                        <div class="p-6">
-                            <div class="grid md:grid-cols-2 gap-6 mb-4">
-                                <div>
-                                    <h4 class="font-black text-brand-sky mb-2 uppercase text-sm border-b-2 border-brand-sky/30 pb-1">Experimentos</h4>
-                                    <ul class="text-sm space-y-2 text-gray-700 font-medium">
-                                        <li><strong>Sem 1:</strong> Torre de Líquidos (Densidad).</li>
-                                        <li><strong>Sem 2:</strong> Cohetes de Vinagre.</li>
-                                        <li><strong>Sem 3:</strong> Brújulas y Magnetismo.</li>
-                                        <li><strong>Sem 4:</strong> Slime Científico (Viscosidad).</li>
-                                        <li><strong>Sem 5:</strong> Óptica y Arcoíris.</li>
-                                        <li><strong>Sem 6:</strong> 🚀 Presión y Vuelo.</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h4 class="font-black text-brand-sky mb-2 uppercase text-sm border-b-2 border-brand-sky/30 pb-1">Metodología</h4>
-                                    <ul class="text-sm space-y-2 text-gray-700">
-                                        <li>1. Enigma (Teoría).</li>
-                                        <li>2. Manos a la Ciencia (Práctica).</li>
-                                        <li>3. Bitácora (Conclusión).</li>
-                                        <li><strong>Traer:</strong> Bata blanca y cuaderno.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mt-4 bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#0095DA]">
-                                <div class="bg-brand-sky p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="flask-conical" class="w-8 h-8 text-white"></i></div>
-                                <div><h5 class="font-black text-brand-sky text-sm uppercase mb-1">¡Científico Senior!</h5><p class="text-sm font-bold text-gray-700">Completa tu Bitácora y gana la <span class="text-brand-dark underline">Insignia de Descubrimiento</span> 🔬</p></div>
-                            </div>
+                </div>
+                <div id="details-610-thu" class="details-content bg-sky-50">
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div><h4 class="font-black text-brand-sky mb-3 uppercase border-b-2 border-brand-sky/20 pb-1">Experimentos</h4><ul class="text-sm space-y-2 text-gray-700 list-disc pl-4"><li><strong>Sem 1:</strong> El Misterio de la Densidad. Torre de líquidos.</li><li><strong>Sem 2:</strong> Alquimia y Gases Invisibles. Globo autoinflable.</li><li><strong>Sem 3:</strong> Fuerzas Invisibles. Magnetismo y brújulas.</li><li><strong>Sem 4:</strong> Estados "Locos" de la Materia. Slime científico.</li><li><strong>Sem 5:</strong> Óptica: El Secreto de la Luz. Moneda invisible.</li><li><strong>Sem 6:</strong> 🚀 Presión Atmosférica y Vuelo.</li></ul></div>
+                            <div class="flex flex-col justify-between"><div><h4 class="font-black text-brand-sky mb-3 uppercase border-b-2 border-brand-sky/20 pb-1">Metodología</h4><ul class="text-sm space-y-2 text-gray-700 list-disc pl-4 mb-4"><li>1. El Enigma (Teoría breve).</li><li>2. Manos a la Ciencia (Práctica).</li><li>3. Bitácora de Campo (Conclusión).</li><li><strong>Traer:</strong> Bata blanca y cuaderno.</li></ul></div><div class="bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#0095DA]"><div class="bg-brand-sky p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="flask-conical" class="w-8 h-8 text-white"></i></div><div><h5 class="font-black text-brand-sky text-sm uppercase mb-1">¡Científico Senior!</h5><p class="text-sm font-bold text-gray-700 leading-tight">Completa tu Bitácora y gana la <span class="text-brand-dark underline">Insignia de Descubrimiento</span> 🔬</p></div></div></div>
                         </div>
                     </div>
                 </div>
@@ -678,196 +790,135 @@
 
             <!-- Viernes: Inglés -->
             <div class="sticker-card">
-                <div class="p-6 md:p-8 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-blue opacity-20 rounded-bl-full -mr-10 -mt-10"></div>
-                    <div class="flex flex-col md:flex-row justify-between items-start gap-4 relative z-10">
-                        <div class="flex-1">
-                            <span class="inline-block bg-brand-blue text-white border-2 border-brand-dark px-3 py-1 rounded-md text-sm font-bold uppercase tracking-wide mb-2 shadow-[2px_2px_0px_0px_#2D3436]">Viernes • 5:00 - 6:00 PM</span>
-                            <h2 class="font-display text-3xl font-bold text-brand-dark">Inglés: "English Discovery"</h2>
-                            <p class="text-gray-600 font-bold mt-1">Fluidez Oral y Vocabulario (+100 palabras)</p>
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-brand-blue/20 mix-blend-multiply"></div>
+                        <span class="absolute top-4 left-4 bg-brand-blue text-white border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Viernes</span>
+                    </div>
+                    <div class="p-6 md:w-7/12 flex flex-col justify-center bg-white">
+                        <h2 class="font-display text-3xl font-bold text-brand-dark mb-1">Inglés: "English Discovery"</h2>
+                        <p class="font-bold text-gray-600 mb-6 italic">"Fluidez Oral"</p>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="info-box bg-blue-50"><p class="text-xs text-brand-blue font-bold uppercase">Inicio</p><p class="font-bold">16 Enero</p></div>
+                            <div class="info-box bg-blue-50"><p class="text-xs text-brand-blue font-bold uppercase">Horario</p><p class="font-bold">5:00 PM</p></div>
+                            <div class="info-box bg-blue-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-blue font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
                         </div>
-                        <div class="w-24 h-24 shrink-0 rotate-1 transition-transform hover:rotate-3">
-                            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=200&auto=format&fit=crop" alt="Niños aprendiendo inglés" class="w-full h-full rounded-xl photo-sticker">
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <button onclick="toggleDetails('details-610-fri')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
+                            <a href="https://wa.me/51925982984?text=Hola,%20quiero%20inscribir%20a%20mi%20peque%20en%20Ingl%C3%A9s%20(6-10%20a%C3%B1os)" target="_blank" class="flex-1 btn-pop bg-brand-blue text-white font-bold py-3 rounded-xl text-center hover:bg-blue-600">Inscribir Ahora <i data-lucide="message-circle" class="inline w-4 h-4 ml-1"></i></a>
                         </div>
                     </div>
-                    <button onclick="toggleDetails('details-610-fri')" class="mt-6 w-full md:w-auto bg-brand-light hover:bg-white border-2 border-brand-dark text-brand-dark font-bold py-2 px-6 rounded-lg flex items-center justify-center gap-2 transition-all hover:shadow-[3px_3px_0px_0px_#2D3436]">Ver Sílabus (6 Semanas) <i data-lucide="chevron-down" class="w-5 h-5"></i></button>
-                    <div id="details-610-fri" class="details-content mt-6 bg-brand-light rounded-xl">
-                        <div class="p-6">
-                            <div class="grid md:grid-cols-2 gap-6 mb-4">
-                                <div>
-                                    <h4 class="font-black text-brand-blue mb-2 uppercase text-sm border-b-2 border-brand-blue/30 pb-1">Topics</h4>
-                                    <ul class="text-sm space-y-2 text-gray-700 font-medium">
-                                        <li><strong>Sem 1:</strong> Greetings & Agent ID Card.</li>
-                                        <li><strong>Sem 2:</strong> My Family Tree.</li>
-                                        <li><strong>Sem 3:</strong> Actions (Charades Game).</li>
-                                        <li><strong>Sem 4:</strong> Animal Zoo Guide.</li>
-                                        <li><strong>Sem 5:</strong> The Mini Restaurant.</li>
-                                        <li><strong>Sem 6:</strong> 🗣️ Spelling Bee.</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h4 class="font-black text-brand-blue mb-2 uppercase text-sm border-b-2 border-brand-blue/30 pb-1">Metodología</h4>
-                                    <ul class="text-sm space-y-2 text-gray-700">
-                                        <li>Enfoque en fluidez oral.</li>
-                                        <li>Juegos de rol y mímica.</li>
-                                        <li><strong>Material:</strong> Cuaderno y cartuchera.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mt-4 bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#0072BC]">
-                                <div class="bg-brand-blue p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="globe" class="w-8 h-8 text-white"></i></div>
-                                <div><h5 class="font-black text-brand-blue text-sm uppercase mb-1">¡English Master!</h5><p class="text-sm font-bold text-gray-700">Gana tu Certificado y el <span class="text-brand-dark underline">Global Citizen Badge</span> 🌍</p></div>
-                            </div>
+                </div>
+                <div id="details-610-fri" class="details-content bg-blue-50">
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div><h4 class="font-black text-brand-blue mb-3 uppercase border-b-2 border-brand-blue/20 pb-1">Topics</h4><ul class="text-sm space-y-2 text-gray-700 list-disc pl-4"><li><strong>Sem 1:</strong> Greetings & Myself. Carnet de "agente secreto".</li><li><strong>Sem 2:</strong> My World (Family & Home). Árbol genealógico.</li><li><strong>Sem 3:</strong> Actions & Routines. Juego de Charadas (mímica).</li><li><strong>Sem 4:</strong> The Animal Kingdom. Diseña tu animal fantástico.</li><li><strong>Sem 5:</strong> Food & Preferences. The Mini Restaurant.</li><li><strong>Sem 6:</strong> 🗣️ Spelling Bee & Final Project.</li></ul></div>
+                            <div class="flex flex-col justify-between"><div><h4 class="font-black text-brand-blue mb-3 uppercase border-b-2 border-brand-blue/20 pb-1">Metodología</h4><ul class="text-sm space-y-2 text-gray-700 list-disc pl-4 mb-4"><li>Enfoque en fluidez oral.</li><li>Juegos de rol y mímica.</li><li><strong>Material:</strong> Cuaderno y cartuchera.</li></ul></div><div class="bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#0072BC]"><div class="bg-brand-blue p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="globe" class="w-8 h-8 text-white"></i></div><div><h5 class="font-black text-brand-blue text-sm uppercase mb-1">¡English Master!</h5><p class="text-sm font-bold text-gray-700 leading-tight">Gana tu Certificado y el <span class="text-brand-dark underline">Global Citizen Badge</span> 🌍</p></div></div></div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
 
-        <!-- ================= NUEVO: NIÑ@S TECH (SÁBADOS) ================= -->
-        <div id="content-tech" class="space-y-6 hidden animate-fade-in">
+        <!-- ================= TECH (SÁBADOS) ================= -->
+        <div id="content-tech" class="space-y-8 animate-fade-in hidden">
             <div class="text-center mb-8 bg-white border-3 border-brand-dark p-4 rounded-2xl shadow-pop">
                 <h2 class="font-display text-2xl md:text-3xl font-bold text-brand-purple mb-2">¡Sábados de Tecnología! 🤖</h2>
                 <p class="font-bold text-gray-600">Programación, Diseño y Robótica para inventores del futuro.</p>
             </div>
 
-            <!-- Taller 1: Programación -->
+            <!-- Programación -->
             <div class="sticker-card">
-                <div class="p-6 md:p-8 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-sky opacity-20 rounded-bl-full -mr-10 -mt-10"></div>
-                    <div class="flex flex-col md:flex-row justify-between items-start gap-4 relative z-10">
-                        <div class="flex-1">
-                            <span class="inline-block bg-brand-sky text-white border-2 border-brand-dark px-3 py-1 rounded-md text-sm font-bold uppercase tracking-wide mb-2 shadow-[2px_2px_0px_0px_#2D3436]">Sábados • 8:30 - 9:30 AM</span>
-                            <h2 class="font-display text-3xl font-bold text-brand-dark">Programación Creativa 💻</h2>
-                            <p class="text-gray-600 font-bold mt-1">Videojuegos, Lógica y Retos</p>
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
+                        <img src="https://images.unsplash.com/photo-1593349480506-8433634cdcbe?q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-brand-sky/20 mix-blend-multiply"></div>
+                        <span class="absolute top-4 left-4 bg-brand-sky text-white border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Sábados</span>
+                    </div>
+                    <div class="p-6 md:w-7/12 flex flex-col justify-center bg-white">
+                        <h2 class="font-display text-3xl font-bold text-brand-dark mb-1">Programación Creativa</h2>
+                        <p class="font-bold text-gray-600 mb-6 italic">"Videojuegos y Lógica"</p>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="info-box bg-sky-50"><p class="text-xs text-brand-sky font-bold uppercase">Inicio</p><p class="font-bold">17 Enero</p></div>
+                            <div class="info-box bg-sky-50"><p class="text-xs text-brand-sky font-bold uppercase">Horario</p><p class="font-bold">8:30 AM</p></div>
+                            <div class="info-box bg-sky-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-sky font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
                         </div>
-                        <div class="w-24 h-24 shrink-0 rotate-2 transition-transform hover:rotate-6">
-                            <img src="https://images.unsplash.com/photo-1593349480506-8433634cdcbe?q=80&w=200&auto=format&fit=crop" alt="Niños programando" class="w-full h-full rounded-xl photo-sticker">
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <button onclick="toggleDetails('details-tech-code')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
+                            <a href="https://wa.me/51925982984?text=Hola,%20quiero%20inscribir%20a%20mi%20peque%20en%20Programaci%C3%B3n%20Creativa" target="_blank" class="flex-1 btn-pop bg-brand-sky text-white font-bold py-3 rounded-xl text-center hover:bg-sky-600">Inscribir Ahora <i data-lucide="message-circle" class="inline w-4 h-4 ml-1"></i></a>
                         </div>
                     </div>
-                    <button onclick="toggleDetails('details-tech-code')" class="mt-6 w-full md:w-auto bg-brand-light hover:bg-white border-2 border-brand-dark text-brand-dark font-bold py-2 px-6 rounded-lg flex items-center justify-center gap-2 transition-all hover:shadow-[3px_3px_0px_0px_#2D3436]">Ver Sílabus (6 Semanas) <i data-lucide="chevron-down" class="w-5 h-5"></i></button>
-                    <div id="details-tech-code" class="details-content mt-6 bg-brand-light rounded-xl">
-                        <div class="p-6">
-                            <div class="grid md:grid-cols-2 gap-6 mb-4">
-                                <div>
-                                    <h4 class="font-black text-brand-sky mb-2 uppercase text-sm border-b-2 border-brand-sky/30 pb-1">Plan de Sesiones</h4>
-                                    <ul class="text-sm space-y-2 text-gray-700 font-medium">
-                                        <li><strong>S1:</strong> Pensar como programador (Algoritmos).</li>
-                                        <li><strong>S2:</strong> Secuencias y Eventos.</li>
-                                        <li><strong>S3:</strong> Condiciones (Si pasa X -> ocurre Y).</li>
-                                        <li><strong>S4:</strong> Repeticiones y Bucles.</li>
-                                        <li><strong>S5:</strong> Crear un Mini Juego.</li>
-                                        <li><strong>S6:</strong> 🎮 Presentación Final.</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h4 class="font-black text-brand-sky mb-2 uppercase text-sm border-b-2 border-brand-sky/30 pb-1">Desarrollarás:</h4>
-                                    <ul class="text-sm space-y-2 text-gray-700">
-                                        <li>Pensamiento Lógico.</li>
-                                        <li>Resolución de problemas.</li>
-                                        <li>Creatividad Digital.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mt-4 bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#0095DA]">
-                                <div class="bg-brand-sky p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="code-2" class="w-8 h-8 text-white"></i></div>
-                                <div><h5 class="font-black text-brand-sky text-sm uppercase mb-1">¡Level Up!</h5><p class="text-sm font-bold text-gray-700">Obtén tu rango de <span class="text-brand-dark underline">Desarrollador Junior</span> + Insignia de Código 💾</p></div>
-                            </div>
+                </div>
+                <div id="details-tech-code" class="details-content bg-sky-50">
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div><h4 class="font-black text-brand-sky mb-3 uppercase border-b-2 border-brand-sky/20 pb-1">Plan de Sesiones</h4><ul class="text-sm space-y-2 text-gray-700 list-disc pl-4"><li><strong>S1:</strong> Pensar como programador. Algoritmos y lógica sin PC.</li><li><strong>S2:</strong> Secuencias y Eventos. Animación simple interactiva.</li><li><strong>S3:</strong> Condiciones. Si pasa esto -> ocurre aquello.</li><li><strong>S4:</strong> Repeticiones y Bucles. Creando retos.</li><li><strong>S5:</strong> Crear un Mini Juego. Diseño propio.</li><li><strong>S6:</strong> 🎮 Game Jam: Presentación de videojuegos finales.</li></ul></div>
+                            <div class="flex flex-col justify-between"><div><h4 class="font-black text-brand-sky mb-3 uppercase border-b-2 border-brand-sky/20 pb-1">Desarrollarás:</h4><ul class="text-sm space-y-2 text-gray-700 list-disc pl-4 mb-4"><li>Pensamiento Lógico.</li><li>Resolución de problemas.</li><li>Creatividad Digital.</li></ul></div><div class="bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#0095DA]"><div class="bg-brand-sky p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="code-2" class="w-8 h-8 text-white"></i></div><div><h5 class="font-black text-brand-sky text-sm uppercase mb-1">¡Level Up!</h5><p class="text-sm font-bold text-gray-700 leading-tight">Obtén tu rango de <span class="text-brand-dark underline">Desarrollador Junior</span> + Insignia de Código 💾</p></div></div></div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Taller 2: Diseño -->
+            <!-- Diseño -->
             <div class="sticker-card">
-                <div class="p-6 md:p-8 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-purple opacity-20 rounded-bl-full -mr-10 -mt-10"></div>
-                    <div class="flex flex-col md:flex-row justify-between items-start gap-4 relative z-10">
-                        <div class="flex-1">
-                            <span class="inline-block bg-brand-purple text-white border-2 border-brand-dark px-3 py-1 rounded-md text-sm font-bold uppercase tracking-wide mb-2 shadow-[2px_2px_0px_0px_#2D3436]">Sábados • 9:30 - 10:30 AM</span>
-                            <h2 class="font-display text-3xl font-bold text-brand-dark">Diseño y Animación Digital 🎨</h2>
-                            <p class="text-gray-600 font-bold mt-1">Personajes, Historias y Movimiento</p>
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-brand-purple/20 mix-blend-multiply"></div>
+                        <span class="absolute top-4 left-4 bg-brand-purple text-white border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Sábados</span>
+                    </div>
+                    <div class="p-6 md:w-7/12 flex flex-col justify-center bg-white">
+                        <h2 class="font-display text-3xl font-bold text-brand-dark mb-1">Diseño Digital</h2>
+                        <p class="font-bold text-gray-600 mb-6 italic">"Personajes y Animación"</p>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="info-box bg-purple-50"><p class="text-xs text-brand-purple font-bold uppercase">Inicio</p><p class="font-bold">17 Enero</p></div>
+                            <div class="info-box bg-purple-50"><p class="text-xs text-brand-purple font-bold uppercase">Horario</p><p class="font-bold">9:30 AM</p></div>
+                            <div class="info-box bg-purple-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-purple font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
                         </div>
-                        <div class="w-24 h-24 shrink-0 -rotate-2 transition-transform hover:-rotate-6">
-                            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=200&auto=format&fit=crop" alt="Diseño digital" class="w-full h-full rounded-xl photo-sticker">
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <button onclick="toggleDetails('details-tech-design')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
+                            <a href="https://wa.me/51925982984?text=Info%20Diseño%20Digital" target="_blank" class="flex-1 btn-pop bg-brand-purple text-white font-bold py-3 rounded-xl text-center hover:bg-purple-600">Inscribir Ahora <i data-lucide="message-circle" class="inline w-4 h-4 ml-1"></i></a>
                         </div>
                     </div>
-                    <button onclick="toggleDetails('details-tech-design')" class="mt-6 w-full md:w-auto bg-brand-light hover:bg-white border-2 border-brand-dark text-brand-dark font-bold py-2 px-6 rounded-lg flex items-center justify-center gap-2 transition-all hover:shadow-[3px_3px_0px_0px_#2D3436]">Ver Sílabus (6 Semanas) <i data-lucide="chevron-down" class="w-5 h-5"></i></button>
-                    <div id="details-tech-design" class="details-content mt-6 bg-brand-light rounded-xl">
-                        <div class="p-6">
-                            <div class="grid md:grid-cols-2 gap-6 mb-4">
-                                <div>
-                                    <h4 class="font-black text-brand-purple mb-2 uppercase text-sm border-b-2 border-brand-purple/30 pb-1">Plan de Sesiones</h4>
-                                    <ul class="text-sm space-y-2 text-gray-700 font-medium">
-                                        <li><strong>S1:</strong> Dibujar y Crear Personajes.</li>
-                                        <li><strong>S2:</strong> Movimiento Básico (Caminar, volar).</li>
-                                        <li><strong>S3:</strong> Escenas y Narrativa Visual.</li>
-                                        <li><strong>S4:</strong> Sonidos y Efectos Especiales.</li>
-                                        <li><strong>S5:</strong> Proyecto Animación Libre.</li>
-                                        <li><strong>S6:</strong> 🎬 Muestra Creativa.</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h4 class="font-black text-brand-purple mb-2 uppercase text-sm border-b-2 border-brand-purple/30 pb-1">Beneficios</h4>
-                                    <ul class="text-sm space-y-2 text-gray-700">
-                                        <li>Expresión Digital.</li>
-                                        <li>Narrativa Visual.</li>
-                                        <li>Confianza Tecnológica.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mt-4 bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#7D3F98]">
-                                <div class="bg-brand-purple p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="pen-tool" class="w-8 h-8 text-white"></i></div>
-                                <div><h5 class="font-black text-brand-purple text-sm uppercase mb-1">¡Creador Digital!</h5><p class="text-sm font-bold text-gray-700">Título de <span class="text-brand-dark underline">Animador Pro</span> + Insignia de Creatividad ✨</p></div>
-                            </div>
+                </div>
+                <div id="details-tech-design" class="details-content bg-purple-50">
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div><h4 class="font-black text-brand-purple mb-3 uppercase border-b-2 border-brand-purple/20 pb-1">Plan de Sesiones</h4><ul class="text-sm space-y-2 text-gray-700 list-disc pl-4"><li><strong>S1:</strong> Dibujar y Crear Personajes. Diseño de escenarios.</li><li><strong>S2:</strong> Movimiento Básico. Caminar, saltar y volar.</li><li><strong>S3:</strong> Escenas y Narrativa Visual. Historia corta.</li><li><strong>S4:</strong> Sonidos y Efectos Especiales. Música y transiciones.</li><li><strong>S5:</strong> Proyecto Animación Libre.</li><li><strong>S6:</strong> 🎬 Muestra Creativa. Presentación al grupo.</li></ul></div>
+                            <div class="flex flex-col justify-between"><div><h4 class="font-black text-brand-purple mb-3 uppercase border-b-2 border-brand-purple/20 pb-1">Beneficios</h4><ul class="text-sm space-y-2 text-gray-700 list-disc pl-4 mb-4"><li>Expresión Digital.</li><li>Narrativa Visual.</li><li>Confianza Tecnológica.</li></ul></div><div class="bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#7D3F98]"><div class="bg-brand-purple p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="pen-tool" class="w-8 h-8 text-white"></i></div><div><h5 class="font-black text-brand-purple text-sm uppercase mb-1">¡Creador Digital!</h5><p class="text-sm font-bold text-gray-700 leading-tight">Título de <span class="text-brand-dark underline">Animador Pro</span> + Insignia de Creatividad ✨</p></div></div></div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Taller 3: Robótica -->
+            <!-- Robótica -->
             <div class="sticker-card">
-                <div class="p-6 md:p-8 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-red opacity-20 rounded-bl-full -mr-10 -mt-10"></div>
-                    <div class="flex flex-col md:flex-row justify-between items-start gap-4 relative z-10">
-                        <div class="flex-1">
-                            <span class="inline-block bg-brand-red text-white border-2 border-brand-dark px-3 py-1 rounded-md text-sm font-bold uppercase tracking-wide mb-2 shadow-[2px_2px_0px_0px_#2D3436]">Sábados • 10:30 - 11:30 AM</span>
-                            <h2 class="font-display text-3xl font-bold text-brand-dark">Electrónica y Robótica ⚡</h2>
-                            <p class="text-gray-600 font-bold mt-1">Circuitos, Sensores y Mini Robots</p>
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
+                        <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-brand-red/20 mix-blend-multiply"></div>
+                        <span class="absolute top-4 left-4 bg-brand-red text-white border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Sábados</span>
+                    </div>
+                    <div class="p-6 md:w-7/12 flex flex-col justify-center bg-white">
+                        <h2 class="font-display text-3xl font-bold text-brand-dark mb-1">Electrónica y Robótica</h2>
+                        <p class="font-bold text-gray-600 mb-6 italic">"Circuitos y Robots"</p>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="info-box bg-red-50"><p class="text-xs text-brand-red font-bold uppercase">Inicio</p><p class="font-bold">17 Enero</p></div>
+                            <div class="info-box bg-red-50"><p class="text-xs text-brand-red font-bold uppercase">Horario</p><p class="font-bold">10:30 AM</p></div>
+                            <div class="info-box bg-red-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-red font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
                         </div>
-                        <div class="w-24 h-24 shrink-0 rotate-3 transition-transform hover:rotate-6">
-                            <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=200&auto=format&fit=crop" alt="Robótica niños" class="w-full h-full rounded-xl photo-sticker">
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <button onclick="toggleDetails('details-tech-robot')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
+                            <a href="https://wa.me/51925982984?text=Info%20Robotica" target="_blank" class="flex-1 btn-pop bg-brand-red text-white font-bold py-3 rounded-xl text-center hover:bg-red-600">Inscribir Ahora <i data-lucide="message-circle" class="inline w-4 h-4 ml-1"></i></a>
                         </div>
                     </div>
-                    <button onclick="toggleDetails('details-tech-robot')" class="mt-6 w-full md:w-auto bg-brand-light hover:bg-white border-2 border-brand-dark text-brand-dark font-bold py-2 px-6 rounded-lg flex items-center justify-center gap-2 transition-all hover:shadow-[3px_3px_0px_0px_#2D3436]">Ver Sílabus (6 Semanas) <i data-lucide="chevron-down" class="w-5 h-5"></i></button>
-                    <div id="details-tech-robot" class="details-content mt-6 bg-brand-light rounded-xl">
-                        <div class="p-6">
-                            <div class="grid md:grid-cols-2 gap-6 mb-4">
-                                <div>
-                                    <h4 class="font-black text-brand-red mb-2 uppercase text-sm border-b-2 border-brand-red/20 pb-1">Plan de Sesiones</h4>
-                                    <ul class="text-sm space-y-2 text-gray-700 font-medium">
-                                        <li><strong>S1:</strong> Circuitos y Primeras Luces.</li>
-                                        <li><strong>S2:</strong> Sensores (Luz y Sonido).</li>
-                                        <li><strong>S3:</strong> Movimiento (Motores).</li>
-                                        <li><strong>S4:</strong> Comunicación (Control Remoto).</li>
-                                        <li><strong>S5:</strong> Diseño de Proyecto Final.</li>
-                                        <li><strong>S6:</strong> 🤖 Demo Day.</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h4 class="font-black text-brand-red mb-2 uppercase text-sm border-b-2 border-brand-red/20 pb-1">¿Qué aprenden?</h4>
-                                    <ul class="text-sm space-y-2 text-gray-700">
-                                        <li>Pensamiento Estructurado.</li>
-                                        <li>Habilidades Prácticas (Hardware).</li>
-                                        <li>Trabajo en Equipo.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="mt-4 bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#EF4136]">
-                                <div class="bg-brand-red p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="cpu" class="w-8 h-8 text-white"></i></div>
-                                <div><h5 class="font-black text-brand-red text-sm uppercase mb-1">¡Genio Maker!</h5><p class="text-sm font-bold text-gray-700">Diploma de <span class="text-brand-dark underline">Ingeniero Robótico</span> + Insignia de Innovación 🔋</p></div>
-                            </div>
+                </div>
+                <div id="details-tech-robot" class="details-content bg-red-50">
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div><h4 class="font-black text-brand-red mb-3 uppercase border-b-2 border-brand-red/20 pb-1">Plan de Sesiones</h4><ul class="text-sm space-y-2 text-gray-700 list-disc pl-4"><li><strong>S1:</strong> Circuitos y Primeras Luces. Conociendo componentes.</li><li><strong>S2:</strong> Sensores Inteligentes. Luz, sonido y movimiento.</li><li><strong>S3:</strong> Movimiento. Motores y servos.</li><li><strong>S4:</strong> Comunicación. Control remoto simple.</li><li><strong>S5:</strong> Diseño de Proyecto Final (Alarma, mascota robot).</li><li><strong>S6:</strong> 🤖 Demo Day. Presentación de proyectos.</li></ul></div>
+                            <div class="flex flex-col justify-between"><div><h4 class="font-black text-brand-red mb-3 uppercase border-b-2 border-brand-red/20 pb-1">¿Qué aprenden?</h4><ul class="text-sm space-y-2 text-gray-700 list-disc pl-4 mb-4"><li>Pensamiento Estructurado.</li><li>Habilidades Prácticas (Hardware).</li><li>Trabajo en Equipo.</li></ul></div><div class="bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#EF4136]"><div class="bg-brand-red p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="cpu" class="w-8 h-8 text-white"></i></div><div><h5 class="font-black text-brand-red text-sm uppercase mb-1">¡Genio Maker!</h5><p class="text-sm font-bold text-gray-700 leading-tight">Diploma de <span class="text-brand-dark underline">Ingeniero Robótico</span> + Insignia de Innovación 🔋</p></div></div></div>
                         </div>
                     </div>
                 </div>
@@ -876,7 +927,7 @@
 
         <!-- ================= BALLET ================= -->
         <div id="content-ballet" class="space-y-8 animate-fade-in hidden">
-            <div class="sticker-card overflow-hidden">
+            <div class="sticker-card">
                 <div class="flex flex-col md:flex-row">
                     <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
                         <img src="https://images.unsplash.com/photo-1520609090647-19458df24107?q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
@@ -1082,4 +1133,3 @@
     </script>
 </body>
 </html>
-
