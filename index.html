@@ -73,13 +73,7 @@
             box-shadow: 8px 8px 0px 0px #2D3436;
             transition: all 0.2s ease;
             border-radius: 24px;
-            /* Quitamos overflow:hidden global para permitir etiquetas flotantes en los precios */
-        }
-        
-        /* Clase específica para recortar imágenes en tarjetas de talleres */
-        .card-image-container {
             overflow: hidden;
-            border-radius: 20px 20px 0 0; /* Ajuste interno para respetar bordes */
         }
 
         .sticker-card:hover {
@@ -137,12 +131,18 @@
     <!-- Hero Section -->
     <header class="pt-20 pb-16 px-4 text-center relative">
         <div class="bg-white border-4 border-brand-dark p-8 md:p-12 rounded-[2rem] max-w-4xl mx-auto shadow-pop-lg relative z-10 rotate-1 transform">
-            <span class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-brand-primary text-white border-4 border-brand-dark px-6 py-2 rounded-full font-bold font-display text-lg shadow-pop rotate-2">
+            <span class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-brand-red text-white border-4 border-brand-dark px-6 py-2 rounded-full font-bold font-display text-lg shadow-pop rotate-2">
                 ¡Temporada 2026!
             </span>
             
             <h1 class="font-display text-5xl md:text-7xl font-bold mb-4 leading-tight mt-4">
-                Verano <span class="text-brand-purple">Marcy</span> <span class="text-brand-sky">Kids</span>
+                Verano <br class="md:hidden">
+                <span class="inline-block transform -rotate-2">
+                    <span class="text-brand-purple">M</span><span class="text-brand-red">a</span><span class="text-brand-red">r</span><span class="text-brand-yellow">c</span><span class="text-brand-green">y</span>
+                </span> 
+                <span class="inline-block transform rotate-2 ml-2">
+                    <span class="text-brand-sky">K</span><span class="text-brand-green">i</span><span class="text-brand-purple">d</span><span class="text-brand-blue">s</span>
+                </span>
             </h1>
             <p class="font-sans text-xl md:text-2xl font-bold text-gray-600 max-w-2xl mx-auto mb-8">
                 Talleres creativos donde aprender es una gran aventura.
@@ -171,6 +171,7 @@
                 <span class="flex items-center gap-2">6-10 Años <i data-lucide="user" class="w-5 h-5"></i></span>
                 <span class="block text-xs font-sans font-normal opacity-90">5:00 - 6:00 PM</span>
             </button>
+            <!-- Botón Niñ@s Tech cambiado a morado -->
             <button onclick="switchTab('tech')" id="tab-tech" class="btn-pop inactive-tab py-4 px-6 rounded-2xl font-display font-bold text-lg md:text-xl text-center border-4 border-brand-dark bg-brand-purple text-white flex-1 min-w-[140px] flex flex-col items-center gap-1">
                 <span class="flex items-center gap-2">Niñ@s Tech <i data-lucide="bot" class="w-5 h-5"></i></span>
                 <span class="block text-xs font-sans font-normal opacity-90">Sábados</span>
@@ -937,82 +938,102 @@
     </main>
 
     <!-- Section Packs -->
-    <section class="py-16 px-4 bg-brand-yellow/20 border-t-4 border-brand-dark relative">
+    <!-- CORRECCIÓN: Fondo sólido bg-brand-yellow en lugar de transparente para mejorar lectura -->
+    <section class="py-16 px-4 bg-brand-yellow border-t-4 border-brand-dark relative">
         <div class="container mx-auto max-w-7xl">
             <div class="text-center mb-12">
                 <h2 class="font-display text-4xl md:text-5xl font-bold text-brand-dark mb-4">¡Packs de Verano! ☀️</h2>
-                <p class="text-xl text-gray-700 font-bold">Elige la mejor opción para tu peque</p>
+                <p class="text-xl text-brand-dark font-bold">Elige la mejor opción para potenciar su talento</p>
             </div>
 
-            <!-- GRID CAMBIADO A 4 COLUMNAS PARA INCLUIR EL FULL PASS -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Fila Superior: Opciones Básicas -->
+            <div class="flex flex-wrap justify-center gap-8 mb-8">
                 <!-- Pack 1 -->
-                <div class="sticker-card bg-white p-6 relative transform hover:-translate-y-2 transition-transform border-brand-sky overflow-visible">
-                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-brand-sky text-white border-2 border-brand-dark px-3 py-1 rounded-full text-sm font-bold shadow-pop">Básico</div>
-                    <h3 class="font-display text-2xl font-bold text-center mt-4 mb-2 text-brand-sky">1 Taller</h3>
-                    <p class="text-center text-xs text-gray-500 mb-4">Para probar la experiencia</p>
-                    <div class="text-center mb-4">
-                        <span class="text-3xl font-bold text-brand-dark">S/ 150</span>
-                        <span class="text-xs text-gray-500 block">/ único pago</span>
+                <div class="sticker-card bg-white p-8 relative transform hover:-translate-y-2 transition-transform w-full md:w-[350px]">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-brand-sky text-white border-2 border-brand-dark px-4 py-1 rounded-full font-bold shadow-pop">Básico</div>
+                    <h3 class="font-display text-3xl font-bold text-center mt-4 mb-2">1 Taller</h3>
+                    <p class="text-center text-gray-500 mb-6">Para probar la experiencia</p>
+                    <div class="text-center mb-6">
+                        <span class="text-4xl font-bold text-brand-dark">S/ 150</span>
+                        <span class="text-sm text-gray-500">/ único pago</span>
                     </div>
-                    <ul class="space-y-2 mb-6 text-sm">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-4 h-4"></i> Acceso a 1 taller</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-4 h-4"></i> 6 Semanas</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-4 h-4"></i> Materiales incluidos*</li>
+                    <ul class="space-y-3 mb-8 text-sm">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Acceso a 1 taller (6 semanas)</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Materiales incluidos</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Diploma digital</li>
                     </ul>
-                    <a href="https://wa.me/51925982984?text=Hola,%20me%20interesa%20inscribirme%20en%201%20Taller" target="_blank" class="w-full btn-pop bg-brand-sky text-white font-bold py-2 rounded-xl text-center block text-sm">Elegir 1 Taller</a>
+                    <a href="https://wa.me/51925982984?text=Hola,%20me%20interesa%20inscribirme%20en%201%20Taller" target="_blank" class="w-full btn-pop bg-brand-sky text-white font-bold py-3 rounded-xl text-center block">Elegir 1 Taller</a>
                 </div>
 
                 <!-- Pack 2 -->
-                 <div class="sticker-card bg-white p-6 relative transform hover:-translate-y-2 transition-transform border-brand-purple overflow-visible">
-                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-brand-purple text-white border-2 border-brand-dark px-3 py-1 rounded-full text-sm font-bold shadow-pop">Duo</div>
-                    <h3 class="font-display text-2xl font-bold text-center mt-4 mb-2 text-brand-purple">Pack 2</h3>
-                    <p class="text-center text-xs text-gray-500 mb-4">Dos talleres a elección</p>
-                    <div class="text-center mb-4">
-                        <span class="text-3xl font-bold text-brand-purple">S/ 280</span>
-                        <span class="text-xs text-gray-500 block line-through">Antes S/ 300</span>
+                 <div class="sticker-card bg-white p-8 relative transform hover:-translate-y-2 transition-transform w-full md:w-[350px]">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-brand-purple text-white border-2 border-brand-dark px-4 py-1 rounded-full font-bold shadow-pop">¡Más Popular!</div>
+                    <h3 class="font-display text-3xl font-bold text-center mt-4 mb-2 text-brand-purple">Pack Duo</h3>
+                    <p class="text-center text-gray-500 mb-6">Dos talleres a elección</p>
+                    <div class="text-center mb-6">
+                        <span class="text-4xl font-bold text-brand-purple">S/ 280</span>
+                        <span class="text-sm text-gray-500 block line-through">Antes S/ 300</span>
                     </div>
-                    <ul class="space-y-2 mb-6 text-sm">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-brand-purple w-4 h-4"></i> <strong>Ahorras S/ 20</strong></li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-4 h-4"></i> Acceso a 2 talleres</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-4 h-4"></i> Diploma Físico</li>
+                    <ul class="space-y-3 mb-8 text-sm">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-brand-purple w-5 h-5"></i> <strong>Ahorras S/ 20</strong></li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Acceso a 2 talleres</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Diploma Físico</li>
                     </ul>
-                    <a href="https://wa.me/51925982984?text=Hola,%20me%20interesa%20el%20Pack%20Duo" target="_blank" class="w-full btn-pop bg-brand-purple text-white font-bold py-2 rounded-xl text-center block text-sm">Quiero el Duo</a>
+                    <a href="https://wa.me/51925982984?text=Hola,%20me%20interesa%20el%20Pack%20Duo" target="_blank" class="w-full btn-pop bg-brand-purple text-white font-bold py-3 rounded-xl text-center block">Quiero el Duo</a>
                 </div>
 
                 <!-- Pack 3 -->
-                 <div class="sticker-card bg-white p-6 relative transform hover:-translate-y-2 transition-transform border-brand-red overflow-visible">
-                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-brand-red text-white border-2 border-brand-dark px-3 py-1 rounded-full text-sm font-bold shadow-pop">Trio</div>
-                    <h3 class="font-display text-2xl font-bold text-center mt-4 mb-2 text-brand-red">Pack 3</h3>
-                    <p class="text-center text-xs text-gray-500 mb-4">Experiencia variada</p>
-                    <div class="text-center mb-4">
-                        <span class="text-3xl font-bold text-brand-dark">S/ 400</span>
-                        <span class="text-xs text-gray-500 block line-through">Antes S/ 450</span>
+                 <div class="sticker-card bg-white p-8 relative transform hover:-translate-y-2 transition-transform w-full md:w-[350px]">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-brand-red text-white border-2 border-brand-dark px-4 py-1 rounded-full font-bold shadow-pop">Super Ahorro</div>
+                    <h3 class="font-display text-3xl font-bold text-center mt-4 mb-2 text-brand-red">Pack Trio</h3>
+                    <p class="text-center text-gray-500 mb-6">Experiencia variada</p>
+                    <div class="text-center mb-6">
+                        <span class="text-4xl font-bold text-brand-dark">S/ 400</span>
+                        <span class="text-sm text-gray-500 block line-through">Antes S/ 450</span>
                     </div>
-                    <ul class="space-y-2 mb-6 text-sm">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-brand-red w-4 h-4"></i> <strong>Ahorras S/ 50</strong></li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-4 h-4"></i> Acceso a 3 talleres</li>
-                        <li class="flex items-center gap-2"><i data-lucide="gift" class="text-brand-red w-4 h-4"></i> Polo Marcy Kids</li>
+                    <ul class="space-y-3 mb-8 text-sm">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-brand-red w-5 h-5"></i> <strong>Ahorras S/ 50</strong></li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Acceso a 3 talleres</li>
+                        <li class="flex items-center gap-2"><i data-lucide="gift" class="text-brand-red w-5 h-5"></i> Polo de Marcy Kids GRATIS</li>
                     </ul>
-                    <a href="https://wa.me/51925982984?text=Hola,%20me%20interesa%20el%20Pack%20Trio" target="_blank" class="w-full btn-pop bg-brand-red text-white font-bold py-2 rounded-xl text-center block text-sm">Quiero el Trio</a>
+                    <a href="https://wa.me/51925982984?text=Hola,%20me%20interesa%20el%20Pack%20Trio" target="_blank" class="w-full btn-pop bg-brand-red text-white font-bold py-3 rounded-xl text-center block">Quiero el Trio</a>
+                </div>
+            </div>
+
+            <!-- Fila Inferior: Packs Especiales -->
+            <div class="flex flex-wrap justify-center gap-8">
+                <!-- Pack 5 Talleres -->
+                <div class="sticker-card bg-white p-8 relative transform hover:-translate-y-2 transition-transform w-full md:w-[350px] border-brand-green">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-brand-green text-white border-2 border-brand-dark px-4 py-1 rounded-full font-bold shadow-pop w-max">⭐️ Full Week</div>
+                    <h3 class="font-display text-3xl font-bold text-center mt-4 mb-2 text-brand-green">Pack 5 Talleres</h3>
+                    <p class="text-center text-gray-500 mb-6">De Lunes a Viernes</p>
+                    <div class="text-center mb-6">
+                        <span class="text-4xl font-bold text-brand-dark">S/ 600</span>
+                        <span class="text-sm text-gray-500 block line-through">Antes S/ 750</span>
+                    </div>
+                    <ul class="space-y-3 mb-8 text-sm">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-brand-green w-5 h-5"></i> <strong>¡Ahorras S/ 150!</strong></li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Lunes a Viernes completo</li>
+                        <li class="flex items-center gap-2"><i data-lucide="gift" class="text-brand-green w-5 h-5"></i> Kit de Bienvenida GRATIS</li>
+                    </ul>
+                    <a href="https://wa.me/51925982984?text=Hola,%20me%20interesa%20el%20Pack%20Full%205%20Talleres" target="_blank" class="w-full btn-pop bg-brand-green text-white font-bold py-3 rounded-xl text-center block">Quiero Full Week</a>
                 </div>
 
-                <!-- Pack 4 (FULL WEEK) -->
-                <div class="sticker-card bg-green-50 p-6 relative transform hover:-translate-y-2 transition-transform scale-105 z-10 border-brand-green shadow-xl overflow-visible">
-                    <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-brand-green text-white border-2 border-brand-dark px-4 py-2 rounded-full font-bold shadow-pop text-sm w-max">★ FULL WEEK ★</div>
-                    <h3 class="font-display text-2xl font-bold text-center mt-6 mb-2 text-brand-green">Lunes a Viernes</h3>
-                    <p class="text-center text-xs text-gray-600 mb-4 font-bold">¡Diversión todos los días!</p>
-                    <div class="text-center mb-4">
-                        <span class="text-4xl font-bold text-brand-green">S/ 600</span>
-                        <span class="text-xs text-gray-500 block line-through">Antes S/ 750</span>
+                <!-- Pack Niñ@s Tech -->
+                <div class="sticker-card bg-white p-8 relative transform hover:-translate-y-2 transition-transform w-full md:w-[350px] border-brand-sky">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-brand-sky text-white border-2 border-brand-dark px-4 py-1 rounded-full font-bold shadow-pop w-max">🤖 Tech Pass</div>
+                    <h3 class="font-display text-3xl font-bold text-center mt-4 mb-2 text-brand-sky">Pack Niñ@s Tech</h3>
+                    <p class="text-center text-gray-500 mb-6">Todos los talleres del Sábado</p>
+                    <div class="text-center mb-6">
+                        <span class="text-4xl font-bold text-brand-dark">S/ 380</span>
+                        <span class="text-sm text-gray-500 block line-through">Antes S/ 450</span>
                     </div>
-                    <ul class="space-y-2 mb-6 text-sm">
-                        <li class="flex items-center gap-2"><i data-lucide="sparkles" class="text-brand-yellow w-4 h-4"></i> <strong>¡Ahorras S/ 150!</strong></li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-600 w-4 h-4"></i> 5 Talleres (Lun-Vie)</li>
-                        <li class="flex items-center gap-2"><i data-lucide="gift" class="text-brand-red w-4 h-4"></i> Polo + Merch Oficial</li>
-                        <li class="flex items-center gap-2"><i data-lucide="star" class="text-brand-yellow w-4 h-4"></i> Diploma de Honor</li>
+                    <ul class="space-y-3 mb-8 text-sm">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-brand-sky w-5 h-5"></i> <strong>Programación + Diseño + Robótica</strong></li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> 3 Horas de full tecnología</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Diploma "Experto Tech"</li>
                     </ul>
-                    <a href="https://wa.me/51925982984?text=Hola,%20me%20interesa%20el%20Pack%20FULL%20WEEK%20(Lunes%20a%20Viernes)" target="_blank" class="w-full btn-pop bg-brand-green text-white font-bold py-3 rounded-xl text-center block text-lg hover:bg-green-600">¡Lo Quiero Todo!</a>
+                    <a href="https://wa.me/51925982984?text=Hola,%20me%20interesa%20el%20Pack%20Ni%C3%B1os%20Tech" target="_blank" class="w-full btn-pop bg-brand-sky text-white font-bold py-3 rounded-xl text-center block">Quiero Tech Pass</a>
                 </div>
             </div>
         </div>
