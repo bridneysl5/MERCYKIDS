@@ -18,16 +18,16 @@
                     },
                     colors: {
                         brand: {
-                            purple: '#7D3F98',      
-                            red: '#EF4136',         
-                            yellow: '#FDB913',      
-                            green: '#8CC63F',       
-                            sky: '#0095DA',         
-                            blue: '#0072BC',        
+                            purple: '#7D3F98',     
+                            red: '#EF4136',        
+                            yellow: '#FDB913',     
+                            green: '#8CC63F',      
+                            sky: '#0095DA',        
+                            blue: '#0072BC',       
                             dark: '#2D3436',
                             light: '#F1F2F6',
-                            ballet: '#FF9FF3',      
-                            hotpink: '#ef5777'      
+                            ballet: '#FF9FF3',     
+                            hotpink: '#ef5777'     
                         }
                     },
                     boxShadow: {
@@ -100,14 +100,9 @@
             padding: 10px;
             text-align: center;
         }
-        
-        /* Animación suave para el scroll */
-        html {
-            scroll-behavior: smooth;
-        }
     </style>
 </head>
-<body class="text-brand-dark overflow-x-hidden relative">
+<body class="text-brand-dark overflow-x-hidden">
 
     <!-- Navegación -->
     <nav class="sticky top-4 z-50 px-4">
@@ -166,6 +161,7 @@
                 <span class="flex items-center gap-2">6-10 Años <i data-lucide="user" class="w-5 h-5"></i></span>
                 <span class="block text-xs font-sans font-normal opacity-90">5:00 - 6:00 PM</span>
             </button>
+            <!-- Botón Niñ@s Tech cambiado a morado -->
             <button onclick="switchTab('tech')" id="tab-tech" class="btn-pop inactive-tab py-4 px-6 rounded-2xl font-display font-bold text-lg md:text-xl text-center border-4 border-brand-dark bg-brand-purple text-white flex-1 min-w-[140px] flex flex-col items-center gap-1">
                 <span class="flex items-center gap-2">Niñ@s Tech <i data-lucide="bot" class="w-5 h-5"></i></span>
                 <span class="block text-xs font-sans font-normal opacity-90">Sábados</span>
@@ -474,6 +470,7 @@
 
         <!-- ================= 4-5 AÑOS ================= -->
         <div id="content-kids" class="space-y-8 animate-fade-in hidden">
+            <!-- (Repetimos estructura para 4-5 años con textos completos) -->
             <!-- Lunes -->
             <div class="sticker-card">
                 <div class="flex flex-col md:flex-row">
@@ -672,8 +669,9 @@
                         <span class="absolute top-4 left-4 bg-brand-purple text-white border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Lunes</span>
                     </div>
                     <div class="p-6 md:w-7/12 flex flex-col justify-center bg-white">
-                        <h2 class="font-display text-3xl font-bold text-brand-purple mb-1">Ajedrez: Mentes Maestras</h2>
-                        <p class="font-bold text-gray-600 mb-6 italic">"Estrategia Avanzada"</p>
+                        <h2 class="font-display text-3xl font-bold text-brand-purple mb-1">Ajedrez: "Mentes Maestras" ♚</h2>
+                        <p class="font-bold text-gray-600 mb-2 italic">"Aprende a pensar, jugar y ganar divirtiéndote"</p>
+                        <p class="text-sm text-gray-500 mb-4">Estrategia avanzada, resiliencia y toma de decisiones bajo presión con dinámicas lúdicas.</p>
                         <div class="grid grid-cols-2 gap-3 mb-6">
                             <div class="info-box bg-purple-50"><p class="text-xs text-brand-purple font-bold uppercase">Inicio</p><p class="font-bold">12 Enero</p></div>
                             <div class="info-box bg-purple-50"><p class="text-xs text-brand-purple font-bold uppercase">Horario</p><p class="font-bold">5:00 PM</p></div>
@@ -688,8 +686,41 @@
                 <div id="details-610-mon" class="details-content bg-purple-50">
                     <div class="p-6">
                         <div class="grid md:grid-cols-2 gap-6">
-                            <div><h4 class="font-black text-brand-purple mb-3 uppercase border-b-2 border-brand-purple/20 pb-1">Programa Académico</h4><ul class="text-sm space-y-2 text-gray-700 list-disc pl-4"><li><strong>Sem 1:</strong> Fundamentos Logísticos: Valor relativo de piezas.</li><li><strong>Sem 2:</strong> El Arte de la Apertura: Italiana y Siciliana.</li><li><strong>Sem 3:</strong> Táctica y Munición: Dobles y Clavadas.</li><li><strong>Sem 4:</strong> Estrategia Medio Juego: Planificación de ataque.</li><li><strong>Sem 5:</strong> Finales de Infarto: Mate con Torre y Rey.</li><li><strong>Sem 6:</strong> 🏆 Torneo "Gambito de Oro".</li></ul></div>
-                            <div class="flex flex-col justify-between"><div><h4 class="font-black text-brand-purple mb-3 uppercase border-b-2 border-brand-purple/20 pb-1">Actividades Pro</h4><ul class="text-sm space-y-2 text-gray-700 list-disc pl-4 mb-4"><li>Ajedrez a Ciegas (Visualización).</li><li>Análisis de Partidas Históricas (Fischer/Carlsen).</li><li>Duelo con Relojes (Manejo de tiempo).</li></ul></div><div class="bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#7D3F98]"><div class="bg-brand-purple p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="crown" class="w-8 h-8 text-white"></i></div><div><h5 class="font-black text-brand-purple text-sm uppercase mb-1">¡Gran Maestro Junior!</h5><p class="text-sm font-bold text-gray-700 leading-tight">Gana tu <span class="text-brand-dark underline">Medalla de Estrategia</span> y Trofeo del Torneo 🏆</p></div></div></div>
+                            <div>
+                                <h4 class="font-black text-brand-purple mb-3 uppercase border-b-2 border-brand-purple/20 pb-1">Programa (6 Semanas)</h4>
+                                <ul class="text-sm space-y-2 text-gray-700 list-disc pl-4">
+                                    <li><strong>Sem 1:</strong> El Reino y sus Piezas. Movimientos especiales y valor.</li>
+                                    <li><strong>Sem 2:</strong> ¡A Controlar el Centro! Aperturas y el Enroque.</li>
+                                    <li><strong>Sem 3:</strong> Trucos de Ataque. Ataque Doble y La Clavada.</li>
+                                    <li><strong>Sem 4:</strong> Defensa y Seguridad. Escapar del Jaque.</li>
+                                    <li><strong>Sem 5:</strong> El Camino a la Victoria. Mate con Dos Torres.</li>
+                                    <li><strong>Sem 6:</strong> 🏆 Torneo "Gambito de Oro". Fiesta final.</li>
+                                </ul>
+                                <p class="mt-4 text-xs font-bold italic text-brand-dark">"En el ajedrez, como en la vida, el mejor movimiento es el que se hace con un propósito."</p>
+                            </div>
+                            <div class="flex flex-col justify-between">
+                                <div>
+                                    <h4 class="font-black text-brand-purple mb-3 uppercase border-b-2 border-brand-purple/20 pb-1">Actividades Pro & Materiales</h4>
+                                    <ul class="text-sm space-y-1 text-gray-700 mb-4">
+                                        <li><i data-lucide="brain" class="w-4 h-4 inline mr-1 text-brand-purple"></i> <strong>Gimnasia Cerebral:</strong> Memoria visual.</li>
+                                        <li><i data-lucide="search" class="w-4 h-4 inline mr-1 text-brand-purple"></i> <strong>Detectives:</strong> Trabajo en equipo.</li>
+                                        <li><i data-lucide="zap" class="w-4 h-4 inline mr-1 text-brand-purple"></i> <strong>Duelo de Ingenio:</strong> Sin presión.</li>
+                                    </ul>
+                                    <h5 class="font-bold text-xs uppercase mb-1">Materiales Necesarios:</h5>
+                                    <ul class="text-sm space-y-1 text-gray-700 list-disc pl-4">
+                                        <li>Botella con agua.</li>
+                                        <li>Un plátano de seda 🍌.</li>
+                                        <li>Un tablero de ajedrez básico.</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#7D3F98] mt-4">
+                                    <div class="bg-brand-purple p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="crown" class="w-8 h-8 text-white"></i></div>
+                                    <div>
+                                        <h5 class="font-black text-brand-purple text-sm uppercase mb-1">¡Insignia Final!</h5>
+                                        <p class="text-sm font-bold text-gray-700 leading-tight">Título de <span class="text-brand-dark underline">Gran Maestro Junior</span> + Medalla Estrategia y Trofeo 🏆</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -991,12 +1022,13 @@
 
     </main>
 
-    <!-- Section Packs (Añadido ID para el scroll) -->
-    <section id="ver-packs" class="py-16 px-4 bg-brand-yellow border-t-4 border-brand-dark relative scroll-mt-24">
+    <!-- Section Packs -->
+    <!-- CORRECCIÓN: Fondo sólido bg-brand-yellow en lugar de transparente para mejorar lectura -->
+    <section class="py-16 px-4 bg-brand-yellow border-t-4 border-brand-dark relative">
         <div class="container mx-auto max-w-7xl">
             <div class="text-center mb-12">
                 <h2 class="font-display text-4xl md:text-5xl font-bold text-brand-dark mb-4">¡Packs de Verano! ☀️</h2>
-                <p class="text-xl text-brand-dark font-bold">Elige la mejor opción para potenciar su talento</p>
+                <p class="text-xl text-brand-dark font-bold">Aprovecha nuestras ofertas exclusivas por tiempo limitado</p>
             </div>
 
             <!-- Fila Superior: Opciones Básicas -->
@@ -1012,81 +1044,94 @@
                     </div>
                     <ul class="space-y-3 mb-8 text-sm">
                         <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Acceso a 1 taller (6 semanas)</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Materiales incluidos</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Diploma digital</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Materiales (excepto Mini Chef)</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Diploma Físico</li>
                     </ul>
                     <a href="https://wa.me/51925982984?text=Hola,%20me%20interesa%20inscribirme%20en%201%20Taller" target="_blank" class="w-full btn-pop bg-brand-sky text-white font-bold py-3 rounded-xl text-center block">Elegir 1 Taller</a>
                 </div>
 
-                <!-- Pack 2 -->
-                 <div class="sticker-card bg-white p-8 relative transform hover:-translate-y-2 transition-transform w-full md:w-[350px]">
+                <!-- Pack 2 - OFERTA -->
+                 <div class="sticker-card bg-white p-8 relative transform hover:-translate-y-2 transition-transform w-full md:w-[350px] border-brand-purple">
                     <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-brand-purple text-white border-2 border-brand-dark px-4 py-1 rounded-full font-bold shadow-pop">¡Más Popular!</div>
+                    <!-- Badge de Oferta -->
+                    <div class="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded rotate-12 animate-pulse">¡AHORRA S/60!</div>
+                    
                     <h3 class="font-display text-3xl font-bold text-center mt-4 mb-2 text-brand-purple">Pack Duo</h3>
                     <p class="text-center text-gray-500 mb-6">Dos talleres a elección</p>
                     <div class="text-center mb-6">
-                        <span class="text-4xl font-bold text-brand-purple">S/ 280</span>
-                        <span class="text-sm text-gray-500 block line-through">Antes S/ 300</span>
+                        <div class="text-gray-400 text-lg line-through font-bold">Antes S/ 300</div>
+                        <span class="text-5xl font-black text-brand-purple">S/ 240</span>
+                        <span class="text-sm font-bold text-red-500 block mt-1">¡OFERTA ESPECIAL!</span>
                     </div>
                     <ul class="space-y-3 mb-8 text-sm">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-brand-purple w-5 h-5"></i> <strong>Ahorras S/ 20</strong></li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Acceso a 2 talleres</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-brand-purple w-5 h-5"></i> <strong>2 Talleres Completos</strong></li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Materiales (excepto Mini Chef)</li>
                         <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Diploma Físico</li>
                     </ul>
-                    <a href="https://wa.me/51925982984?text=Hola,%20me%20interesa%20el%20Pack%20Duo" target="_blank" class="w-full btn-pop bg-brand-purple text-white font-bold py-3 rounded-xl text-center block">Quiero el Duo</a>
+                    <a href="https://wa.me/51925982984?text=Hola,%20quiero%20la%20OFERTA%20del%20Pack%20Duo%20a%20S/240" target="_blank" class="w-full btn-pop bg-brand-purple text-white font-bold py-3 rounded-xl text-center block hover:bg-purple-700">Quiero la Oferta Duo</a>
                 </div>
 
-                <!-- Pack 3 -->
+                <!-- Pack 3 - OFERTA -->
                  <div class="sticker-card bg-white p-8 relative transform hover:-translate-y-2 transition-transform w-full md:w-[350px]">
-                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-brand-red text-white border-2 border-brand-dark px-4 py-1 rounded-full font-bold shadow-pop">Super Ahorro</div>
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-brand-red text-white border-2 border-brand-dark px-4 py-1 rounded-full font-bold shadow-pop">Super Descuento</div>
+                    <!-- Badge de Oferta -->
+                    <div class="absolute top-4 right-4 bg-yellow-400 text-brand-dark text-xs font-bold px-2 py-1 rounded -rotate-12 border border-brand-dark">¡AHORRA S/150!</div>
+
                     <h3 class="font-display text-3xl font-bold text-center mt-4 mb-2 text-brand-red">Pack Trio</h3>
-                    <p class="text-center text-gray-500 mb-6">Experiencia variada</p>
+                    <p class="text-center text-gray-500 mb-6">Tres talleres a elección</p>
                     <div class="text-center mb-6">
-                        <span class="text-4xl font-bold text-brand-dark">S/ 400</span>
-                        <span class="text-sm text-gray-500 block line-through">Antes S/ 450</span>
+                        <div class="text-gray-400 text-lg line-through font-bold">Antes S/ 450</div>
+                        <span class="text-5xl font-black text-brand-red">S/ 300</span>
+                        <span class="text-sm font-bold text-red-500 block mt-1">¡SÚPER PRECIO!</span>
                     </div>
                     <ul class="space-y-3 mb-8 text-sm">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-brand-red w-5 h-5"></i> <strong>Ahorras S/ 50</strong></li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Acceso a 3 talleres</li>
-                        <li class="flex items-center gap-2"><i data-lucide="gift" class="text-brand-red w-5 h-5"></i> Polo de Marcy Kids GRATIS</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-brand-red w-5 h-5"></i> <strong>3 Talleres Completos</strong></li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Materiales (excepto Mini Chef)</li>
+                        <li class="flex items-center gap-2"><i data-lucide="gift" class="text-brand-red w-5 h-5"></i> <strong>Kit de Bienvenida GRATIS</strong></li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Diploma Físico</li>
                     </ul>
-                    <a href="https://wa.me/51925982984?text=Hola,%20me%20interesa%20el%20Pack%20Trio" target="_blank" class="w-full btn-pop bg-brand-red text-white font-bold py-3 rounded-xl text-center block">Quiero el Trio</a>
+                    <a href="https://wa.me/51925982984?text=Hola,%20quiero%20la%20S%C3%9APER%20OFERTA%20del%20Pack%20Trio%20a%20S/300" target="_blank" class="w-full btn-pop bg-brand-red text-white font-bold py-3 rounded-xl text-center block hover:bg-red-700">Quiero el Trío a S/300</a>
                 </div>
             </div>
 
             <!-- Fila Inferior: Packs Especiales -->
             <div class="flex flex-wrap justify-center gap-8">
-                <!-- Pack 5 Talleres -->
+                <!-- Pack 5 Talleres - MEGA OFERTA -->
                 <div class="sticker-card bg-white p-8 relative transform hover:-translate-y-2 transition-transform w-full md:w-[350px] border-brand-green">
                     <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-brand-green text-white border-2 border-brand-dark px-4 py-1 rounded-full font-bold shadow-pop w-max">⭐️ Full Week</div>
                     <h3 class="font-display text-3xl font-bold text-center mt-4 mb-2 text-brand-green">Pack 5 Talleres</h3>
                     <p class="text-center text-gray-500 mb-6">De Lunes a Viernes</p>
                     <div class="text-center mb-6">
-                        <span class="text-4xl font-bold text-brand-dark">S/ 600</span>
-                        <span class="text-sm text-gray-500 block line-through">Antes S/ 750</span>
+                        <div class="text-gray-400 text-lg line-through font-bold">Antes S/ 750</div>
+                        <span class="text-5xl font-black text-brand-dark">S/ 500</span>
+                        <span class="text-sm font-bold text-red-500 block mt-1">¡MEJOR PRECIO! 🔥</span>
                     </div>
                     <ul class="space-y-3 mb-8 text-sm">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-brand-green w-5 h-5"></i> <strong>¡Ahorras S/ 150!</strong></li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Lunes a Viernes completo</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-brand-green w-5 h-5"></i> <strong>¡Ahorras S/ 250!</strong></li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Materiales (excepto Mini Chef)</li>
                         <li class="flex items-center gap-2"><i data-lucide="gift" class="text-brand-green w-5 h-5"></i> Kit de Bienvenida GRATIS</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Diploma Físico</li>
                     </ul>
-                    <a href="https://wa.me/51925982984?text=Hola,%20me%20interesa%20el%20Pack%20Full%205%20Talleres" target="_blank" class="w-full btn-pop bg-brand-green text-white font-bold py-3 rounded-xl text-center block">Quiero Full Week</a>
+                    <a href="https://wa.me/51925982984?text=Hola,%20quiero%20la%20MEGA%20OFERTA%20del%20Pack%205%20Talleres%20a%20S/500" target="_blank" class="w-full btn-pop bg-brand-green text-white font-bold py-3 rounded-xl text-center block hover:bg-green-700">Aprovechar Oferta S/500</a>
                 </div>
 
-                <!-- Pack Niñ@s Tech -->
-                <div class="sticker-card bg-white p-8 relative transform hover:-translate-y-2 transition-transform w-full md:w-[350px] border-brand-sky">
-                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-brand-sky text-white border-2 border-brand-dark px-4 py-1 rounded-full font-bold shadow-pop w-max">🤖 Tech Pass</div>
-                    <h3 class="font-display text-3xl font-bold text-center mt-4 mb-2 text-brand-sky">Pack Niñ@s Tech</h3>
+                <!-- Pack Niñ@s Tech - OFERTA -->
+                <div class="sticker-card bg-white p-8 relative transform hover:-translate-y-2 transition-transform w-full md:w-[350px] border-brand-purple">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-brand-purple text-white border-2 border-brand-dark px-4 py-1 rounded-full font-bold shadow-pop w-max">🤖 Tech Pass</div>
+                    <h3 class="font-display text-3xl font-bold text-center mt-4 mb-2 text-brand-purple">Pack Niñ@s Tech</h3>
                     <p class="text-center text-gray-500 mb-6">Todos los talleres del Sábado</p>
                     <div class="text-center mb-6">
-                        <span class="text-4xl font-bold text-brand-dark">S/ 380</span>
-                        <span class="text-sm text-gray-500 block line-through">Antes S/ 450</span>
+                        <div class="text-gray-400 text-lg line-through font-bold">Antes S/ 450</div>
+                        <span class="text-5xl font-black text-brand-dark">S/ 350</span>
+                        <span class="text-sm font-bold text-red-500 block mt-1">¡DESCUENTO TECH!</span>
                     </div>
                     <ul class="space-y-3 mb-8 text-sm">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-brand-sky w-5 h-5"></i> <strong>Programación + Diseño + Robótica</strong></li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-brand-purple w-5 h-5"></i> <strong>Prog + Diseño + Robótica</strong></li>
                         <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> 3 Horas de full tecnología</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Diploma "Experto Tech"</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Ahorras S/ 100</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Diploma Físico "Experto Tech"</li>
                     </ul>
-                    <a href="https://wa.me/51925982984?text=Hola,%20me%20interesa%20el%20Pack%20Ni%C3%B1os%20Tech" target="_blank" class="w-full btn-pop bg-brand-sky text-white font-bold py-3 rounded-xl text-center block">Quiero Tech Pass</a>
+                    <a href="https://wa.me/51925982984?text=Hola,%20quiero%20la%20OFERTA%20del%20Pack%20Ni%C3%B1os%20Tech%20a%20S/350" target="_blank" class="w-full btn-pop bg-brand-purple text-white font-bold py-3 rounded-xl text-center block hover:bg-purple-700">Quiero Pack Tech S/350</a>
                 </div>
             </div>
         </div>
@@ -1104,37 +1149,6 @@
         </div>
     </footer>
 
-    <!-- ================= AVATAR FLOTANTE ================= -->
-    <div id="floating-avatar" onclick="scrollToPacks()" class="fixed bottom-6 right-6 z-50 cursor-pointer group flex flex-col items-end">
-        
-        <!-- Globo de texto (Animación Bounce para llamar la atención) -->
-        <div class="animate-bounce mb-2 mr-2 origin-bottom-right">
-            <div class="bg-white border-4 border-brand-dark px-4 py-3 rounded-2xl shadow-pop relative max-w-[180px]">
-                <p class="font-display font-bold text-brand-dark text-sm leading-tight text-center">
-                    ¡Mira los Packs que tenemos para ti! 👇
-                </p>
-                <!-- Triangulito del globo -->
-                <div class="absolute -bottom-3 right-6 w-5 h-5 bg-white border-r-4 border-b-4 border-brand-dark transform rotate-45"></div>
-            </div>
-        </div>
-
-        <!-- Avatar (Imagen circular) -->
-        <div class="relative w-20 h-20 transition-transform transform group-hover:scale-110 duration-200">
-            <!-- Círculo decorativo detrás -->
-            <div class="absolute inset-0 bg-brand-purple rounded-full border-4 border-brand-dark shadow-pop"></div>
-            
-            <!-- Imagen del Avatar (Puedes cambiar la URL por una foto tuya o de la mascota de la marca) -->
-            <img src="https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg" 
-                 alt="Asistente Marcy" 
-                 class="absolute inset-0 w-full h-full object-cover rounded-full border-4 border-brand-dark overflow-hidden">
-                 
-            <!-- Notificación roja (puntito) -->
-            <div class="absolute top-0 right-0 w-6 h-6 bg-brand-red border-2 border-brand-dark rounded-full flex items-center justify-center animate-pulse">
-                <span class="text-white font-bold text-xs">1</span>
-            </div>
-        </div>
-    </div>
-
     <script>
         lucide.createIcons();
 
@@ -1149,18 +1163,6 @@
                     btn.classList.add('active-tab');
                     btn.classList.remove('inactive-tab', 'border-4', 'border-brand-dark');
                     content.classList.remove('hidden');
-                    
-                    // Lógica para bajar automáticamente en móvil
-                    if (window.innerWidth < 768) {
-                        setTimeout(() => {
-                            // Calcula la posición con un margen para que se vea el header si es sticky
-                            // Aproximadamente 120px para la navegación
-                            const yOffset = -120; 
-                            const y = content.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                            
-                            window.scrollTo({top: y, behavior: 'smooth'});
-                        }, 50);
-                    }
                 } else {
                     btn.classList.remove('active-tab');
                     btn.classList.add('inactive-tab', 'border-4', 'border-brand-dark');
@@ -1173,28 +1175,6 @@
             const element = document.getElementById(id);
             if (element) {
                 element.classList.toggle('details-open');
-            }
-        }
-
-        // Función para bajar suavemente a los packs
-        function scrollToPacks() {
-            const section = document.getElementById('ver-packs');
-            const avatar = document.getElementById('floating-avatar');
-            
-            if (section) {
-                section.scrollIntoView({ behavior: 'smooth' });
-            }
-            
-            if (avatar) {
-                // Efecto de desvanecimiento y movimiento hacia abajo
-                avatar.style.transition = 'all 0.5s ease';
-                avatar.style.opacity = '0';
-                avatar.style.transform = 'translateY(20px)';
-                
-                // Desaparecer completamente después de la animación
-                setTimeout(() => {
-                    avatar.style.display = 'none';
-                }, 500);
             }
         }
     </script>
