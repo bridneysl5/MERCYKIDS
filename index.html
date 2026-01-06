@@ -18,22 +18,36 @@
                     },
                     colors: {
                         brand: {
-                            purple: '#7D3F98',     
+                            purple: '#7D3F98',      
                             red: '#EF4136',        
-                            yellow: '#FDB913',     
-                            green: '#8CC63F',      
-                            sky: '#0095DA',        
-                            blue: '#0072BC',       
+                            yellow: '#FDB913',      
+                            green: '#8CC63F',        
+                            sky: '#0095DA',          
+                            blue: '#0072BC',        
                             dark: '#2D3436',
                             light: '#F1F2F6',
-                            ballet: '#FF9FF3',     
-                            hotpink: '#ef5777'     
+                            ballet: '#FF9FF3',      
+                            hotpink: '#ef5777'      
                         }
                     },
                     boxShadow: {
                         'pop': '4px 4px 0px 0px #2D3436', 
                         'pop-hover': '2px 2px 0px 0px #2D3436',
                         'pop-lg': '8px 8px 0px 0px #2D3436',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
                     }
                 }
             }
@@ -45,6 +59,7 @@
             background-image: radial-gradient(#ffffff 15%, transparent 16%), radial-gradient(#ffffff 15%, transparent 16%);
             background-size: 60px 60px;
             background-position: 0 0, 30px 30px;
+            scroll-behavior: smooth;
         }
         
         .details-content {
@@ -66,8 +81,14 @@
             box-shadow: 8px 8px 0px 0px #2D3436;
             transition: all 0.2s ease;
             border-radius: 24px;
-            overflow: hidden;
+            overflow: hidden; /* Mantiene las imágenes dentro de los bordes redondeados */
         }
+        
+        /* NUEVO: Clase para las tarjetas de precio para que las etiquetas no se corten */
+        .sticker-card-visible {
+            overflow: visible !important;
+        }
+
         .sticker-card:hover {
             transform: translate(-2px, -2px);
             box-shadow: 10px 10px 0px 0px #2D3436;
@@ -100,6 +121,16 @@
             padding: 10px;
             text-align: center;
         }
+
+        /* Estilos para el Avatar WOW */
+        #wow-avatar {
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s ease;
+        }
+        .avatar-hide {
+            transform: scale(0) rotate(360deg) !important;
+            opacity: 0;
+            pointer-events: none;
+        }
     </style>
 </head>
 <body class="text-brand-dark overflow-x-hidden">
@@ -127,7 +158,13 @@
                 ¡Temporada 2026!
             </span>
             <h1 class="font-display text-5xl md:text-7xl font-bold mb-4 leading-tight mt-4">
-                Verano <span class="text-brand-purple">Marcy</span> <span class="text-brand-sky">Kids</span>
+                Verano <br class="md:hidden">
+                <span class="inline-block transform -rotate-2">
+                    <span class="text-brand-purple">M</span><span class="text-brand-red">a</span><span class="text-brand-red">r</span><span class="text-brand-yellow">c</span><span class="text-brand-green">y</span>
+                </span> 
+                <span class="inline-block transform rotate-2 ml-2">
+                    <span class="text-brand-sky">K</span><span class="text-brand-green">i</span><span class="text-brand-purple">d</span><span class="text-brand-blue">s</span>
+                </span>
             </h1>
             <p class="font-sans text-xl md:text-2xl font-bold text-gray-600 max-w-2xl mx-auto mb-8">
                 Talleres creativos donde aprender es una gran aventura.
@@ -166,7 +203,8 @@
         </div>
     </div>
 
-    <main class="container mx-auto px-4 pb-20 max-w-5xl">
+    <!-- Se añade ID 'main-content' para el scroll automático -->
+    <main id="main-content" class="container mx-auto px-4 pb-20 max-w-5xl">
         
         <!-- ================= 2-3 AÑOS ================= -->
         <div id="content-toddlers" class="space-y-8 animate-fade-in block">
@@ -174,7 +212,7 @@
             <div class="sticker-card">
                 <div class="flex flex-col md:flex-row">
                     <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
-                        <img src="https://images.unsplash.com/photo-1545389336-cf090694435e?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <img src="img/baile moderno.jpg" class="absolute inset-0 w-full h-full object-cover">
                         <div class="absolute inset-0 bg-brand-red/20 mix-blend-multiply"></div>
                         <span class="absolute top-4 left-4 bg-brand-red text-white border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Lunes</span>
                     </div>
@@ -184,7 +222,6 @@
                         <div class="grid grid-cols-2 gap-3 mb-6">
                             <div class="info-box bg-red-50"><p class="text-xs text-brand-red font-bold uppercase">Inicio</p><p class="font-bold">12 Enero</p></div>
                             <div class="info-box bg-red-50"><p class="text-xs text-brand-red font-bold uppercase">Horario</p><p class="font-bold">3:00 PM</p></div>
-                            <div class="info-box bg-red-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-red font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
                         </div>
                         <div class="flex flex-col sm:flex-row gap-3">
                             <button onclick="toggleDetails('details-23-mon')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
@@ -232,7 +269,7 @@
             <div class="sticker-card">
                 <div class="flex flex-col md:flex-row">
                     <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
-                        <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <img src="img/arte.jpg" class="absolute inset-0 w-full h-full object-cover">
                         <div class="absolute inset-0 bg-brand-green/20 mix-blend-multiply"></div>
                         <span class="absolute top-4 left-4 bg-brand-green text-white border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Martes</span>
                     </div>
@@ -242,7 +279,6 @@
                         <div class="grid grid-cols-2 gap-3 mb-6">
                             <div class="info-box bg-green-50"><p class="text-xs text-brand-green font-bold uppercase">Inicio</p><p class="font-bold">13 Enero</p></div>
                             <div class="info-box bg-green-50"><p class="text-xs text-brand-green font-bold uppercase">Horario</p><p class="font-bold">3:00 PM</p></div>
-                            <div class="info-box bg-green-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-green font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
                         </div>
                         <div class="flex flex-col sm:flex-row gap-3">
                             <button onclick="toggleDetails('details-23-tue')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
@@ -290,7 +326,7 @@
             <div class="sticker-card">
                 <div class="flex flex-col md:flex-row">
                     <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
-                        <img src="https://images.unsplash.com/photo-1580541832626-2a7131ee809f?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <img src="img/ajedrez.jpg" class="absolute inset-0 w-full h-full object-cover">
                         <div class="absolute inset-0 bg-brand-purple/20 mix-blend-multiply"></div>
                         <span class="absolute top-4 left-4 bg-brand-purple text-white border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Miércoles</span>
                     </div>
@@ -300,7 +336,6 @@
                         <div class="grid grid-cols-2 gap-3 mb-6">
                             <div class="info-box bg-purple-50"><p class="text-xs text-brand-purple font-bold uppercase">Inicio</p><p class="font-bold">14 Enero</p></div>
                             <div class="info-box bg-purple-50"><p class="text-xs text-brand-purple font-bold uppercase">Horario</p><p class="font-bold">3:00 PM</p></div>
-                            <div class="info-box bg-purple-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-purple font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
                         </div>
                         <div class="flex flex-col sm:flex-row gap-3">
                             <button onclick="toggleDetails('details-23-wed')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
@@ -348,7 +383,7 @@
             <div class="sticker-card">
                 <div class="flex flex-col md:flex-row">
                     <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
-                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <img src="img/ciencia.webp" class="absolute inset-0 w-full h-full object-cover">
                         <div class="absolute inset-0 bg-brand-sky/20 mix-blend-multiply"></div>
                         <span class="absolute top-4 left-4 bg-brand-sky text-white border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Jueves</span>
                     </div>
@@ -358,11 +393,10 @@
                         <div class="grid grid-cols-2 gap-3 mb-6">
                             <div class="info-box bg-sky-50"><p class="text-xs text-brand-sky font-bold uppercase">Inicio</p><p class="font-bold">15 Enero</p></div>
                             <div class="info-box bg-sky-50"><p class="text-xs text-brand-sky font-bold uppercase">Horario</p><p class="font-bold">3:00 PM</p></div>
-                            <div class="info-box bg-sky-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-sky font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
                         </div>
                         <div class="flex flex-col sm:flex-row gap-3">
                             <button onclick="toggleDetails('details-23-thu')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
-                            <a href="https://wa.me/51925982984?text=Info%20Ciencia%20Toddlers" target="_blank" class="flex-1 btn-pop bg-brand-sky text-white font-bold py-3 rounded-xl text-center hover:bg-sky-600">Inscribir Ahora</a>
+                            <a href="https://wa.me/51925982984?text=Hola,%20quiero%20inscribir%20a%20mi%20peque%20en%20Jugando%20con%20Ciencia%20(2-3%20a%C3%B1os)" target="_blank" class="flex-1 btn-pop bg-brand-sky text-white font-bold py-3 rounded-xl text-center hover:bg-sky-600">Inscribir Ahora <i data-lucide="message-circle" class="inline w-4 h-4 ml-1"></i></a>
                         </div>
                     </div>
                 </div>
@@ -406,7 +440,7 @@
             <div class="sticker-card">
                 <div class="flex flex-col md:flex-row">
                     <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
-                        <img src="https://images.unsplash.com/photo-1606822365365-17937397b275?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <img src="img/chef.webp" class="absolute inset-0 w-full h-full object-cover">
                         <div class="absolute inset-0 bg-brand-yellow/20 mix-blend-multiply"></div>
                         <span class="absolute top-4 left-4 bg-brand-yellow text-brand-dark border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Viernes</span>
                     </div>
@@ -416,11 +450,10 @@
                         <div class="grid grid-cols-2 gap-3 mb-6">
                             <div class="info-box bg-yellow-50"><p class="text-xs text-brand-yellow font-bold uppercase">Inicio</p><p class="font-bold">16 Enero</p></div>
                             <div class="info-box bg-yellow-50"><p class="text-xs text-brand-yellow font-bold uppercase">Horario</p><p class="font-bold">3:00 PM</p></div>
-                            <div class="info-box bg-yellow-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-yellow font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
                         </div>
                         <div class="flex flex-col sm:flex-row gap-3">
                             <button onclick="toggleDetails('details-23-fri')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
-                            <a href="https://wa.me/51925982984?text=Hola,%20quiero%20inscribir%20a%20mi%20hijo/a%20en%20Mini%20Chefs%20(2-3%20a%C3%B1os)" target="_blank" class="flex-1 btn-pop bg-brand-yellow text-brand-dark font-bold py-3 rounded-xl text-center hover:bg-yellow-400">Inscribir Ahora <i data-lucide="message-circle" class="inline w-4 h-4 ml-1"></i></a>
+                            <a href="https://wa.me/51925982984?text=Hola,%20quiero%20inscribir%20a%20mi%20peque%20en%20Mini%20Chefs%20(2-3%20a%C3%B1os)" target="_blank" class="flex-1 btn-pop bg-brand-yellow text-brand-dark font-bold py-3 rounded-xl text-center hover:bg-yellow-400">Inscribir Ahora <i data-lucide="message-circle" class="inline w-4 h-4 ml-1"></i></a>
                         </div>
                     </div>
                 </div>
@@ -463,12 +496,11 @@
 
         <!-- ================= 4-5 AÑOS ================= -->
         <div id="content-kids" class="space-y-8 animate-fade-in hidden">
-            <!-- (Repetimos estructura para 4-5 años con textos completos) -->
             <!-- Lunes -->
             <div class="sticker-card">
                 <div class="flex flex-col md:flex-row">
                     <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
-                        <img src="https://images.unsplash.com/photo-1545389336-cf090694435e?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <img src="img/baile moderno.jpg" class="absolute inset-0 w-full h-full object-cover">
                         <div class="absolute inset-0 bg-brand-red/20 mix-blend-multiply"></div>
                         <span class="absolute top-4 left-4 bg-brand-red text-white border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Lunes</span>
                     </div>
@@ -478,7 +510,6 @@
                         <div class="grid grid-cols-2 gap-3 mb-6">
                             <div class="info-box bg-red-50"><p class="text-xs text-brand-red font-bold uppercase">Inicio</p><p class="font-bold">12 Enero</p></div>
                             <div class="info-box bg-red-50"><p class="text-xs text-brand-red font-bold uppercase">Horario</p><p class="font-bold">4:00 PM</p></div>
-                            <div class="info-box bg-red-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-red font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
                         </div>
                         <div class="flex flex-col sm:flex-row gap-3">
                             <button onclick="toggleDetails('details-45-mon')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
@@ -500,7 +531,7 @@
             <div class="sticker-card">
                 <div class="flex flex-col md:flex-row">
                     <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
-                        <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <img src="img/arte.jpg" class="absolute inset-0 w-full h-full object-cover">
                         <div class="absolute inset-0 bg-brand-green/20 mix-blend-multiply"></div>
                         <span class="absolute top-4 left-4 bg-brand-green text-white border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Martes</span>
                     </div>
@@ -510,7 +541,6 @@
                         <div class="grid grid-cols-2 gap-3 mb-6">
                             <div class="info-box bg-green-50"><p class="text-xs text-brand-green font-bold uppercase">Inicio</p><p class="font-bold">13 Enero</p></div>
                             <div class="info-box bg-green-50"><p class="text-xs text-brand-green font-bold uppercase">Horario</p><p class="font-bold">4:00 PM</p></div>
-                            <div class="info-box bg-green-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-green font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
                         </div>
                         <div class="flex flex-col sm:flex-row gap-3">
                             <button onclick="toggleDetails('details-45-tue')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
@@ -532,7 +562,7 @@
             <div class="sticker-card">
                 <div class="flex flex-col md:flex-row">
                     <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
-                        <img src="https://images.unsplash.com/photo-1580541832626-2a7131ee809f?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <img src="img/ajedrez.jpg" class="absolute inset-0 w-full h-full object-cover">
                         <div class="absolute inset-0 bg-brand-purple/20 mix-blend-multiply"></div>
                         <span class="absolute top-4 left-4 bg-brand-purple text-white border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Miércoles</span>
                     </div>
@@ -542,7 +572,6 @@
                         <div class="grid grid-cols-2 gap-3 mb-6">
                             <div class="info-box bg-purple-50"><p class="text-xs text-brand-purple font-bold uppercase">Inicio</p><p class="font-bold">14 Enero</p></div>
                             <div class="info-box bg-purple-50"><p class="text-xs text-brand-purple font-bold uppercase">Horario</p><p class="font-bold">4:00 PM</p></div>
-                            <div class="info-box bg-purple-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-purple font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
                         </div>
                         <div class="flex flex-col sm:flex-row gap-3">
                             <button onclick="toggleDetails('details-45-wed')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
@@ -564,7 +593,7 @@
             <div class="sticker-card">
                 <div class="flex flex-col md:flex-row">
                     <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
-                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <img src="img/ciencia.webp" class="absolute inset-0 w-full h-full object-cover">
                         <div class="absolute inset-0 bg-brand-sky/20 mix-blend-multiply"></div>
                         <span class="absolute top-4 left-4 bg-brand-sky text-white border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Jueves</span>
                     </div>
@@ -574,7 +603,6 @@
                         <div class="grid grid-cols-2 gap-3 mb-6">
                             <div class="info-box bg-sky-50"><p class="text-xs text-brand-sky font-bold uppercase">Inicio</p><p class="font-bold">15 Enero</p></div>
                             <div class="info-box bg-sky-50"><p class="text-xs text-brand-sky font-bold uppercase">Horario</p><p class="font-bold">4:00 PM</p></div>
-                            <div class="info-box bg-sky-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-sky font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
                         </div>
                         <div class="flex flex-col sm:flex-row gap-3">
                             <button onclick="toggleDetails('details-45-thu')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
@@ -586,7 +614,7 @@
                     <div class="p-6">
                         <div class="grid md:grid-cols-2 gap-6">
                             <div><h4 class="font-black text-brand-sky mb-3 uppercase border-b-2 border-brand-sky/20 pb-1">Cronograma Semanal</h4><ul class="text-sm space-y-2 text-gray-700 list-disc pl-4"><li><strong>Sem 1:</strong> Agua Viajera (Capilaridad).</li><li><strong>Sem 2:</strong> El Huevo Mágico (Densidad).</li><li><strong>Sem 3:</strong> Tinta Invisible (Reacciones).</li><li><strong>Sem 4:</strong> Magia Estática (Electricidad).</li><li><strong>Sem 5:</strong> El Gran Volcán.</li><li><strong>Sem 6:</strong> 🚀 Exposición de Inventos.</li></ul></div>
-                            <div class="flex flex-col justify-between"><div><h4 class="font-black text-brand-sky mb-3 uppercase border-b-2 border-brand-sky/20 pb-1">Requisitos</h4><p class="text-sm text-gray-700 mb-4">Bata, lentes, cuaderno.</p><div class="bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#0095DA]"><div class="bg-brand-sky p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="microscope" class="w-8 h-8 text-white"></i></div><div><h5 class="font-black text-brand-sky text-sm uppercase mb-1">¡Certificación!</h5><p class="text-sm font-bold text-gray-700 leading-tight">Carnet de Científico Senior + <span class="text-brand-dark underline">Medalla de la Innovación</span> 🧬</p></div></div></div>
+                            <div class="flex flex-col justify-between"><div><h4 class="font-black text-brand-sky mb-3 uppercase border-b-2 border-brand-sky/20 pb-1">Requisitos</h4><ul class="text-sm space-y-2 text-gray-700 list-disc pl-4 mb-4"><li>Bata blanca o camisa vieja.</li><li>Lentes de juguete (opcional).</li><li>Cuaderno de notas.</li></ul></div><div class="bg-white border-2 border-brand-dark p-4 rounded-xl flex items-center gap-4 shadow-[4px_4px_0px_0px_#0095DA]"><div class="bg-brand-sky p-3 rounded-full border-2 border-brand-dark shrink-0"><i data-lucide="microscope" class="w-8 h-8 text-white"></i></div><div><h5 class="font-black text-brand-sky text-sm uppercase mb-1">¡Certificación!</h5><p class="text-sm font-bold text-gray-700 leading-tight">Carnet de Científico Senior + <span class="text-brand-dark underline">Medalla de la Innovación</span> 🧬</p></div></div></div>
                         </div>
                     </div>
                 </div>
@@ -596,7 +624,7 @@
             <div class="sticker-card">
                 <div class="flex flex-col md:flex-row">
                     <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
-                        <img src="https://images.unsplash.com/photo-1606822365365-17937397b275?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <img src="img/chef.webp" class="absolute inset-0 w-full h-full object-cover">
                         <div class="absolute inset-0 bg-brand-yellow/20 mix-blend-multiply"></div>
                         <span class="absolute top-4 left-4 bg-brand-yellow text-brand-dark border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Viernes</span>
                     </div>
@@ -606,7 +634,6 @@
                         <div class="grid grid-cols-2 gap-3 mb-6">
                             <div class="info-box bg-yellow-50"><p class="text-xs text-brand-yellow font-bold uppercase">Inicio</p><p class="font-bold">16 Enero</p></div>
                             <div class="info-box bg-yellow-50"><p class="text-xs text-brand-yellow font-bold uppercase">Horario</p><p class="font-bold">4:00 PM</p></div>
-                            <div class="info-box bg-yellow-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-yellow font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
                         </div>
                         <div class="flex flex-col sm:flex-row gap-3">
                             <button onclick="toggleDetails('details-45-fri')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
@@ -657,7 +684,7 @@
             <div class="sticker-card">
                 <div class="flex flex-col md:flex-row">
                     <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
-                        <img src="https://images.unsplash.com/photo-1529699211952-734e80c4d42b?q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <img src="img/ajedrez.jpg" class="absolute inset-0 w-full h-full object-cover">
                         <div class="absolute inset-0 bg-brand-purple/20 mix-blend-multiply"></div>
                         <span class="absolute top-4 left-4 bg-brand-purple text-white border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Lunes</span>
                     </div>
@@ -668,7 +695,6 @@
                         <div class="grid grid-cols-2 gap-3 mb-6">
                             <div class="info-box bg-purple-50"><p class="text-xs text-brand-purple font-bold uppercase">Inicio</p><p class="font-bold">12 Enero</p></div>
                             <div class="info-box bg-purple-50"><p class="text-xs text-brand-purple font-bold uppercase">Horario</p><p class="font-bold">5:00 PM</p></div>
-                            <div class="info-box bg-purple-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-purple font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
                         </div>
                         <div class="flex flex-col sm:flex-row gap-3">
                             <button onclick="toggleDetails('details-610-mon')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
@@ -723,7 +749,7 @@
             <div class="sticker-card">
                 <div class="flex flex-col md:flex-row">
                     <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
-                        <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <img src="img/arte.jpg" class="absolute inset-0 w-full h-full object-cover">
                         <div class="absolute inset-0 bg-brand-green/20 mix-blend-multiply"></div>
                         <span class="absolute top-4 left-4 bg-brand-green text-white border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Martes</span>
                     </div>
@@ -733,7 +759,6 @@
                         <div class="grid grid-cols-2 gap-3 mb-6">
                             <div class="info-box bg-green-50"><p class="text-xs text-brand-green font-bold uppercase">Inicio</p><p class="font-bold">13 Enero</p></div>
                             <div class="info-box bg-green-50"><p class="text-xs text-brand-green font-bold uppercase">Horario</p><p class="font-bold">5:00 PM</p></div>
-                            <div class="info-box bg-green-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-green font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
                         </div>
                         <div class="flex flex-col sm:flex-row gap-3">
                             <button onclick="toggleDetails('details-610-tue')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
@@ -755,7 +780,7 @@
             <div class="sticker-card">
                 <div class="flex flex-col md:flex-row">
                     <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
-                        <img src="https://images.unsplash.com/photo-1516475429286-465d815a0df7?q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <img src="img/caporal.png" class="absolute inset-0 w-full h-full object-cover">
                         <div class="absolute inset-0 bg-brand-red/20 mix-blend-multiply"></div>
                         <span class="absolute top-4 left-4 bg-brand-red text-white border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Miércoles</span>
                     </div>
@@ -765,7 +790,6 @@
                         <div class="grid grid-cols-2 gap-3 mb-6">
                             <div class="info-box bg-red-50"><p class="text-xs text-brand-red font-bold uppercase">Inicio</p><p class="font-bold">14 Enero</p></div>
                             <div class="info-box bg-red-50"><p class="text-xs text-brand-red font-bold uppercase">Horario</p><p class="font-bold">5:00 PM</p></div>
-                            <div class="info-box bg-red-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-red font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
                         </div>
                         <div class="flex flex-col sm:flex-row gap-3">
                             <button onclick="toggleDetails('details-610-wed')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
@@ -787,7 +811,7 @@
             <div class="sticker-card">
                 <div class="flex flex-col md:flex-row">
                     <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
-                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <img src="img/ciencia.webp" class="absolute inset-0 w-full h-full object-cover">
                         <div class="absolute inset-0 bg-brand-sky/20 mix-blend-multiply"></div>
                         <span class="absolute top-4 left-4 bg-brand-sky text-white border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Jueves</span>
                     </div>
@@ -797,7 +821,6 @@
                         <div class="grid grid-cols-2 gap-3 mb-6">
                             <div class="info-box bg-sky-50"><p class="text-xs text-brand-sky font-bold uppercase">Inicio</p><p class="font-bold">15 Enero</p></div>
                             <div class="info-box bg-sky-50"><p class="text-xs text-brand-sky font-bold uppercase">Horario</p><p class="font-bold">5:00 PM</p></div>
-                            <div class="info-box bg-sky-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-sky font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
                         </div>
                         <div class="flex flex-col sm:flex-row gap-3">
                             <button onclick="toggleDetails('details-610-thu')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
@@ -819,7 +842,7 @@
             <div class="sticker-card">
                 <div class="flex flex-col md:flex-row">
                     <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
-                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <img src="img/ingles.jpeg" class="absolute inset-0 w-full h-full object-cover">
                         <div class="absolute inset-0 bg-brand-blue/20 mix-blend-multiply"></div>
                         <span class="absolute top-4 left-4 bg-brand-blue text-white border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Viernes</span>
                     </div>
@@ -829,7 +852,6 @@
                         <div class="grid grid-cols-2 gap-3 mb-6">
                             <div class="info-box bg-blue-50"><p class="text-xs text-brand-blue font-bold uppercase">Inicio</p><p class="font-bold">16 Enero</p></div>
                             <div class="info-box bg-blue-50"><p class="text-xs text-brand-blue font-bold uppercase">Horario</p><p class="font-bold">5:00 PM</p></div>
-                            <div class="info-box bg-blue-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-blue font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
                         </div>
                         <div class="flex flex-col sm:flex-row gap-3">
                             <button onclick="toggleDetails('details-610-fri')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
@@ -859,7 +881,7 @@
             <div class="sticker-card">
                 <div class="flex flex-col md:flex-row">
                     <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
-                        <img src="https://images.unsplash.com/photo-1593349480506-8433634cdcbe?q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <img src="img/programacion.jpg" class="absolute inset-0 w-full h-full object-cover">
                         <div class="absolute inset-0 bg-brand-sky/20 mix-blend-multiply"></div>
                         <span class="absolute top-4 left-4 bg-brand-sky text-white border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Sábados</span>
                     </div>
@@ -869,7 +891,6 @@
                         <div class="grid grid-cols-2 gap-3 mb-6">
                             <div class="info-box bg-sky-50"><p class="text-xs text-brand-sky font-bold uppercase">Inicio</p><p class="font-bold">17 Enero</p></div>
                             <div class="info-box bg-sky-50"><p class="text-xs text-brand-sky font-bold uppercase">Horario</p><p class="font-bold">8:30 AM</p></div>
-                            <div class="info-box bg-sky-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-sky font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
                         </div>
                         <div class="flex flex-col sm:flex-row gap-3">
                             <button onclick="toggleDetails('details-tech-code')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
@@ -891,7 +912,7 @@
             <div class="sticker-card">
                 <div class="flex flex-col md:flex-row">
                     <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
-                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <img src="img/diseno.jpg" class="absolute inset-0 w-full h-full object-cover">
                         <div class="absolute inset-0 bg-brand-purple/20 mix-blend-multiply"></div>
                         <span class="absolute top-4 left-4 bg-brand-purple text-white border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Sábados</span>
                     </div>
@@ -901,7 +922,6 @@
                         <div class="grid grid-cols-2 gap-3 mb-6">
                             <div class="info-box bg-purple-50"><p class="text-xs text-brand-purple font-bold uppercase">Inicio</p><p class="font-bold">17 Enero</p></div>
                             <div class="info-box bg-purple-50"><p class="text-xs text-brand-purple font-bold uppercase">Horario</p><p class="font-bold">9:30 AM</p></div>
-                            <div class="info-box bg-purple-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-purple font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
                         </div>
                         <div class="flex flex-col sm:flex-row gap-3">
                             <button onclick="toggleDetails('details-tech-design')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
@@ -923,7 +943,7 @@
             <div class="sticker-card">
                 <div class="flex flex-col md:flex-row">
                     <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
-                        <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <img src="img/electornica.webp" class="absolute inset-0 w-full h-full object-cover">
                         <div class="absolute inset-0 bg-brand-red/20 mix-blend-multiply"></div>
                         <span class="absolute top-4 left-4 bg-brand-red text-white border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Sábados</span>
                     </div>
@@ -933,7 +953,6 @@
                         <div class="grid grid-cols-2 gap-3 mb-6">
                             <div class="info-box bg-red-50"><p class="text-xs text-brand-red font-bold uppercase">Inicio</p><p class="font-bold">17 Enero</p></div>
                             <div class="info-box bg-red-50"><p class="text-xs text-brand-red font-bold uppercase">Horario</p><p class="font-bold">10:30 AM</p></div>
-                            <div class="info-box bg-red-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-red font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
                         </div>
                         <div class="flex flex-col sm:flex-row gap-3">
                             <button onclick="toggleDetails('details-tech-robot')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
@@ -957,7 +976,7 @@
             <div class="sticker-card">
                 <div class="flex flex-col md:flex-row">
                     <div class="md:w-5/12 relative border-b-4 md:border-b-0 md:border-r-4 border-brand-dark min-h-[250px]">
-                        <img src="https://images.unsplash.com/photo-1520609090647-19458df24107?q=80&w=800" class="absolute inset-0 w-full h-full object-cover">
+                        <img src="img/ballet.jpg" class="absolute inset-0 w-full h-full object-cover">
                         <div class="absolute inset-0 bg-brand-hotpink/20 mix-blend-multiply"></div>
                         <span class="absolute top-4 left-4 bg-brand-hotpink text-white border-2 border-brand-dark px-3 py-1 rounded-full text-xs font-bold uppercase shadow-pop">Sábados</span>
                     </div>
@@ -967,7 +986,6 @@
                         <div class="grid grid-cols-2 gap-3 mb-6">
                             <div class="info-box bg-pink-50"><p class="text-xs text-brand-hotpink font-bold uppercase">Inicio</p><p class="font-bold">17 Enero</p></div>
                             <div class="info-box bg-pink-50"><p class="text-xs text-brand-hotpink font-bold uppercase">Horario</p><p class="font-bold">3:00 PM</p></div>
-                            <div class="info-box bg-pink-50 col-span-2 flex justify-between px-4"><p class="text-xs text-brand-hotpink font-bold uppercase self-center">Inversión Total</p><p class="font-bold text-xl">S/ 150.00</p></div>
                         </div>
                         <div class="flex flex-col sm:flex-row gap-3">
                             <button onclick="toggleDetails('details-ballet')" class="flex-1 bg-white border-2 border-brand-dark text-brand-dark font-bold py-3 rounded-xl hover:bg-gray-50 transition-all">Ver Sílabus Completo ▼</button>
@@ -1015,127 +1033,126 @@
 
     </main>
 
-    <!-- Section Packs -->
-    <!-- CORRECCIÓN: Fondo sólido bg-brand-yellow en lugar de transparente para mejorar lectura -->
-    <section class="py-16 px-4 bg-brand-yellow border-t-4 border-brand-dark relative">
+    <!-- Section Packs - SECCIÓN DE DESTINO PARA EL AVATAR -->
+    <section id="packs-section" class="py-16 px-4 bg-brand-yellow border-t-4 border-brand-dark relative">
         <div class="container mx-auto max-w-7xl">
             <div class="text-center mb-12">
                 <h2 class="font-display text-4xl md:text-5xl font-bold text-brand-dark mb-4">¡Packs de Verano! ☀️</h2>
-                <p class="text-xl text-brand-dark font-bold">Aprovecha nuestras ofertas exclusivas por tiempo limitado</p>
+                <p class="text-xl text-brand-dark font-bold">¡Precios especiales para vecinos por tiempo limitado!</p>
             </div>
 
-            <!-- Fila Superior: Opciones Básicas -->
+            <!-- Fila Superior -->
             <div class="flex flex-wrap justify-center gap-8 mb-8">
                 <!-- Pack 1 -->
-                <div class="sticker-card bg-white p-8 relative transform hover:-translate-y-2 transition-transform w-full md:w-[350px]">
+                <div class="sticker-card sticker-card-visible bg-white p-8 relative transform hover:-translate-y-2 transition-transform w-full md:w-[350px] border-brand-red">
                     <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-brand-sky text-white border-2 border-brand-dark px-4 py-1 rounded-full font-bold shadow-pop">Básico</div>
-                    <h3 class="font-display text-3xl font-bold text-center mt-4 mb-2">1 Taller</h3>
-                    <p class="text-center text-gray-500 mb-6">Para probar la experiencia</p>
-                    <div class="text-center mb-6">
-                        <span class="text-4xl font-bold text-brand-dark">S/ 150</span>
-                        <span class="text-sm text-gray-500">/ único pago</span>
-                    </div>
-                    <ul class="space-y-3 mb-8 text-sm">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5 flex-shrink-0"></i> Acceso a 1 taller (6 semanas)</li>
-                        <li class="flex items-center gap-2"><i data-lucide="gift" class="text-brand-red w-5 h-5 flex-shrink-0"></i> <strong>Kit de Bienvenida GRATIS</strong></li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5 flex-shrink-0"></i> Materiales (excepto Mini Chef)</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5 flex-shrink-0"></i> Diploma Físico</li>
-                    </ul>
-                    <a href="https://wa.me/51925982984?text=Hola,%20me%20interesa%20inscribirme%20en%201%20Taller" target="_blank" class="w-full btn-pop bg-brand-sky text-white font-bold py-3 rounded-xl text-center block">Elegir 1 Taller</a>
-                </div>
-
-                <!-- Pack 2 - OFERTA -->
-                 <div class="sticker-card bg-white p-8 relative transform hover:-translate-y-2 transition-transform w-full md:w-[350px] border-brand-purple">
-                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-brand-purple text-white border-2 border-brand-dark px-4 py-1 rounded-full font-bold shadow-pop">¡Más Popular!</div>
-                    <!-- Badge de Oferta -->
-                    <div class="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded rotate-12 animate-pulse">¡AHORRA S/60!</div>
+                    <div class="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded rotate-12 animate-pulse shadow-md border border-brand-dark">¡OFERTA FLASH!</div>
                     
-                    <h3 class="font-display text-3xl font-bold text-center mt-4 mb-2 text-brand-purple">Pack Duo</h3>
-                    <p class="text-center text-gray-500 mb-6">Dos talleres a elección</p>
+                    <h3 class="font-display text-3xl font-bold text-center mt-4 mb-2">1 Taller</h3>
+                    <p class="text-center text-gray-500 mb-6">1 hora a la semana</p>
                     <div class="text-center mb-6">
-                        <div class="text-gray-400 text-lg line-through font-bold">Antes S/ 300</div>
-                        <span class="text-5xl font-black text-brand-purple">S/ 240</span>
-                        <span class="text-sm font-bold text-red-500 block mt-1">¡OFERTA ESPECIAL!</span>
+                        <div class="text-gray-400 text-lg line-through font-bold">Precio Real: S/ 150</div>
+                        <span class="text-6xl font-black text-brand-red">S/ 99</span>
+                        <div class="bg-yellow-100 text-brand-red font-bold text-sm px-3 py-1 rounded-full inline-block mt-2 border-2 border-brand-red animate-bounce">
+                            🔥 ¡Solo 5 primeros inscritos!
+                        </div>
                     </div>
                     <ul class="space-y-3 mb-8 text-sm">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-brand-purple w-5 h-5 flex-shrink-0"></i> <strong>2 Talleres Completos</strong></li>
-                        <li class="flex items-center gap-2"><i data-lucide="gift" class="text-brand-red w-5 h-5 flex-shrink-0"></i> <strong>Kit de Bienvenida GRATIS</strong></li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5 flex-shrink-0"></i> Materiales (excepto Mini Chef)</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5 flex-shrink-0"></i> Diploma Físico</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Acceso a 1 taller (6 semanas)</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Materiales (excepto Mini Chef)</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Diploma Físico</li>
                     </ul>
-                    <a href="https://wa.me/51925982984?text=Hola,%20quiero%20la%20OFERTA%20del%20Pack%20Duo%20a%20S/240" target="_blank" class="w-full btn-pop bg-brand-purple text-white font-bold py-3 rounded-xl text-center block hover:bg-purple-700">Quiero la Oferta Duo</a>
+                    <a href="https://wa.me/51925982984?text=Hola,%20quiero%20ser%20uno%20de%20los%205%20primeros%20para%20la%20promo%20de%201%20Taller%20a%20S/99" target="_blank" class="w-full btn-pop bg-brand-sky text-white font-bold py-3 rounded-xl text-center block hover:bg-sky-600 text-lg">¡Aprovechar Promo S/99!</a>
                 </div>
 
-                <!-- Pack 3 - OFERTA -->
-                 <div class="sticker-card bg-white p-8 relative transform hover:-translate-y-2 transition-transform w-full md:w-[350px]">
-                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-brand-red text-white border-2 border-brand-dark px-4 py-1 rounded-full font-bold shadow-pop">Super Descuento</div>
-                    <!-- Badge de Oferta -->
-                    <div class="absolute top-4 right-4 bg-yellow-400 text-brand-dark text-xs font-bold px-2 py-1 rounded -rotate-12 border border-brand-dark">¡AHORRA S/150!</div>
-
-                    <h3 class="font-display text-3xl font-bold text-center mt-4 mb-2 text-brand-red">Pack Trio</h3>
-                    <p class="text-center text-gray-500 mb-6">Tres talleres a elección</p>
+                <!-- Pack 2 -->
+                 <div class="sticker-card sticker-card-visible bg-white p-8 relative transform hover:-translate-y-2 transition-transform w-full md:w-[350px] border-brand-purple">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-brand-purple text-white border-2 border-brand-dark px-4 py-1 rounded-full font-bold shadow-pop">Recomendado</div>
+                    <div class="absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded rotate-12 animate-pulse">AHORRA S/80</div>
+                    
+                    <h3 class="font-display text-3xl font-bold text-center mt-4 mb-2 text-brand-purple">Pack Dúo</h3>
+                    <p class="text-center text-gray-500 mb-6">2 horas a la semana</p>
                     <div class="text-center mb-6">
-                        <div class="text-gray-400 text-lg line-through font-bold">Antes S/ 450</div>
-                        <span class="text-5xl font-black text-brand-red">S/ 300</span>
-                        <span class="text-sm font-bold text-red-500 block mt-1">¡SÚPER PRECIO!</span>
+                        <div class="text-gray-400 text-lg line-through font-bold">Normal: S/ 240</div>
+                        <span class="text-5xl font-black text-brand-purple">S/ 160</span>
+                        <span class="text-sm font-bold text-green-600 block mt-1 uppercase bg-green-100 rounded-full py-1 px-3 inline-block">Precio Vecino</span>
+                        <p class="text-xs text-gray-400 mt-1">(Pago adelantado)</p>
                     </div>
                     <ul class="space-y-3 mb-8 text-sm">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-brand-red w-5 h-5 flex-shrink-0"></i> <strong>3 Talleres Completos</strong></li>
-                        <li class="flex items-center gap-2"><i data-lucide="gift" class="text-brand-red w-5 h-5 flex-shrink-0"></i> <strong>Kit de Bienvenida GRATIS</strong></li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5 flex-shrink-0"></i> Materiales (excepto Mini Chef)</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5 flex-shrink-0"></i> Diploma Físico</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-brand-purple w-5 h-5"></i> <strong>2 Talleres a elección</strong></li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Materiales incluidos</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Diploma Físico</li>
                     </ul>
-                    <a href="https://wa.me/51925982984?text=Hola,%20quiero%20la%20S%C3%9APER%20OFERTA%20del%20Pack%20Trio%20a%20S/300" target="_blank" class="w-full btn-pop bg-brand-red text-white font-bold py-3 rounded-xl text-center block hover:bg-red-700">Quiero el Trío a S/300</a>
+                    <a href="https://wa.me/51925982984?text=Hola,%20quiero%20el%20Pack%20Duo%20a%20Precio%20Vecino%20(S/160)" target="_blank" class="w-full btn-pop bg-brand-purple text-white font-bold py-3 rounded-xl text-center block hover:bg-purple-700">Quiero Pack Dúo S/160</a>
+                </div>
+
+                <!-- Pack 3 -->
+                 <div class="sticker-card sticker-card-visible bg-white p-8 relative transform hover:-translate-y-2 transition-transform w-full md:w-[350px]">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-brand-red text-white border-2 border-brand-dark px-4 py-1 rounded-full font-bold shadow-pop">Super Pack</div>
+                    <div class="absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded rotate-12 animate-pulse">AHORRA S/80</div>
+
+                    <h3 class="font-display text-3xl font-bold text-center mt-4 mb-2 text-brand-red">Pack Trío</h3>
+                    <p class="text-center text-gray-500 mb-6">3 horas a la semana</p>
+                    <div class="text-center mb-6">
+                        <div class="text-gray-400 text-lg line-through font-bold">Normal: S/ 300</div>
+                        <span class="text-5xl font-black text-brand-red">S/ 220</span>
+                        <span class="text-sm font-bold text-green-600 block mt-1 uppercase bg-green-100 rounded-full py-1 px-3 inline-block">Precio Vecino</span>
+                        <p class="text-xs text-gray-400 mt-1">(Pago adelantado)</p>
+                    </div>
+                    <ul class="space-y-3 mb-8 text-sm">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-brand-red w-5 h-5"></i> <strong>3 Talleres a elección</strong></li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Materiales incluidos</li>
+                        <li class="flex items-center gap-2"><i data-lucide="gift" class="text-brand-red w-5 h-5"></i> <strong>Kit de Bienvenida</strong></li>
+                    </ul>
+                    <a href="https://wa.me/51925982984?text=Hola,%20quiero%20el%20Pack%20Trio%20a%20Precio%20Vecino%20(S/220)" target="_blank" class="w-full btn-pop bg-brand-red text-white font-bold py-3 rounded-xl text-center block hover:bg-red-700">Quiero Pack Trío S/220</a>
                 </div>
             </div>
 
             <!-- Fila Inferior: Packs Especiales -->
             <div class="flex flex-wrap justify-center gap-8">
-                <!-- Pack 5 Talleres - MEGA OFERTA -->
-                <div class="sticker-card bg-white p-8 relative transform hover:-translate-y-2 transition-transform w-full md:w-[350px] border-brand-green">
-                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-brand-green text-white border-2 border-brand-dark px-4 py-1 rounded-full font-bold shadow-pop w-max">⭐️ Full Week</div>
-                    <h3 class="font-display text-3xl font-bold text-center mt-4 mb-2 text-brand-green">Pack 5 Talleres</h3>
-                    <p class="text-center text-gray-500 mb-6">De Lunes a Viernes</p>
-                    <div class="text-center mb-6">
-                        <div class="text-gray-400 text-lg line-through font-bold">Antes S/ 750</div>
-                        <span class="text-5xl font-black text-brand-dark">S/ 500</span>
-                        <span class="text-sm font-bold text-red-500 block mt-1">¡MEJOR PRECIO! 🔥</span>
-                    </div>
-                    <ul class="space-y-3 mb-8 text-sm">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-brand-green w-5 h-5 flex-shrink-0"></i> <strong>¡Ahorras S/ 250!</strong></li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5 flex-shrink-0"></i> Lunes a Viernes completo</li>
-                        <li class="flex items-center gap-2"><i data-lucide="gift" class="text-brand-green w-5 h-5 flex-shrink-0"></i> <strong>Kit de Bienvenida GRATIS</strong></li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5 flex-shrink-0"></i> Materiales (excepto Mini Chef)</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5 flex-shrink-0"></i> Diploma Físico</li>
-                    </ul>
-                    <a href="https://wa.me/51925982984?text=Hola,%20quiero%20la%20MEGA%20OFERTA%20del%20Pack%205%20Talleres%20a%20S/500" target="_blank" class="w-full btn-pop bg-brand-green text-white font-bold py-3 rounded-xl text-center block hover:bg-green-700">Aprovechar Oferta S/500</a>
-                </div>
-
                 <!-- Pack Niñ@s Tech - OFERTA -->
-                <div class="sticker-card bg-white p-8 relative transform hover:-translate-y-2 transition-transform w-full md:w-[350px] border-brand-purple">
+                <div class="sticker-card sticker-card-visible bg-white p-8 relative transform hover:-translate-y-2 transition-transform w-full md:w-[350px] border-brand-purple">
                     <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-brand-purple text-white border-2 border-brand-dark px-4 py-1 rounded-full font-bold shadow-pop w-max">🤖 Tech Pass</div>
+                    <div class="absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded rotate-12 animate-pulse">AHORRA S/150</div>
+                    
                     <h3 class="font-display text-3xl font-bold text-center mt-4 mb-2 text-brand-purple">Pack Niñ@s Tech</h3>
                     <p class="text-center text-gray-500 mb-6">Todos los talleres del Sábado</p>
                     <div class="text-center mb-6">
-                        <div class="text-gray-400 text-lg line-through font-bold">Antes S/ 450</div>
-                        <span class="text-5xl font-black text-brand-dark">S/ 350</span>
-                        <span class="text-sm font-bold text-red-500 block mt-1">¡DESCUENTO TECH!</span>
+                        <div class="text-gray-400 text-lg line-through font-bold">Normal: S/ 450</div>
+                        <span class="text-5xl font-black text-brand-dark">S/ 300</span>
+                        <span class="text-sm font-bold text-green-600 block mt-1 uppercase bg-green-100 rounded-full py-1 px-3 inline-block">Precio Vecino</span>
+                        <p class="text-xs text-gray-400 mt-1">(Pago adelantado)</p>
                     </div>
                     <ul class="space-y-3 mb-8 text-sm">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-brand-purple w-5 h-5 flex-shrink-0"></i> <strong>Prog + Diseño + Robótica</strong></li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5 flex-shrink-0"></i> 3 Horas de full tecnología</li>
-                        <li class="flex items-center gap-2"><i data-lucide="gift" class="text-brand-purple w-5 h-5 flex-shrink-0"></i> <strong>Kit de Bienvenida GRATIS</strong></li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5 flex-shrink-0"></i> Ahorras S/ 100</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5 flex-shrink-0"></i> Diploma Físico "Experto Tech"</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-brand-purple w-5 h-5"></i> <strong>Prog + Diseño + Robótica</strong></li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> 3 Horas de full tecnología</li>
+                        <li class="flex items-center gap-2"><i data-lucide="gift" class="text-brand-purple w-5 h-5"></i> Kit Tech de Bienvenida</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Diploma Físico "Experto Tech"</li>
                     </ul>
-                    <a href="https://wa.me/51925982984?text=Hola,%20quiero%20la%20OFERTA%20del%20Pack%20Ni%C3%B1os%20Tech%20a%20S/350" target="_blank" class="w-full btn-pop bg-brand-purple text-white font-bold py-3 rounded-xl text-center block hover:bg-purple-700">Quiero Pack Tech S/350</a>
+                    <a href="https://wa.me/51925982984?text=Hola,%20quiero%20la%20OFERTA%20del%20Pack%20Ni%C3%B1os%20Tech%20a%20S/300" target="_blank" class="w-full btn-pop bg-brand-purple text-white font-bold py-3 rounded-xl text-center block hover:bg-purple-700">Quiero Pack Tech S/300</a>
                 </div>
-            </div>
 
-            <div class="mt-8 text-center">
-                <p class="text-red-600 font-bold text-sm md:text-base bg-white/90 inline-block px-6 py-3 rounded-full border-2 border-brand-dark shadow-md">
-                    ⚠️ Nota Importante: Estas ofertas y packs NO incluyen el taller de "Ballet Kids".
-                </p>
+                <!-- Pack 5 Talleres - MEGA OFERTA -->
+                <div class="sticker-card sticker-card-visible bg-white p-8 relative transform hover:-translate-y-2 transition-transform w-full md:w-[400px] border-brand-green">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-brand-green text-white border-2 border-brand-dark px-4 py-1 rounded-full font-bold shadow-pop w-max">⭐️ Full Week Experience</div>
+                    <div class="absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded rotate-12 animate-pulse">AHORRA S/120</div>
+                    
+                    <h3 class="font-display text-3xl font-bold text-center mt-4 mb-2 text-brand-green">Full 5 Talleres</h3>
+                    <p class="text-center text-gray-500 mb-6">¡Actividades de Lunes a Viernes!</p>
+                    <div class="text-center mb-6">
+                        <div class="text-gray-400 text-lg line-through font-bold">Normal: S/ 500</div>
+                        <span class="text-6xl font-black text-brand-dark">S/ 380</span>
+                        <span class="text-sm font-bold text-green-600 block mt-1 uppercase bg-green-100 rounded-full py-1 px-3 inline-block">Precio Vecino</span>
+                        <p class="text-xs text-gray-400 mt-1">(Pago adelantado)</p>
+                    </div>
+                    <ul class="space-y-3 mb-8 text-sm">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-brand-green w-5 h-5"></i> <strong>5 Talleres (Semana completa)</strong></li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Materiales incluidos</li>
+                        <li class="flex items-center gap-2"><i data-lucide="gift" class="text-brand-green w-5 h-5"></i> Kit Premium + Polo Marcy Kids</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Diploma de Honor</li>
+                    </ul>
+                    <a href="https://wa.me/51925982984?text=Hola,%20quiero%20el%20FULL%20WEEK%205%20Talleres%20a%20Precio%20Vecino%20(S/380)" target="_blank" class="w-full btn-pop bg-brand-green text-white font-bold py-3 rounded-xl text-center block hover:bg-green-700 text-xl">¡Quiero Todo a S/380!</a>
+                </div>
             </div>
         </div>
     </section>
@@ -1144,13 +1161,30 @@
     <footer class="bg-brand-dark text-white py-12 border-t-4 border-black">
         <div class="container mx-auto px-4 text-center">
             <h2 class="font-display text-3xl font-bold mb-8">¿Listo para el Verano?</h2>
-            <a href="https://wa.me/51925982984" class="btn-pop bg-brand-secondary text-white px-8 py-4 rounded-full font-bold text-xl inline-flex items-center gap-3 hover:bg-green-600">
+            <a href="https://wa.me/51925982984" class="btn-pop bg-brand-green text-white px-8 py-4 rounded-full font-bold text-xl inline-flex items-center gap-3 hover:bg-green-600">
                 <i data-lucide="phone"></i> 925 982 984
             </a>
             <p class="mt-8 text-gray-400 font-bold">Condominio Los Nogales 251</p>
             <p class="mt-4 text-sm text-gray-500">© 2026 Marcy Kids. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <!-- AVATAR FLOTANTE WOW -->
+    <div id="wow-avatar" class="fixed bottom-4 right-4 z-50 cursor-pointer animate-float hover:scale-105" onclick="scrollToPacks()">
+        <div class="relative w-24 h-24">
+            <!-- Globo de texto -->
+            <div class="absolute -top-16 right-0 bg-white border-4 border-brand-dark p-2 rounded-xl shadow-pop w-40 text-center transform transition-transform origin-bottom-right">
+                <p class="font-display text-sm font-bold text-brand-purple leading-tight">¡WOW! 😱<br>¡Mira las Ofertas!</p>
+                <!-- Pico del globo -->
+                <div class="absolute -bottom-2 right-8 w-4 h-4 bg-white border-r-4 border-b-4 border-brand-dark transform rotate-45"></div>
+            </div>
+            
+            <!-- Personaje Robot (Neutro) -->
+            <div class="w-20 h-20 bg-brand-yellow rounded-full border-4 border-brand-dark shadow-pop flex items-center justify-center text-5xl hover:rotate-12 transition-transform absolute bottom-0 right-0">
+                🤖
+            </div>
+        </div>
+    </div>
 
     <script>
         lucide.createIcons();
@@ -1172,6 +1206,16 @@
                     content.classList.add('hidden');
                 }
             });
+
+            // Lógica para scroll automático al contenido (Importante para móvil)
+            const contentContainer = document.getElementById('main-content');
+            const navHeight = 110; // Compensación por la cabecera fija
+            const targetPosition = contentContainer.getBoundingClientRect().top + window.scrollY - navHeight;
+
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
         }
 
         function toggleDetails(id) {
@@ -1179,6 +1223,20 @@
             if (element) {
                 element.classList.toggle('details-open');
             }
+        }
+
+        // Función para el Avatar WOW
+        function scrollToPacks() {
+            const packsSection = document.getElementById('packs-section');
+            const avatar = document.getElementById('wow-avatar');
+            
+            // Scroll suave hacia los paquetes
+            packsSection.scrollIntoView({ behavior: 'smooth' });
+
+            // Animación de desaparición
+            setTimeout(() => {
+                avatar.classList.add('avatar-hide');
+            }, 500); // Espera medio segundo mientras inicia el scroll
         }
     </script>
 </body>
